@@ -68,6 +68,9 @@ $r_desk_4k: 3760px; // 3840
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
+    @media (min-width: $r_desk) {
+        min-width: 960px;
+    }
 }
 
 header {
@@ -80,15 +83,13 @@ header {
     justify-content: space-between;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    &__logo {
-        width: 146px;
-        height: 28.1px;
-        padding-top: .4rem;
-    }
     &__items {
         display: flex;
         align-items: center;
         gap: 1.5rem;
+        @media (min-width: $r_desk) {
+            gap: 2rem;
+        }
     }
     &__search {
         border: 1px solid $line;
@@ -120,18 +121,24 @@ header {
     }
 }
 
-.main {
-    &__text {
-        margin-top: 5rem;
-        letter-spacing: .96px;
+.logo {
+    width: 146px;
+    height: 28.1px;
+    padding-top: .4rem;
+    @media (min-width: $r_desk) {
+        width: 270px;
+        height: 52px;
     }
-    &__description {
-        font-size: 1.6rem;
-        font-family: $font-jet;
-        font-weight: 700;
-        margin: 0;
-        padding-bottom: 4.5rem;
-        letter-spacing: .48px;
+    &._footer {
+        width: 210px;
+        height: 40px;
+        display: block;
+        padding-left: 1.5rem;
+        @media (min-width: $r_desk) {
+            width: 270px;
+            height: 52px;
+            padding: 0;
+        }
     }
 }
 
@@ -140,8 +147,24 @@ header {
     font-family: $font-jet;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0;
+    margin: 5rem 0 0 0;
     line-height: 1.1;
+    letter-spacing: .96px;
+    @media (min-width: $r_desk) {
+        font-size: 4rem;
+        margin: 9.5rem 0 0 0;
+    }
+    &>span {
+        display: block;
+        font-size: 1.6rem;
+        padding-bottom: 5rem;
+        letter-spacing: .48px;
+        text-transform: lowercase;
+        @media (min-width: $r_desk) {
+            font-size: 2.4rem;
+            letter-spacing: 0.68px;
+        }
+    }
 }
 
 
@@ -152,13 +175,19 @@ header {
     padding-bottom: 2rem;
     margin-bottom: 2.7rem;
     border: 1px solid $line;
+    @media (min-width: $r_desk) {
+        margin-bottom: 3.1rem;
+    }
     }
     &__thumb {
         position: relative;
         overflow: hidden;
         width: 100%;
         height: 193px;
-        margin-bottom: 3.3rem;
+        margin-bottom: 3rem;
+        @media (min-width: $r_desk) {
+            height: 447px;
+        }
     }
     &__img {
         width: 100%;
@@ -172,6 +201,10 @@ header {
     &__about {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        @media (min-width: $r_desk) {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
     }
     &__tag {
         font-size: 1.8rem;
@@ -183,9 +216,12 @@ header {
     &__title {
         font-size: 1.8rem;
         font-family: $font-jet;
-        margin-top: 1.5rem;
+        margin-top: 1.7rem;
         margin-bottom: 1.5rem;
-        line-height: 1.28;
+        line-height: 1.2;
+        @media (min-width: $r_desk) {
+            font-size: 2.4rem;
+        }
         & a {
             text-decoration: none;
             color: $dark;
@@ -193,6 +229,13 @@ header {
             &:hover {
                 color: $accent;
             }
+        }
+    }
+    &__info {
+        @media (min-width: $r_desk) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
     &__footer {
@@ -203,6 +246,9 @@ header {
         color: #95A3B1;
         font-size: 1.6rem;
         padding-top: 2rem;
+        @media (min-width: $r_desk) {
+            font-size: 2rem;
+        }
     }
     &__link {
         text-decoration: none;
@@ -252,10 +298,16 @@ header {
         margin: 0;
         padding-top: 0.4rem;
         font-size: 1.8rem;
+        @media (min-width: $r_desk) {
+            font-size: 2rem;
+        }
     }
     &__date {
         color: #95A3B1;
         font-size: 1.6rem;
+        @media (min-width: $r_desk) {
+            font-size: 1.8rem;
+        }
     }
 }
 
@@ -266,12 +318,24 @@ header {
     background-color: rgba($accent, .05);
     padding: 3rem 1.5rem;
     margin-bottom: 3rem;
+    @media (min-width: $r_desk) {
+        padding: 3rem;
+    }
     &__title {
         font-size: 1.8rem;
         font-family: $font-jet;
         margin-top: 0;
         margin-bottom: 2.1rem;
         line-height: 1.2;
+        @media (min-width: $r_desk) {
+            font-size: 2.4rem;
+        }
+    }
+    &__area {
+        @media (min-width: $r_desk) {
+            display: flex;
+            gap: 2rem;
+        }
     }
     &__input {
         font-family: $font-fira;
@@ -281,6 +345,9 @@ header {
         padding: 2rem 1.4rem;
         border: 1px solid rgb(237, 237, 237);
         width: 100%;
+        @media (min-width: $r_desk) {
+            padding: 1rem 1.4rem;
+        }
         &::placeholder {
             color: #95A3B1;
         }
@@ -306,11 +373,19 @@ header {
         width: 100%;
         padding: 1.7rem;
         margin-top: 1.5rem;
+        @media (min-width: $r_desk) {
+            max-width: 314px;
+            margin: 0 !important;
+        }
     }
     &__agreement {
         color: #95A3B1;
         font-size: 1.4rem;
         font-family: $font-jet;
+        @media (min-width: $r_desk) {
+            font-size: 1.6rem;
+            margin-top: 3rem;
+        }
         & a {
             color: $accent;
             transition: .2s;
@@ -329,30 +404,55 @@ header {
         margin-bottom: 0;
         & h2 {
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            @media (min-width: $r_desk) {
+                font-size: 1.8rem;
+            }
+        }
+        & button {
+            margin-top: 2.3rem;
+            @media (min-width: $r_desk) {
+                max-width: 341px;
+            }
         }
     }
 }
 
 /* Footer */
 
+footer {
+    margin-top: 4.7rem;
+    @media (min-width: $r_desk) {
+        margin-top: 11rem;
+    }
+}
 
 .footer {
     border: 1px solid $line;
-    padding-top: 3rem;
-    &__logo {
-    width: 210px;
-    height: 40px;
-    display: block;
-    padding-left: 1.5rem;
+    padding-top: 2.4rem;
+    @media (min-width: $r_desk) {
+        padding-top: 1.2rem;
     }
     &__socials {
         display: flex;
         justify-content: start;
-        gap: 3rem;
+        gap: 2.75rem;
         margin-top: 3rem;
         margin-bottom: 3rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+        @media (min-width: $r_desk) {
+            gap: 3rem;
+            padding: 0;
+        }
+    }
+    &__head {
+        @media (min-width: $r_desk) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 2rem 1rem 2rem;
+        }
     }
     &__social {
         display: block;
@@ -362,6 +462,10 @@ header {
         text-decoration: none;
         background: $dark;
         transition: background-color .2s;
+        @media (min-width: $r_desk) {
+            width: 3rem;
+            height: 3rem;
+        }
         &._yt {
             mask-image: url(/img/yt.svg);
             background-size: 2.6rem;
@@ -394,11 +498,26 @@ header {
     &__menu {
         border-top: 1px solid $line;
         border-bottom: 1px solid $line;
-        padding: 1rem 1.5rem;
+        padding: .9rem 1.5rem;
+        @media (min-width: $r_desk) {
+            display: flex;
+            justify-content: space-between;
+            padding: 3rem 2rem 5rem 2rem;
+            gap: 1%;
+        }
+    }
+    &__courses {
+        @media (min-width: $r_desk) {
+            flex-basis: 50%;
+        }
     }
     &__marathons {
         padding-top: 1rem;
         padding-bottom: 2rem;
+        @media (min-width: $r_desk) {
+            flex-basis: 50%;
+            padding: 0;
+        }
     }
     &__title {
         color: $dark;
@@ -406,6 +525,10 @@ header {
         font-family: $font-jet;
         font-weight: 700;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
+        @media (min-width: $r_desk) {
+            margin-bottom: 2rem;
+        }
     }
     &__list {
         & a:last-child {
@@ -418,13 +541,31 @@ header {
         color: $light-text;
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
+        @media (min-width: $r_desk) {
+            letter-spacing: .96px;
+            margin-bottom: 1.7rem;
+        }
+    }
+    &__bottom {
+        @media (min-width: $r_desk) {
+            display: flex;
+            padding-top: 0.5rem;
+            letter-spacing: .96px;
+        }
     }
     &__rules {
         font-size: 1.4rem;
         color: $light-text;
         padding: 2rem 1.5rem;
+        @media (min-width: $r_desk) {
+            flex-basis: 50%;
+            padding: 3rem;
+        }
         & span {
             display: block;
+            @media (min-width: $r_desk) {
+                display: inline-block;
+            }
         }
         & a {
             display: block;
@@ -437,6 +578,10 @@ header {
         font-size: 1.4rem;
         color: $light-text;
         padding: 0 1.5rem 2rem 1.5rem;
+        @media (min-width: $r_desk) {
+            flex-basis: 50%;
+            padding: 5rem 3rem;
+        }
         & span {
             display: block;
             padding-bottom: 2rem;
