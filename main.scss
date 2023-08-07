@@ -21,7 +21,7 @@ $r_desk_wxga: 1340px; // 1366
 $r_desk_wxga_xxl: 1360px;
 $r_desk_full: 1600px;
 $r_desk_full_over: 1680px;
-$r_desk_fhd: 1860px; // 1920
+$r_desk_fhd: 1920px; // 1920
 $r_desk_2k: 2480px; // 2560
 $r_desk_4k: 3760px; // 3840
 
@@ -90,6 +90,17 @@ header {
         @media (min-width: $r_desk) {
             gap: 2rem;
         }
+        @media (min-width: 1001px) {
+            display: none;
+        }
+        &._desc {
+            @media (max-width: 1001px) {
+                display: none;
+            }
+            @media (min-width: 1001px) {
+                display: flex;
+            }
+        }
     }
     &__search {
         border: 1px solid $line;
@@ -118,6 +129,31 @@ header {
         border-radius: 100%;
         border: none;
         cursor: pointer;
+    }
+    &__socials {
+        display: flex;
+        gap: 2rem;
+    }
+    &__link {
+        font-size: 2.4rem;
+        color: $dark;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        transition: .2s;
+        &:hover {
+            color: $accent;
+        }
+        &::after {
+            content: '';
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 24px;
+            height: 24px;
+            background-image: url(img/arrow.svg);
+            background-size: contain;
+        }
     }
 }
 
@@ -418,6 +454,50 @@ header {
     }
 }
 
+/* Socials */
+
+.social {
+    display: block;
+    width: 2.8rem;
+    height: 2.8rem;
+    mask: center center/100% no-repeat;
+    text-decoration: none;
+    background: $dark;
+    transition: background-color .2s;
+    @media (min-width: $r_desk) {
+        width: 3rem;
+        height: 3rem;
+    }
+    &._yt {
+        mask-image: url(/img/yt.svg);
+        background-size: 2.6rem;
+        &:hover {
+            background: #F12509;
+        }
+    }
+    &._vk {
+        mask-image: url(/img/vk.svg);
+        background-size: 2.8rem;
+        &:hover {
+            background: #0077FF;
+        }
+    }
+    &._tg {
+        mask-image: url(/img/tg.svg);
+        background-size: 2.45rem;
+        &:hover {
+            background: #12C0DD;
+        }
+    }
+    &._ig {
+        mask-image: url(/img/ig.svg);
+        background-size: 2.63rem;
+        &:hover {
+            background: fuchsia;
+        }
+    }
+}
+
 /* Footer */
 
 footer {
@@ -452,47 +532,6 @@ footer {
             justify-content: space-between;
             align-items: center;
             padding: 0rem 2rem 1rem 2rem;
-        }
-    }
-    &__social {
-        display: block;
-        width: 2.8rem;
-        height: 2.8rem;
-        mask: center center/100% no-repeat;
-        text-decoration: none;
-        background: $dark;
-        transition: background-color .2s;
-        @media (min-width: $r_desk) {
-            width: 3rem;
-            height: 3rem;
-        }
-        &._yt {
-            mask-image: url(/img/yt.svg);
-            background-size: 2.6rem;
-            &:hover {
-                background: #F12509;
-            }
-        }
-        &._vk {
-            mask-image: url(/img/vk.svg);
-            background-size: 2.8rem;
-            &:hover {
-                background: #0077FF;
-            }
-        }
-        &._tg {
-            mask-image: url(/img/tg.svg);
-            background-size: 2.45rem;
-            &:hover {
-                background: #12C0DD;
-            }
-        }
-        &._ig {
-            mask-image: url(/img/ig.svg);
-            background-size: 2.63rem;
-            &:hover {
-                background: fuchsia;
-            }
         }
     }
     &__menu {
