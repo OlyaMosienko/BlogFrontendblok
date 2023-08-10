@@ -248,6 +248,13 @@ header {
   text-transform: uppercase;
   line-height: 1.1;
   letter-spacing: 0.96px;
+  margin: 0;
+}
+@media (min-width: 1340px) {
+  .title {
+    font-size: 6.4rem;
+    letter-spacing: 1.8px;
+  }
 }
 .title > span {
   display: block;
@@ -260,6 +267,12 @@ header {
   .title > span {
     font-size: 2.4rem;
     letter-spacing: 0.68px;
+  }
+}
+@media (min-width: 1340px) {
+  .title > span {
+    font-size: 4.8rem;
+    letter-spacing: 1.3px;
   }
 }
 
@@ -297,6 +310,14 @@ header {
 }
 
 /* Articles */
+@media (min-width: 1340px) {
+  .article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+}
 .article__item {
   padding-bottom: 2rem;
   margin-bottom: 2.7rem;
@@ -305,6 +326,11 @@ header {
 @media (min-width: 1000px) {
   .article__item {
     margin-bottom: 3.1rem;
+  }
+}
+@media (min-width: 1340px) {
+  .article__item {
+    margin-bottom: 0;
   }
 }
 .article__thumb {
