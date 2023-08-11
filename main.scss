@@ -19,7 +19,7 @@ $r_desk: 1000px; // 1024
 $r_desk_1150: 1150px;
 $r_desk_hd: 1200px; // 1280
 $r_desk_wxga: 1340px; // 1366
-$r_desk_wxga_xxl: 1360px;
+$r_desk_wxga_xxl: 1500px;
 $r_desk_full: 1600px;
 $r_desk_full_over: 1680px;
 $r_desk_fhd: 1770px; // 1920
@@ -84,6 +84,10 @@ header {
     width: 146px;
     height: 28.1px;
     padding-top: .4rem;
+    @media (min-width: $r_tab) {
+        width: 208px;
+        height: 40px;
+    }
     @media (min-width: $r_desk) {
         width: 270px;
         height: 52px;
@@ -110,7 +114,10 @@ header {
     &__items {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
+        @media (min-width: $r_mob_360) {
+            gap: 1.5rem;
+        }
         @media (min-width: $r_desk) {
             gap: 2rem;
         }
@@ -132,20 +139,28 @@ header {
         background-color: $light;
         border-radius: 100%;
         box-sizing: border-box;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         padding: 1.1rem;
         cursor: pointer;
+        @media (min-width: $r_mob_360) {
+            width: 50px;
+            height: 50px;
+        }
     }
     &__search img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         background-position: center;
+        @media (min-width: $r_mob_360) {
+            width: 24px;
+            height: 24px;
+        }
     }
     &__menu {
         padding: 0;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background-image: url(/img/menu.png);
         background-repeat: no-repeat;
         background-size: 24px 24px;
@@ -154,6 +169,10 @@ header {
         border-radius: 100%;
         border: none;
         cursor: pointer;
+        @media (min-width: $r_mob_360) {
+            width: 50px;
+            height: 50px;
+        }
     }
     &__socials {
         display: flex;
@@ -220,7 +239,10 @@ header {
 /* Main */
 
 .main {
-    margin: 5rem auto 0 auto;
+    margin: 3rem auto 0 auto;
+    @media (min-width: $r_mob_360) {
+        margin: 5rem auto 0 auto;
+    }
     @media (min-width: $r_desk) {
         margin: 9.5rem auto 0 auto;
     }
@@ -251,6 +273,9 @@ header {
     @media (min-width: $r_mob_360) {
         font-size: 3.2rem;
     }
+    @media (min-width: $r_tab) {
+        font-size: 4rem;
+    }
     @media (min-width: $r_desk_wxga) {
         font-size: 6.4rem;
         letter-spacing: 1.8px;
@@ -258,13 +283,14 @@ header {
     &>span {
         display: block;
         font-size: 1.45rem;
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
         letter-spacing: .48px;
         text-transform: lowercase;
         @media (min-width: $r_mob_360) {
             font-size: 1.6rem;
+            padding-bottom: 5rem;
         }
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             font-size: 2.4rem;
             letter-spacing: 0.68px;
         }
@@ -408,8 +434,11 @@ header {
         }
     }
     &__link {
-        text-decoration: none;
         color: $accent;
+        transition: .2s;
+        &:hover {
+            text-decoration: none;
+        }
     }
     &__views {
         display: flex;
@@ -486,6 +515,11 @@ header {
     @media (min-width: $r_desk) {
         padding: 3rem;
     }
+    &__box {
+        @media (min-width: $r_desk_wxga_xxl) {
+            display: flex;
+        }
+    }
     &__title {
         font-size: 1.8rem;
         font-family: $font-jet;
@@ -495,11 +529,19 @@ header {
         @media (min-width: $r_desk) {
             font-size: 2.4rem;
         }
+        @media (min-width: $r_desk_wxga_xxl) {
+            flex-basis: 40.5rem;
+            margin: 0;
+        }
     }
     &__area {
         @media (min-width: $r_desk) {
             display: flex;
             gap: 2rem;
+        }
+        @media (min-width: $r_desk_wxga_xxl) {
+            flex-grow: 1;
+            gap: 3rem;
         }
     }
     &__input {
@@ -512,6 +554,9 @@ header {
         width: 100%;
         @media (min-width: $r_desk) {
             padding: 1rem 1.4rem;
+        }
+        @media (min-width: $r_desk_wxga_xxl) {
+            font-size: 1.8rem;
         }
         &::placeholder {
             color: #95A3B1;
@@ -541,6 +586,10 @@ header {
         @media (min-width: $r_desk) {
             max-width: 314px;
             margin: 0 !important;
+        }
+        @media (min-width: $r_desk_wxga_xxl) {
+            max-width: 281px;
+            font-size: 1.8rem;
         }
     }
     &__agreement {
@@ -656,7 +705,7 @@ footer {
         }
     }
     &__head {
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -667,7 +716,7 @@ footer {
         border-top: 1px solid $line;
         border-bottom: 1px solid $line;
         padding: .9rem 1.5rem;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             display: flex;
             justify-content: space-between;
             padding: 3rem 2rem 5rem 2rem;
@@ -675,14 +724,14 @@ footer {
         }
     }
     &__courses {
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             flex-basis: 50%;
         }
     }
     &__marathons {
         padding-top: 1rem;
         padding-bottom: 2rem;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             flex-basis: 50%;
             padding: 0;
         }
@@ -694,7 +743,7 @@ footer {
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             margin-bottom: 2rem;
         }
     }
@@ -715,23 +764,29 @@ footer {
         }
     }
     &__bottom {
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             display: flex;
             padding-top: 0.5rem;
             letter-spacing: .96px;
+        }
+        @media (min-width: $r_desk_fhd) {
+            padding-top: 0;
         }
     }
     &__rules {
         font-size: 1.4rem;
         color: $light-text;
         padding: 2rem 1.5rem;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             flex-basis: 50%;
             padding: 3rem;
         }
+        @media (min-width: $r_desk_fhd) {
+            border-right: 1px solid $line;
+        }
         & span {
             display: block;
-            @media (min-width: $r_desk) {
+            @media (min-width: $r_tab) {
                 display: inline-block;
             }
         }
@@ -746,7 +801,7 @@ footer {
         font-size: 1.4rem;
         color: $light-text;
         padding: 0 1.5rem 2rem 1.5rem;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             flex-basis: 50%;
             padding: 5rem 3rem;
         }
