@@ -100,6 +100,9 @@ header {
             height: 52px;
             padding: 0;
         }
+        @media (min-width: $r_desk_fhd) {
+            padding: 4.7rem 0 5rem 7.5rem;
+        }
     }
 }
 
@@ -238,7 +241,7 @@ header {
 
 .main {
     &__page {
-        height: 500vh;
+        height: 100%;
     }
     margin: 3rem auto 0 auto;
     @media (min-width: $r_mob_360) {
@@ -309,6 +312,7 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 1.5rem;
+    padding-bottom: 3rem;
     @media (max-width: 1151px) {
         display: none;
     }
@@ -618,6 +622,25 @@ header {
     &._footer {
         padding: 5rem 3rem;
         margin-bottom: 0;
+        @media (min-width: $r_desk_fhd) {
+            margin-right: 5.5rem;
+            padding: 5rem 3rem 2rem;
+            z-index: 1;
+            text-align: center;
+        }
+        & .subscribe__area {
+            @media (min-width: $r_desk_fhd) {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2rem;
+                gap: 2rem;
+            }
+        }
+        & .subscribe__input {
+            @media (min-width: $r_desk_fhd) {
+                padding: 1.5rem 1.4rem;
+            }
+        }
         & h2 {
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -629,6 +652,9 @@ header {
             margin-top: 2.3rem;
             @media (min-width: $r_desk) {
                 max-width: 341px;
+            }
+            @media (min-width: $r_desk_fhd) {
+                max-width: 100%;
             }
         }
     }
@@ -685,13 +711,20 @@ footer {
     @media (min-width: $r_desk) {
         margin-top: 11rem;
     }
+    @media (min-width: $r_desk_fhd) {
+        margin-top: 10rem;
+    }
 }
 
 .footer {
     border: 1px solid $line;
+    border-top: none;
     padding-top: 2.4rem;
     @media (min-width: $r_desk) {
         padding-top: 1.2rem;
+    }
+    @media (min-width: $r_desk_fhd) {
+        padding: 0;
     }
     &__socials {
         display: flex;
@@ -704,6 +737,14 @@ footer {
         @media (min-width: $r_desk) {
             gap: 3rem;
             padding: 0;
+        }
+        @media (min-width: $r_desk_fhd) {
+            margin: 0 0 -1px 0;
+            border-left: 1px solid $line;
+            border-bottom: 1px solid #EDEDED;
+            align-items: center;
+            justify-content: center;
+            padding-right: 7.5rem;
         }
     }
     &__head {
@@ -724,10 +765,18 @@ footer {
             padding: 3rem 2rem 5rem 2rem;
             gap: 1%;
         }
+        @media (min-width: $r_desk_fhd) {
+            padding: 3rem 2rem 3rem 7.5rem;
+        }
     }
     &__courses {
         @media (min-width: $r_tab) {
             flex-basis: 50%;
+        }
+        & .footer__list {
+            @media (min-width: $r_desk_fhd) {
+                gap: 0 6.7rem;
+            }
         }
     }
     &__marathons {
@@ -748,10 +797,17 @@ footer {
         @media (min-width: $r_tab) {
             margin-bottom: 2rem;
         }
+        @media (min-width: $r_desk_fhd) {
+            margin-bottom: 5rem;
+        }
     }
     &__list {
         & a:last-child {
             margin-bottom: 0;
+        }
+        @media (min-width: $r_desk_fhd) {
+            display: grid;
+            grid-template-columns: 25rem 1fr;
         }
     }
     &__item {
@@ -784,7 +840,12 @@ footer {
             padding: 3rem;
         }
         @media (min-width: $r_desk_fhd) {
+            font-size: 1.6rem;
             border-right: 1px solid $line;
+            display: flex;
+            align-items: center;
+            padding: 3.2rem 0 5rem 7.5rem;
+            gap: 9.8vw;
         }
         & span {
             display: block;
@@ -797,6 +858,9 @@ footer {
             color: $light-text;
             text-decoration: none;
             margin-top: 2rem;
+            @media (min-width: $r_desk_fhd) {
+                margin-top: 0;
+            }
         }
     }
     &__dataset {
@@ -807,9 +871,35 @@ footer {
             flex-basis: 50%;
             padding: 5rem 3rem;
         }
+        @media (min-width: $r_desk_fhd) {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5vw;
+            padding: 3.2rem 5.5rem 5rem 4rem;
+            margin-top: -1px;
+            border-top: 1px solid #EDEDED;
+            border-left: 1px solid #EDEDED;
+        }
         & span {
             display: block;
             padding-bottom: 2rem;
+            @media (min-width: $r_desk_fhd) {
+                padding: 0;
+            }
+        }
+    }
+    &._main {
+        @media (min-width: $r_desk_fhd) {
+            display: none;
+        }
+    }
+    &._desk {
+        display: grid;
+        grid-template-columns: 1fr 50.5rem;
+        border-top: 1px solid $line;
+        @media (max-width: $r_desk_fhd) {
+            display: none;
         }
     }
 }
