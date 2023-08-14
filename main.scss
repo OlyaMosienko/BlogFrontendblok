@@ -29,8 +29,6 @@ $r_desk_4k: 3760px; // 3840
 @media all {
     html {
         font-size: 10px;
-
-        overflow-x: hidden;
         &._opened-menu,
         &._opened-modal {
             overflow: hidden;
@@ -239,6 +237,9 @@ header {
 /* Main */
 
 .main {
+    &__page {
+        height: 500vh;
+    }
     margin: 3rem auto 0 auto;
     @media (min-width: $r_mob_360) {
         margin: 5rem auto 0 auto;
@@ -252,10 +253,10 @@ header {
 }
 
 .scroll-menu {
+    height: 100%;
     @media (min-width: $r_desk_1150) {
         display: flex;
         gap: 6.7rem;
-        overflow: auto;
     }
     @media (min-width: $r_desk_wxga) {
         gap: 9.7rem;
@@ -305,8 +306,9 @@ header {
 
 .menu {
     width: 204px;
+    align-self: flex-start;
     position: sticky;
-    top: 5rem;
+    top: 1.5rem;
     @media (max-width: 1151px) {
         display: none;
     }

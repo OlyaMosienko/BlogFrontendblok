@@ -2,7 +2,6 @@
 @media all {
   html {
     font-size: 10px;
-    overflow-x: hidden;
   }
   html._opened-menu, html._opened-modal {
     overflow: hidden;
@@ -244,6 +243,9 @@ header {
 .main {
   margin: 3rem auto 0 auto;
 }
+.main__page {
+  height: 500vh;
+}
 @media (min-width: 360px) {
   .main {
     margin: 5rem auto 0 auto;
@@ -260,11 +262,13 @@ header {
   }
 }
 
+.scroll-menu {
+  height: 100%;
+}
 @media (min-width: 1150px) {
   .scroll-menu {
     display: flex;
     gap: 6.7rem;
-    overflow: auto;
   }
 }
 @media (min-width: 1340px) {
@@ -327,8 +331,9 @@ header {
 /* Menu */
 .menu {
   width: 204px;
+  align-self: flex-start;
   position: sticky;
-  top: 5rem;
+  top: 1.5rem;
 }
 @media (max-width: 1151px) {
   .menu {
