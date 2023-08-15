@@ -95,6 +95,7 @@ header {
         height: 40px;
         display: block;
         padding-left: 1.5rem;
+        padding-top: 3rem;
         @media (min-width: $r_desk) {
             width: 270px;
             height: 52px;
@@ -243,7 +244,7 @@ header {
     &__page {
         height: 100%;
         & button {
-            margin: 0 auto !important;
+            margin: 1.5rem auto 0 !important;
         }
     }
     margin: 3rem auto 0 auto;
@@ -262,6 +263,7 @@ header {
     @media (min-width: $r_tab) {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 5rem;
     }
 }
@@ -951,6 +953,15 @@ footer {
         padding: 1rem;
         border: 1px solid $dark;
         transition: .2s;
+        @media (min-width: $r_tab) {
+            padding: .8rem;
+        }
+        @media (min-width: $r_desk) {
+            padding: 1rem;
+        }
+        @media (min-width: $r_desk_fhd) {
+            padding: 1.5rem 3rem;
+        }
         &:hover {
             color: $light;
             background-color: $accent;
@@ -969,4 +980,88 @@ footer {
 
 .swiper-wrapper {
     display: flex;
+}
+
+/* Error 404 */
+
+.error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $accent;
+    background-color: rgba($accent, .05);
+    padding: 3rem;
+    margin: auto 0;
+    @media (min-width: $r_tab) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5vw;
+    }
+    &__text {
+        @media (min-width: $r_tab) {
+            width: 39vw;
+        }
+    }
+    & h1 {
+        font-family: $font-jet;
+        font-size: 3.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        letter-spacing: .96px;
+        margin: 0 0 3rem;
+        @media (min-width: $r_tab) {
+            font-size: 4rem;
+        }
+        @media (min-width: $r_desk_1150) {
+            font-size: 4.8rem;
+        }
+    }
+    & p {
+        margin: 0;
+        @media (min-width: $r_tab) {
+            font-size: 2.4rem;
+        }
+        @media (min-width: $r_desk_fhd) {
+            font-size: 2.6rem;
+        }
+    }
+    & a {
+        display: block;
+        color: white;
+        font-size: 1.4rem;
+        font-family: $font-jet;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        letter-spacing: 0.42px;
+        background-color: $accent;
+        border: 1px solid $accent;
+        box-sizing: border-box;
+        max-width: 34.7rem;
+        padding: 1.7rem;
+        margin-top: 3rem;
+        @media (min-width: $r_tab) {
+            font-size: 1.6rem;
+        }
+        @media (min-width: $r_desk_fhd) {
+            font-size: 1.8rem;
+        }
+    }
+    &__img {
+        margin: 3rem auto 0;
+        @media (min-width: $r_tab) {
+            margin: 0;
+        }
+    }
+    & img {
+        width: 74vw;
+        height: auto;
+        @media (min-width: $r_tab) {
+            max-width: 33.4rem;
+        }
+    }
 }
