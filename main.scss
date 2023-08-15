@@ -242,6 +242,9 @@ header {
 .main {
     &__page {
         height: 100%;
+        & button {
+            margin: 0 auto !important;
+        }
     }
     margin: 3rem auto 0 auto;
     @media (min-width: $r_mob_360) {
@@ -252,6 +255,14 @@ header {
     }
     @media (min-width: $r_desk_hd) {
         margin: 10.5rem auto 0 auto;
+    }
+}
+
+.page-title {
+    @media (min-width: $r_tab) {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
     }
 }
 
@@ -312,8 +323,7 @@ header {
     align-self: flex-start;
     position: sticky;
     top: 1.5rem;
-    padding-bottom: 3rem;
-    @media (max-width: 1151px) {
+    @media (max-width: $r_desk_1150) {
         display: none;
     }
     &__categories {
@@ -331,6 +341,10 @@ header {
             display: block;
             transition: .2s;
             &:hover {
+                color: $light;
+                background-color: $dark;
+            }
+            &:active {
                 color: $light;
                 background-color: $dark;
             }
@@ -391,12 +405,22 @@ header {
             padding-right: 3rem;
         }
     }
-    &__tag {
+    &__category {
         font-size: 1.8rem;
         font-weight: 500;
         border: 1px solid $accent;
         padding: 3px 9px 2px 9px;
         letter-spacing: .48px;
+    }
+    &__tag {
+        font-family: $font-jet;
+        color: $accent;
+        font-size: 1.6rem;
+        margin-left: 1rem;
+        cursor: pointer;
+        @media (min-width: $r_tab) {
+            font-size: 1.8rem;
+        }
     }
     &__title {
         font-size: 1.8rem;
@@ -902,4 +926,47 @@ footer {
             display: none;
         }
     }
+}
+
+
+/* Tag and Category */
+
+.tag {
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 3rem 0 5rem;
+        @media (min-width: $r_tab) {
+            margin: 0;
+        }
+    }
+}
+
+.tag-swiper {
+    &__link {
+        display: block;
+        font-size: 2rem;
+        color: $dark;
+        text-decoration: none;
+        padding: 1rem;
+        border: 1px solid $dark;
+        transition: .2s;
+        &:hover {
+            color: $light;
+            background-color: $accent;
+            border: 1px solid $accent;
+        }
+        &:active {
+            color: $light;
+            background-color: $accent;
+            border: 1px solid $accent;
+        }
+        &:last-child {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.swiper-wrapper {
+    display: flex;
 }

@@ -251,6 +251,9 @@ header {
 .main__page {
   height: 100%;
 }
+.main__page button {
+  margin: 0 auto !important;
+}
 @media (min-width: 360px) {
   .main {
     margin: 5rem auto 0 auto;
@@ -264,6 +267,14 @@ header {
 @media (min-width: 1200px) {
   .main {
     margin: 10.5rem auto 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
   }
 }
 
@@ -339,9 +350,8 @@ header {
   align-self: flex-start;
   position: sticky;
   top: 1.5rem;
-  padding-bottom: 3rem;
 }
-@media (max-width: 1151px) {
+@media (max-width: 1150px) {
   .menu {
     display: none;
   }
@@ -363,6 +373,10 @@ header {
   transition: 0.2s;
 }
 .menu__categories a:hover {
+  color: #FFFFFF;
+  background-color: #2A2F36;
+}
+.menu__categories a:active {
   color: #FFFFFF;
   background-color: #2A2F36;
 }
@@ -429,12 +443,24 @@ header {
     padding-right: 3rem;
   }
 }
-.article__tag {
+.article__category {
   font-size: 1.8rem;
   font-weight: 500;
   border: 1px solid #12C0DD;
   padding: 3px 9px 2px 9px;
   letter-spacing: 0.48px;
+}
+.article__tag {
+  font-family: "JetBrains Mono", sans-serif;
+  color: #12C0DD;
+  font-size: 1.6rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .article__tag {
+    font-size: 1.8rem;
+  }
 }
 .article__title {
   font-size: 1.8rem;
@@ -1028,4 +1054,43 @@ footer {
   .footer._desk {
     display: none;
   }
+}
+
+/* Tag and Category */
+.tag__list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 3rem 0 5rem;
+}
+@media (min-width: 768px) {
+  .tag__list {
+    margin: 0;
+  }
+}
+
+.tag-swiper__link {
+  display: block;
+  font-size: 2rem;
+  color: #2A2F36;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid #2A2F36;
+  transition: 0.2s;
+}
+.tag-swiper__link:hover {
+  color: #FFFFFF;
+  background-color: #12C0DD;
+  border: 1px solid #12C0DD;
+}
+.tag-swiper__link:active {
+  color: #FFFFFF;
+  background-color: #12C0DD;
+  border: 1px solid #12C0DD;
+}
+.tag-swiper__link:last-child {
+  margin-right: 0 !important;
+}
+
+.swiper-wrapper {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */
