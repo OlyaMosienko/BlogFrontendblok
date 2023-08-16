@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-журнал FrontendBlok</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="Frontend Blok" class="logo">
+                </a>
+                <div class="header__items">
+                    <button class="header__search header__btn">
+                        <img src="img/search.png" alt="">
+                    </button>
+                    <button class="header__menu header__btn"></button>
+                </div>
+                <div class="header__items _desc">
+                    <div class="search-area">
+                        <input class="search-area__input" type="text" placeholder="Введите запрос">
+                        <button class="search-area__btn" type="submit"></button>
+                    </div>
+                    <div class="header__socials">
+                        <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
+                        <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
+                        <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
+                    </div>
+                    <a href="http://frontendblok.com" class="header__link" target="_blank">FrontendBlok</a>
+                </div>
+            </div>
+        </div>    
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="scroll-menu">
+                <div class="menu">
+                    <ul class="menu__categories">
+                        <li><a href="">Код</a></li>
+                        <li><a href="">Карьера</a></li>
+                        <li><a href="">Мотивация</a></li>
+                        <li><a href="">Технологии</a></li>
+                        <li><a href="">События</a></li>
+                    </ul>
+                </div>
+                <div class="main__page">
+                    <div class="article">
+                        <article class="article__main">
+                            <h1 class="title">Единицы измерения CSS для padding, margin, height, width</h1>
+                            <nav class="article-nav">
+                                <h3 class="article-nav__title">В этой статье:</h3>
+                                <ul class="article-nav__list">
+                                    <li>
+                                        <a href="">EM</a>
+                                        <ul>
+                                            <li><a href="">Классика: тестовая пирамида</a></li>
+                                            <li><a href="">Классика: тестовая пирамида</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Документация</a></li>
+                                    <li><a href="">Смотреть видео</a></li>
+                                </ul>
+                            </nav>
+                            <div class="article__about">
+                                <span class="article__category">Код</span>
+                                <span class="article__category">Мотивация</span>
+                                <span class="article__category">Технологии</span>
+                                <div class="article__info">
+                                    <div class="author">
+                                        <img src="img/author.png" alt="" class="author__img">
+                                        <div class="author__info">
+                                            <h4 class="author__name">Анна Блок</h4>
+                                            <span class="author__date">28 июля 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="article__footer">
+                                        <span class="article__comment">10</span>
+                                        <span class="article__views">850</span>
+                                        <span class="article__time">~25 мин</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article__thumb">
+                                <img class="article__img" src="img/post1.png" alt="">
+                            </div>
+                            <div class="article__body">
+                                <p>Всем привет, меня зовут Анна Блок и в этой статье мы продолжим говорить про единицы измерения CSS. <a href="">Предыдущая статья</a> была связана с тем, что я описывала все значения, которые можно использовать относительно такого свойства, как font-size, но при этом я не сделала совершенно никаких выводов для того, что бы вам стало ясно какую единицу измерения использовать и в какой ситуации. Исправлю это недоразумение.</p>
+                                <p>Выводы сформулирую в конце этой статьи. В начале поговорим о том, как использовать эти единицы измерения для других свойств, которые связаны с шириной и высотой: width, height, padding, margin, border-radius. Конечно же, все эти аспекты нужно рассматривать с точки зрения теории-практики, поэтому поехали.</p>
+                                <div class="article__advice advice">
+                                    <h2 class="advice__title">Рекомендация от нас</h2>
+                                    <p>Если ты только учишься, то рекомендуем пройти Бесплатный Марафон <a href="">«Основы веб-разработки»</a>. Идеально подойдет даже тем, кто впервые слышит слово «веб-разработка».</p>
+                                    <div class="advice__img"><img src="/img/recommend.png" alt=""></div>
+                                </div>
+                                <p>Напомню, что если вам необходим наглядный список того, какие единицы измерения используются, то вы можете открыть этот codepen и оставить его во вкладке браузера пока читаете эту статью, либо когда верстаете сайт.</p>
+                                <h2>Em</h2>
+                                <h2>Документация</h2>
+                                <h3>Документация</h3>
+                                <h4>Документация</h4>
+                                <p>Давайте рассмотрим, как работает единица измерения em. Например, у вас есть класс, box внутри которого заложен текст:</p>
+                                <figure>
+                                    <img src="img/article-img.png" alt="">
+                                </figure>
+                                <h2>Документация</h2>
+                                <p>К сожалению, с Джекиллом мы столкнулись с двумя основными проблемами:</p>
+                                <ul>
+                                    <li>Jekyll требует, чтобы Ruby был установлен</li>
+                                    <li>Создание сайта было очень медленным</li>
+                                </ul>
+                                <ol>
+                                    <li>Jekyll требует, чтобы Ruby был установлен</li>
+                                    <li>Создание сайта было очень медленным</li>
+                                </ol>
+                                <blockquote>«Неисследованную жизнь не стоит проживать», – Сократ.</blockquote>
+                                <p>С другой стороны, Hugo написан на Go, поэтому он не имеет внешних зависимостей времени выполнения и работает намного быстрее. Мы создаем наш текущий основной ветвь сайта, в том числе документ Sass -> CSS в ~ 1.6s. Наш локальный сервер перезагружается за миллисекунды вместо 8-12 секунд, поэтому работа с документами снова стала приятным опытом.</p>
+                                <h2>Смотреть видео:</h2>
+                                <iframe width="969" height="543" src="https://www.youtube.com/embed/ZuSIlE9jj2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="socials">
+                        <h2 class="socials__title">Интернет-журнал от FrontendBlok для фронтендеров и не только</h2>
+                        <div class="socials__list">
+                            <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank">Youtube</a>
+                            <a href="https://vk.com/tpverstak" class="social _vk" target="_blank">Вконтакте</a>
+                            <a href="https://t.me/tpverstak" class="social _tg" target="_blank">Telegram</a>
+                        </div>
+                    </div>
+                    <div class="article__recommend">
+                        <h2>Похожие статьи</h2>
+                        <article class="article__item">
+                            <div class="article__thumb">
+                                <a href="">
+                                    <img class="article__img" src="img/post6.png" alt="">
+                                </a>
+                            </div>
+                            <div class="article__about">
+                                <span class="article__category">Код</span>
+                                <h3 class="article__title">
+                                    <a href="">Единицы измерения CSS для padding, margin, height, width</a>
+                                </h3>
+                                <div class="article__info">
+                                    <div class="author">
+                                        <img src="img/author.png" alt="" class="author__img">
+                                        <div class="author__info">
+                                            <h4 class="author__name">Анна Блок</h4>
+                                            <span class="author__date">28 июля 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="article__footer">
+                                        <span class="article__views">850</span>
+                                        <span class="article__time">~25 мин</span>
+                                        <a href="" class="article__link">Читать далее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article__item">
+                            <div class="article__thumb">
+                                <a href="">
+                                    <img class="article__img" src="img/post6.png" alt="">
+                                </a>
+                            </div>
+                            <div class="article__about">
+                                <span class="article__category">Код</span>
+                                <h3 class="article__title">
+                                    <a href="">Единицы измерения CSS для padding, margin, height, width</a>
+                                </h3>
+                                <div class="article__info">
+                                    <div class="author">
+                                        <img src="img/author.png" alt="" class="author__img">
+                                        <div class="author__info">
+                                            <h4 class="author__name">Анна Блок</h4>
+                                            <span class="author__date">28 июля 2023</span>
+                                        </div>
+                                    </div>
+                                    <div class="article__footer">
+                                        <span class="article__views">850</span>
+                                        <span class="article__time">~25 мин</span>
+                                        <a href="" class="article__link">Читать далее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="comments post__comments">
+                        <form class="comments__form">
+                            <textarea class="comments__textarea" placeholder="Введите комментарий*"></textarea>
+                            <input type="text" class="comments__input" placeholder="Введите имя*">
+                            <input type="email" class="comments__input" placeholder="Введите e-mail*">
+                            <div class="comments__btn">
+                                <a href="#" class="btn">Отправить</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="comments">
+                        <h2 class="comments__title">Комментарии</h2>
+                        <div class="comment__item">
+                            <div class="author">
+                                <img src="img/author.png" alt="" class="author__img">
+                                <div class="author__info">
+                                    <h4 class="author__name">Анна Блок</h4>
+                                </div>
+                            </div>
+                            <p>В начале описания каждой же программы проставлена цена и условия работы демо-версии. Нажмите Ctrl + F  и напишите «бесплатно». Это слово на странице вы найдете только в своем комментарии.</p>
+                            <div class="comment__functions">
+                                <div class="replay"><a href="">Ответить</a></div>
+                                <span>Свернуть</span>
+                            </div>
+                        </div>
+                        <div class="comment__item answer">
+                            <div class="author">
+                                <img src="img/author.png" alt="" class="author__img">
+                                <div class="author__info">
+                                    <h4 class="author__name">Анна Блок</h4>
+                                </div>
+                            </div>
+                            <p>Большое спасибо за ответ, всё стало понятно</p>
+                            <div class="comment__functions">
+                                <div class="replay"><a href="">Ответить</a></div>
+                            </div>
+                        </div>
+                        <div class="comment__item">
+                            <div class="author">
+                                <img src="img/author.png" alt="" class="author__img">
+                                <div class="author__info">
+                                    <h4 class="author__name">Анна Блок</h4>
+                                </div>
+                            </div>
+                            <p>В начале описания каждой же программы проставлена цена и условия работы демо-версии. Нажмите Ctrl + F  и напишите «бесплатно». Это слово на странице вы найдете только в своем комментарии.</p>
+                            <div class="comment__functions">
+                                <div class="replay"><a href="">Ответить</a></div>
+                                <span>Просмотреть все комментарии</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer _main">
+                <section class="subscribe _footer">
+                    <h2 class="subscribe__title">Подпишись на рассылку</h2>
+                    <div class="subscribe__area">
+                        <input type="email" placeholder="Ваш e-mail" class="subscribe__input">
+                        <button type="submit" class="subscribe__btn">отправить</button>
+                    </div>
+                </section>
+                <div class="footer__head">
+                    <a href="#">
+                        <img src="img/logo.svg" alt="Frontend Blok" class="logo _footer"/>
+                    </a>
+                    <div class="footer__socials">
+                        <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
+                        <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
+                        <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
+                        <a href="https://www.instagram.com/frontendblok/" class="social _ig" target="_blank"></a>
+                    </div>
+                </div> 
+                <div class="footer__menu">
+                    <div class="footer__courses">
+                        <h3 class="footer__title">Курсы</h3>
+                        <div class="footer__list">
+                            <a href="https://frontendblok.com/courses/html-css" class="footer__item">Базовый курс по&nbsp;верстке</a>
+                            <a href="https://frontendblok.com/courses/advanced-html-css" class="footer__item">Продвинутый курс по&nbsp;верстке</a>
+                            <a href="https://frontendblok.com/courses/javascript" class="footer__item">Курс JavaScript с нуля</a>
+                            <a href="https://frontendblok.com/courses/qa" class="footer__item">Ручное тестирование</a>
+                            <a href="https://frontendblok.com/courses/wordpress" class="footer__item">Интенсив Wordpress</a>
+                            <a href="https://frontendblok.com/courses/work" class="footer__item">Трудоустройство и фриланс</a>
+                        </div>
+                    </div>
+                    <div class="footer__marathons">
+                        <h3 class="footer__title">Марафоны</h3>
+                        <div class="footer__list">
+                            <a href="https://frontendblok.com/marathons/flexbox-marathon" class="footer__item">Марафон Flexbox CSS</a>
+                            <a href="https://frontendblok.com/marathons/grid-marathon" class="footer__item">Марафон Grid CSS</a>
+                            <a href="https://frontendblok.com/marathons/svg-marathon" class="footer__item">Марафон SVG для&nbsp;Web</a>
+                            <a href="https://frontendblok.com/marathons/email-marathon" class="footer__item">Марафон Email Вёрстка</a>
+                            <a href="https://frontendblok.com/marathons/multipage-website" class="footer__item">Многостраничный сайт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="footer__rules">
+                        <span class="footer__copyright">&reg; frontendblok 2019 - ∞,&nbsp;</span>
+                        <span class="footer__copyright">Все права защищены</span>
+                        <a href="/pdf/Политика обработки персональных Frontend Blok.pdf" class="footer__rule">Политика конфиденциальности</a>
+                        <a href="/pdf/Публичная оферта Frontend Blok.pdf" class="footer__rule">Публичная оферта</a>
+                    </div>
+                    <div class="footer__dataset">
+                        <span class="footer__data">ИНН 663005760277</span>
+                        <span class="footer__data">ОГРНИП 319665800052422</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer _desk">
+            <a href="#">
+                <img src="img/logo.svg" alt="Frontend Blok" class="logo _footer"/>
+            </a>
+            <div class="footer__socials">
+                <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
+                <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
+                <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
+                <a href="https://www.instagram.com/frontendblok/" class="social _ig" target="_blank"></a>
+            </div>
+            <div class="footer__menu">
+                <div class="footer__courses">
+                    <h3 class="footer__title">Курсы</h3>
+                    <div class="footer__list">
+                        <a href="https://frontendblok.com/courses/html-css" class="footer__item">Базовый курс по&nbsp;верстке</a>
+                        <a href="https://frontendblok.com/courses/advanced-html-css" class="footer__item">Продвинутый курс по&nbsp;верстке</a>
+                        <a href="https://frontendblok.com/courses/javascript" class="footer__item">Курс JavaScript с нуля</a>
+                        <a href="https://frontendblok.com/courses/qa" class="footer__item">Ручное тестирование</a>
+                        <a href="https://frontendblok.com/courses/wordpress" class="footer__item">Интенсив Wordpress</a>
+                        <a href="https://frontendblok.com/courses/work" class="footer__item">Трудоустройство и фриланс</a>
+                    </div>
+                </div>
+                <div class="footer__marathons">
+                    <h3 class="footer__title">Марафоны</h3>
+                    <div class="footer__list">
+                        <a href="https://frontendblok.com/marathons/flexbox-marathon" class="footer__item">Марафон Flexbox CSS</a>
+                        <a href="https://frontendblok.com/marathons/grid-marathon" class="footer__item">Марафон Grid CSS</a>
+                        <a href="https://frontendblok.com/marathons/svg-marathon" class="footer__item">Марафон SVG для&nbsp;Web</a>
+                        <a href="https://frontendblok.com/marathons/email-marathon" class="footer__item">Марафон Email Вёрстка</a>
+                        <a href="https://frontendblok.com/marathons/multipage-website" class="footer__item">Многостраничный сайт</a>
+                    </div>
+                </div>
+            </div>
+            <section class="subscribe _footer">
+                <h2 class="subscribe__title">Подпишись на рассылку</h2>
+                <div class="subscribe__area">
+                    <input type="email" placeholder="Ваш e-mail" class="subscribe__input">
+                    <button type="submit" class="subscribe__btn">отправить</button>
+                </div>
+            </section>
+            <div class="footer__rules">
+                <div class="footer__copy">
+                    <span class="footer__copyright">&reg; frontendblok 2019 - ∞,&nbsp;</span>
+                    <span class="footer__copyright">Все права защищены</span>
+                </div>
+                <a href="/pdf/Политика обработки персональных Frontend Blok.pdf" class="footer__rule">Политика конфиденциальности</a>
+                <a href="/pdf/Публичная оферта Frontend Blok.pdf" class="footer__rule">Публичная оферта</a>
+            </div>
+            <div class="footer__dataset">
+                <span class="footer__data">ИНН 663005760277</span>
+                <span class="footer__data">ОГРНИП 319665800052422</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

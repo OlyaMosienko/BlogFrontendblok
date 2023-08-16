@@ -142,7 +142,7 @@ header {
   box-sizing: border-box;
   width: 40px;
   height: 40px;
-  padding: 1.1rem;
+  padding: 1rem;
   cursor: pointer;
 }
 @media (min-width: 360px) {
@@ -1110,6 +1110,17 @@ footer {
 
 .swiper-wrapper {
   display: flex;
+}
+
+/* Search */
+.search__result {
+  margin: 3rem 0 3rem;
+}
+@media (min-width: 768px) {
+  .search__result {
+    font-size: 2.6rem;
+    margin: 3rem 0 5rem;
+  }
 }
 
 /* Error 404 */
