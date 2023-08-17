@@ -1086,33 +1086,9 @@ footer {
 /* Post */
 
 .post {
-    & .title {
-        line-height: 1.2;
-    }
-    & .article__about {
-        padding: 0;
-    }
     &__categories {
         display: flex;
         justify-content: space-between;
-    }
-    & .article__info {
-        margin-top: 3rem;
-    }
-    & .author__name {
-        padding: 0;
-        font-size: 2rem !important;
-    }
-    & .author__date {
-        font-size: 1.8rem;
-    }
-    & .article__footer {
-        margin-top: 1rem;
-        gap: 2rem;
-        font-size: 2rem;
-    }
-    & .article__thumb {
-        margin: 5rem 0;
     }
     &__body {
         & p {
@@ -1129,6 +1105,108 @@ footer {
         & figure {
             margin: 0 auto;
         }
+        & ul, ol {
+            padding-left: 0;
+            list-style-type: none;
+            margin: 3rem 0;
+        }
+        & ul > li + li, ol li + li {
+            margin-top: 0;
+        }
+        & ul > li, ol > li {
+            position: relative;
+            padding-left: 2.3rem;
+            line-height: 1.5;
+        }
+        & ul > li::before {
+            content: '';
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            background-color: $accent;
+            position: absolute;
+            top: .9rem;
+            left: 0;
+        }
+        & ol {
+            counter-reset: item;
+        }
+        & ol > li::before {
+            content: counter(item)'.';
+            counter-increment: item;
+            color: $accent;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            font-weight: 700;
+            position: absolute;
+            top: 4px;
+            left: 0;
+        }
+        & blockquote {
+            margin: 0;
+            padding: 3rem;
+            border-left: 1px solid $accent;
+            display: flex;
+            gap: 1rem;
+            line-height: 1.4;
+        }
+        & blockquote::before {
+            content: '';
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-basis: 5rem;
+            height: 24px;
+            background-image: url(img/quote.png);
+            background-size: cover;
+        }
+    }
+    &__video {
+        position: relative;
+        padding-bottom: 56.25%;
+        margin-top: 3.2rem;
+        height: 0;
+        overflow: hidden;
+        & iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.main-article {
+    &__thumb {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 50vw;
+        margin: 5rem 0;
+    }
+    & .title {
+        line-height: 1.2;
+    }
+    & .article__about {
+        padding: 0;
+    }
+    & .article__info {
+        margin-top: 3rem;
+    }
+    & .author__name {
+        padding: 0;
+        font-size: 2rem !important;
+        font-family: $font-fira;
+    }
+    & .author__date {
+        font-size: 1.8rem;
+    }
+    & .article__footer {
+        margin-top: 1rem;
+        gap: 2rem;
+        font-size: 2rem;
     }
     & h2,h3,h4 {
         font-family: $font-jet;
@@ -1137,7 +1215,7 @@ footer {
     }
     & h2 {
         font-size: 2.4rem;
-        margin: 4.5rem 0 0;
+        margin: 4.75rem 0 0;
     }
     & h3 {
         font-size: 2rem;
@@ -1163,6 +1241,61 @@ footer {
     }
     & p {
         margin: 3rem 0;
+    }
+}
+
+.socials {
+    border: 1px solid $accent;
+    background-color: rgba($accent, .05);
+    padding: 2rem 1.5rem 1.5rem;
+    margin: 5rem 0;
+    &__title {
+        font-size: 2rem;
+        font-family: $font-jet;
+        text-transform: uppercase;
+        letter-spacing: .06rem;
+        margin: 0;
+        line-height: 1.45;
+    }
+    &__list {
+        margin: 3rem 0 0;
+    }
+    &__list a {
+        color: $accent;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        transition: .2s;
+        & svg {
+            fill: $dark;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__list a + a {
+        margin-top: 3rem;
+    }
+    &__yt {
+        &:hover {
+            & .fill {
+                fill: #F12509;
+            }
+        }
+    }
+    &__vk {
+        &:hover {
+            & .fill {
+                fill: #0077FF;
+            }
+        }
+    }
+    &__tg {
+        &:hover {
+            & .fill {
+                fill: #12C0DD;
+            }
+        }
     }
 }
 
