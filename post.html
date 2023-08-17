@@ -34,7 +34,7 @@
             </div>
         </div>    
     </header>
-    <main class="main">
+    <main>
         <div class="container">
             <div class="scroll-menu">
                 <div class="menu">
@@ -46,7 +46,7 @@
                         <li><a href="">События</a></li>
                     </ul>
                 </div>
-                <div class="main__page">
+                <div class="page post">
                     <div class="article">
                         <article class="article__main">
                             <h1 class="title">Единицы измерения CSS для padding, margin, height, width</h1>
@@ -65,9 +65,11 @@
                                 </ul>
                             </nav>
                             <div class="article__about">
-                                <span class="article__category">Код</span>
-                                <span class="article__category">Мотивация</span>
-                                <span class="article__category">Технологии</span>
+                                <div class="post__categories">
+                                    <span class="article__category">Код</span>
+                                    <span class="article__category">Мотивация</span>
+                                    <span class="article__category">Технологии</span>
+                                </div>
                                 <div class="article__info">
                                     <div class="author">
                                         <img src="img/author.png" alt="" class="author__img">
@@ -86,7 +88,7 @@
                             <div class="article__thumb">
                                 <img class="article__img" src="img/post1.png" alt="">
                             </div>
-                            <div class="article__body">
+                            <div class="post__body">
                                 <p>Всем привет, меня зовут Анна Блок и в этой статье мы продолжим говорить про единицы измерения CSS. <a href="">Предыдущая статья</a> была связана с тем, что я описывала все значения, которые можно использовать относительно такого свойства, как font-size, но при этом я не сделала совершенно никаких выводов для того, что бы вам стало ясно какую единицу измерения использовать и в какой ситуации. Исправлю это недоразумение.</p>
                                 <p>Выводы сформулирую в конце этой статьи. В начале поговорим о том, как использовать эти единицы измерения для других свойств, которые связаны с шириной и высотой: width, height, padding, margin, border-radius. Конечно же, все эти аспекты нужно рассматривать с точки зрения теории-практики, поэтому поехали.</p>
                                 <div class="article__advice advice">
@@ -185,7 +187,7 @@
                             </div>
                         </article>
                     </div>
-                    <div class="comments post__comments">
+                    <div class="comments article__comments">
                         <form class="comments__form">
                             <textarea class="comments__textarea" placeholder="Введите комментарий*"></textarea>
                             <input type="text" class="comments__input" placeholder="Введите имя*">
