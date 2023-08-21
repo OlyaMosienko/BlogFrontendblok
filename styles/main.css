@@ -191,7 +191,7 @@ header {
   padding: 0;
   width: 40px;
   height: 40px;
-  background-image: url(/img/menu.png);
+  background-image: url(../img/menu.png);
   background-repeat: no-repeat;
   background-size: 24px 24px;
   background-position: center;
@@ -219,17 +219,14 @@ header {
   gap: 0.5rem;
   transition: 0.2s;
 }
+.header__link .fill {
+  stroke: #2A2F36;
+}
 .header__link:hover {
   color: #12C0DD;
 }
-.header__link::after {
-  content: "";
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 24px;
-  height: 24px;
-  background-image: url(img/arrow.svg);
-  background-size: contain;
+.header__link:hover .fill {
+  stroke: #12C0DD;
 }
 
 .search-area {
@@ -262,7 +259,7 @@ header {
   width: 22px;
   height: 22px;
   background-color: transparent;
-  background-image: url(/img/search.png);
+  background-image: url(../img/search.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -278,7 +275,7 @@ main .page {
   height: 100%;
 }
 main .page button {
-  margin: 1.5rem auto 0 !important;
+  margin: 1.5rem auto 0;
 }
 @media (min-width: 360px) {
   main {
@@ -602,7 +599,7 @@ main .page button {
   width: 20px;
   height: 20px;
   display: block;
-  background-image: url(img/comment.png);
+  background-image: url(../img/comment.png);
   background-size: contain;
 }
 @media (min-width: 360px) {
@@ -623,7 +620,7 @@ main .page button {
   width: 20px;
   height: 20px;
   display: block;
-  background-image: url(img/views.png);
+  background-image: url(../img/views.png);
   background-size: contain;
 }
 @media (min-width: 360px) {
@@ -644,7 +641,7 @@ main .page button {
   width: 20px;
   height: 20px;
   display: block;
-  background-image: url(img/time.png);
+  background-image: url(../img/time.png);
   background-size: contain;
 }
 @media (min-width: 360px) {
@@ -660,15 +657,15 @@ main .page button {
   gap: 1.5rem;
 }
 .author__info {
-  font-weight: 400;
-  font-family: "Fira Sans", sans-serif !important;
+  font-family: "Fira Sans", sans-serif;
 }
 .author__name {
-  margin: 0 !important;
+  margin: 0;
   padding-top: 0.4rem;
   font-size: 1.8rem;
-  text-transform: none !important;
-  letter-spacing: normal !important;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
 }
 @media (min-width: 1000px) {
   .author__name {
@@ -1290,7 +1287,7 @@ footer {
   background-position: center;
   flex-basis: 5rem;
   height: 24px;
-  background-image: url(img/quote.png);
+  background-image: url(../img/quote.png);
   background-size: cover;
 }
 .post__video {
@@ -1306,6 +1303,13 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.post__recommend h2 {
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  margin-bottom: 3rem;
 }
 
 .main-article__thumb {
@@ -1326,8 +1330,12 @@ footer {
 }
 .main-article .author__name {
   padding: 0;
+  margin: 0;
   font-size: 2rem !important;
   font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
 }
 .main-article .author__date {
   font-size: 1.8rem;
@@ -1375,7 +1383,7 @@ footer {
 .socials {
   border: 1px solid #12C0DD;
   background-color: rgba(18, 192, 221, 0.05);
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.5rem;
   margin: 5rem 0;
 }
 .socials__title {
@@ -1384,7 +1392,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.06rem;
   margin: 0;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 .socials__list {
   margin: 3rem 0 0;
@@ -1413,6 +1421,144 @@ footer {
 }
 .socials__tg:hover .fill {
   fill: #12C0DD;
+}
+
+.comments-form {
+  border: 1px solid #EDEDED;
+  padding: 2rem;
+  margin-bottom: 5rem;
+}
+.comments-form__textarea, .comments-form__input {
+  padding: 2rem;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #EDEDED;
+  margin-bottom: 2rem;
+}
+.comments-form__textarea::-moz-placeholder, .comments-form__input::-moz-placeholder {
+  color: #95A3B1;
+}
+.comments-form__textarea::placeholder, .comments-form__input::placeholder {
+  color: #95A3B1;
+}
+.comments-form__textarea:focus, .comments-form__input:focus {
+  outline: none;
+  border: 1px solid #12C0DD;
+}
+.comments-form__textarea {
+  min-height: 20.2rem;
+  resize: none;
+}
+.comments-form__btn {
+  font-size: 1.4rem;
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.42px;
+  background-color: #12C0DD;
+  border: 1px solid #12C0DD;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.7rem;
+  text-align: center;
+}
+.comments-form__btn a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.comments__title {
+  font-family: "JetBrains Mono", sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07rem;
+  margin-bottom: 3rem;
+}
+.comments .author__name {
+  padding: 0;
+  font-size: 2rem;
+}
+.comments .author__date {
+  font-size: 1.8rem;
+}
+.comments__item {
+  border: 1px solid #EDEDED;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.comments__item p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 2.1rem;
+}
+.comments__functions {
+  font-size: 1.6rem;
+  display: flex;
+}
+.comments__functions._close-comments {
+  justify-content: space-between;
+  align-items: center;
+}
+.comments__functions._open-comments {
+  flex-direction: column;
+  gap: 2rem;
+}
+.comments__functions a {
+  color: #95A3B1;
+  text-decoration: none;
+}
+.comments__functions .replay {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.comments__functions .replay::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-image: url(../img/replay.png);
+  background-size: contain;
+}
+.comments__functions .close-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.comments__functions .close-btn::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-image: url(../img/chevron-up.png);
+  background-size: contain;
+}
+.comments__functions .open-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.comments__functions .open-btn::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-image: url(../img/chevron-down.png);
+  background-size: contain;
+}
+
+/* Swiper */
+.swiper-slide__item {
+  height: 100% !important;
+  width: 32rem !important;
 }
 
 /* Error 404 */
@@ -1473,7 +1619,7 @@ footer {
 }
 .error a {
   display: block;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.4rem;
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 700;
