@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интернет-журнал FrontendBlok</title>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -30,7 +30,12 @@
                         <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
                         <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
                     </div>
-                    <a href="http://frontendblok.com" class="header__link" target="_blank">FrontendBlok</a>
+                    <a href="http://frontendblok.com" class="header__link" target="_blank">FrontendBlok
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="fill" d="M7 7H17V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="fill" d="M7 17L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>    
@@ -93,8 +98,10 @@
                                 <p>Всем привет, меня зовут Анна Блок и в этой статье мы продолжим говорить про единицы измерения CSS. <a href="">Предыдущая статья</a> была связана с тем, что я описывала все значения, которые можно использовать относительно такого свойства, как font-size, но при этом я не сделала совершенно никаких выводов для того, что бы вам стало ясно какую единицу измерения использовать и в какой ситуации. Исправлю это недоразумение.</p>
                                 <p>Выводы сформулирую в конце этой статьи. В начале поговорим о том, как использовать эти единицы измерения для других свойств, которые связаны с шириной и высотой: width, height, padding, margin, border-radius. Конечно же, все эти аспекты нужно рассматривать с точки зрения теории-практики, поэтому поехали.</p>
                                 <div class="article__advice advice">
-                                    <h2 class="advice__title">Рекомендация от нас</h2>
-                                    <p>Если ты только учишься, то рекомендуем пройти Бесплатный Марафон <a href="">«Основы веб-разработки»</a>. Идеально подойдет даже тем, кто впервые слышит слово «веб-разработка».</p>
+                                    <div class="advice__text">
+                                        <h2 class="advice__title">Рекомендация от нас</h2>
+                                        <p>Если ты только учишься, то рекомендуем пройти Бесплатный Марафон <a href="">«Основы веб-разработки»</a>. Идеально подойдет даже тем, кто впервые слышит слово «веб-разработка».</p>
+                                    </div>
                                     <div class="advice__img"><img src="/img/recommend.png" alt=""></div>
                                 </div>
                                 <p>Напомню, что если вам необходим наглядный список того, какие единицы измерения используются, то вы можете открыть этот codepen и оставить его во вкладке браузера пока читаете эту статью, либо когда верстаете сайт.</p>
@@ -146,10 +153,16 @@
                         </div>
                     </div>
                     <div class="post__recommend">
-                        <h2>Похожие статьи</h2>
-                        <div class="swiper mySwiper">
+                        <div class="swiper recommend-swiper">
+                            <div class="recommend-swiper__head">
+                                <h2>Похожие статьи</h2>
+                                <div class="recommend-swiper__nav">
+                                    <div class="swiper-button-prev recommend-swiper__prev"></div>
+                                    <div class="swiper-button-next recommend-swiper__next"></div>
+                                </div>
+                            </div>
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide article__item swiper-slide__item">
+                                <div class="swiper-slide article__item recommend-swiper__item">
                                     <div class="article__thumb">
                                         <a href="">
                                             <img class="article__img" src="img/post6.png" alt="">
@@ -176,7 +189,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide article__item">
+                                <div class="swiper-slide article__item recommend-swiper__item">
+                                    <div class="article__thumb">
+                                        <a href="">
+                                            <img class="article__img" src="img/post5.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="article__about">
+                                        <span class="article__category">Код</span>
+                                        <h3 class="article__title">
+                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
+                                        </h3>
+                                        <div class="article__info">
+                                            <div class="author">
+                                                <img src="img/author.png" alt="" class="author__img">
+                                                <div class="author__info">
+                                                    <h4 class="author__name">Анна Блок</h4>
+                                                    <span class="author__date">28 июля 2023</span>
+                                                </div>
+                                            </div>
+                                            <div class="article__footer">
+                                                <span class="article__views">850</span>
+                                                <span class="article__time">~25 мин</span>
+                                                <a href="" class="article__link">Читать далее</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article__item recommend-swiper__item">
                                     <div class="article__thumb">
                                         <a href="">
                                             <img class="article__img" src="img/post6.png" alt="">
@@ -203,7 +243,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide article__item">
+                                <div class="swiper-slide article__item recommend-swiper__item">
+                                    <div class="article__thumb">
+                                        <a href="">
+                                            <img class="article__img" src="img/post5.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="article__about">
+                                        <span class="article__category">Код</span>
+                                        <h3 class="article__title">
+                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
+                                        </h3>
+                                        <div class="article__info">
+                                            <div class="author">
+                                                <img src="img/author.png" alt="" class="author__img">
+                                                <div class="author__info">
+                                                    <h4 class="author__name">Анна Блок</h4>
+                                                    <span class="author__date">28 июля 2023</span>
+                                                </div>
+                                            </div>
+                                            <div class="article__footer">
+                                                <span class="article__views">850</span>
+                                                <span class="article__time">~25 мин</span>
+                                                <a href="" class="article__link">Читать далее</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide article__item recommend-swiper__item">
                                     <div class="article__thumb">
                                         <a href="">
                                             <img class="article__img" src="img/post6.png" alt="">
@@ -230,64 +297,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide article__item">
+                                <div class="swiper-slide article__item recommend-swiper__item">
                                     <div class="article__thumb">
                                         <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <span class="article__category">Код</span>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <img src="img/author.png" alt="" class="author__img">
-                                                <div class="author__info">
-                                                    <h4 class="author__name">Анна Блок</h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <span class="article__category">Код</span>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <img src="img/author.png" alt="" class="author__img">
-                                                <div class="author__info">
-                                                    <h4 class="author__name">Анна Блок</h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
+                                            <img class="article__img" src="img/post5.png" alt="">
                                         </a>
                                     </div>
                                     <div class="article__about">
@@ -312,8 +325,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
                     <form class="comments-form">

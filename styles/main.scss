@@ -383,18 +383,28 @@ main {
     border-top: 1px solid $line;
     border-bottom: 1px solid $line;
     padding: 3rem 0;
-    margin: 3rem 0 5rem !important;
+    margin: 3rem 0 5rem;
+    @media (min-width: $r_desk) {
+        padding: 3rem 0 2.5rem;
+        margin: 3rem 0 9rem;
+    }
     &__title {
         font-size: 2.4rem !important;
         font-family: $font-fira !important;
         text-transform: none !important;
         margin: 0 0 3rem !important;
+        @media (min-width: $r_desk) {
+            letter-spacing: normal !important;
+        }
     }
     &__list {
         list-style-type: none;
         font-weight: 500;
         padding-left: 0;
         margin: 0;
+        @media (min-width: $r_desk) {
+            font-size: 2.4rem;
+        }
         & li + li {
             margin-bottom: 2rem;
         }
@@ -477,7 +487,10 @@ main {
         font-weight: 500;
         border: 1px solid $accent;
         padding: 3px 9px 2px 9px;
-        letter-spacing: .48px;
+        letter-spacing: .05rem;
+        @media (min-width: $r_desk) {
+            letter-spacing: .08rem;
+        }
     }
     &__tag {
         font-family: $font-jet;
@@ -1086,6 +1099,10 @@ footer {
     &__categories {
         display: flex;
         justify-content: space-between;
+        @media (min-width: $r_desk) {
+            justify-content: flex-start;
+            gap: 1rem;
+        }
     }
     &__body {
         & p {
@@ -1101,6 +1118,10 @@ footer {
         }
         & figure {
             margin: 0 auto;
+            & img {
+                height: auto;
+                width: 100%;
+            }
         }
         & ul, ol {
             padding-left: 0;
@@ -1147,6 +1168,9 @@ footer {
             display: flex;
             gap: 1rem;
             line-height: 1.4;
+            @media (min-width: $r_desk) {
+                gap: 1.5rem;
+            }
         }
         & blockquote::before {
             content: '';
@@ -1157,6 +1181,9 @@ footer {
             height: 24px;
             background-image: url(../img/quote.png);
             background-size: cover;
+            @media (min-width: $r_desk) {
+                flex-basis: 2rem;
+            }
         }
     }
     &__video {
@@ -1173,15 +1200,6 @@ footer {
             height: 100%;
         }
     }
-    &__recommend {
-        & h2 {
-            font-family: $font-jet;
-            font-size: 2.4rem;
-            text-transform: uppercase;
-            letter-spacing: .07rem; 
-            margin-bottom: 3rem;
-        }
-    }
 }
 
 .main-article {
@@ -1194,12 +1212,20 @@ footer {
     }
     & .title {
         line-height: 1.2;
+        @media (min-width: $r_desk) {
+            line-height: 1.1;
+            font-size: 4.8rem;
+            letter-spacing: 0.14rem;
+        }
     }
     & .article__about {
         padding: 0;
     }
     & .article__info {
         margin-top: 3rem;
+        @media (min-width: $r_desk) {
+            align-items: end;
+        }
     }
     & .author__name {
         padding: 0;
@@ -1242,6 +1268,10 @@ footer {
     background-color: rgba($accent, .05);
     padding: 3rem 1.5rem 2.5rem;
     margin-bottom: 3rem;
+    @media (min-width: $r_desk) {
+        padding: 3rem 3rem 2rem;
+        display: flex;
+    }
     &__title {
         font-size: 2rem !important;
         font-family: $font-jet;
@@ -1259,6 +1289,9 @@ footer {
     background-color: rgba($accent, .05);
     padding: 1.5rem;
     margin: 5rem 0;
+    @media (min-width: $r_desk) {
+        padding: 3rem;
+    }
     &__title {
         font-size: 2rem;
         font-family: $font-jet;
@@ -1269,6 +1302,10 @@ footer {
     }
     &__list {
         margin: 3rem 0 0;
+        @media (min-width: $r_desk) {
+            display: flex;
+            gap: 3rem;
+        }
     }
     &__list a {
         color: $accent;
@@ -1285,6 +1322,9 @@ footer {
     }
     &__list a + a {
         margin-top: 3rem;
+        @media (min-width: $r_desk) {
+            margin-top: 0;
+        }
     }
     &__yt {
         &:hover {
@@ -1313,6 +1353,10 @@ footer {
     border: 1px solid $line;
     padding: 2rem;
     margin-bottom: 5rem;
+    @media (min-width: $r_desk) {
+        padding: 3rem;
+        margin-bottom: 9rem;
+    }
     &__textarea, &__input {
         padding: 2rem;
         font-family: $font-fira;
@@ -1321,6 +1365,10 @@ footer {
         box-sizing: border-box;
         border: 1px solid $line;
         margin-bottom: 2rem;
+        @media (min-width: $r_desk) {
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
         &::placeholder {
             color: $light-text;
         }
@@ -1345,6 +1393,9 @@ footer {
         width: 100%;
         padding: 1.7rem;
         text-align: center;
+        @media (min-width: $r_desk) {
+            width: 30.7rem;
+        }
         & a {
             color: $light;
             text-decoration: none;
@@ -1371,10 +1422,16 @@ footer {
         border: 1px solid $line;
         padding: 1.5rem;
         margin-bottom: 2rem;
+        @media (min-width: $r_desk) {
+            padding: 3rem;
+        }
         & p {
             font-size: 1.8rem;
             line-height: 1.5;
             margin-bottom: 2.1rem;
+        }
+        &.answer {
+            margin-left: 7rem;
         }
     }
     &__functions {
@@ -1387,6 +1444,10 @@ footer {
         &._open-comments {
             flex-direction: column;
             gap: 2rem;
+            @media (min-width: $r_desk) {
+                flex-direction: inherit;
+                justify-content: space-between;
+            }
         }
         & a {
             color: $light-text;
@@ -1443,10 +1504,48 @@ footer {
 
 /* Swiper */
 
-.swiper-slide {
+.recommend-swiper {
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        & h2 {
+            font-family: $font-jet;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            letter-spacing: .07rem;
+            margin: 0;
+        }
+    }
+    &__nav {
+        display: flex;
+        gap: 1.5rem;
+    }
+    &__next, &__prev {
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+    }
+    &__next::before, &__prev::before {
+        content: '';
+        background-image: url(../img/prev.png);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: block;
+        width: 3rem;
+        height: 3rem;
+    }
+    &__next::before {
+        transform: rotate(180deg);
+    }
+    & .swiper-wrapper {
+        gap: 3rem;
+    }
     &__item {
-        height: 100% !important;
-        width: 32rem !important;
+        height: auto;
+        flex-basis: 100%;
     }
 }
 

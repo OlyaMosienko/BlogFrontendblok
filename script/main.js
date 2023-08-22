@@ -11,19 +11,18 @@ var swiper = new Swiper(".tagSwiper", {
 
 // Post Swiper
 
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".recommend-swiper", {
   slidesPerView: 2,
-  spaceBetween: 20,
   slidesPerGroup: 2,
   direction: getDirection(),
-  on: {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
         resize: function () {
           swiper.changeDirection(getDirection());
         },
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
       },
 });
 
@@ -32,4 +31,4 @@ function getDirection() {
   var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
 
   return direction;
-}
+};
