@@ -260,9 +260,6 @@ header {
 main {
     & .page {
         height: 100%;
-        @media (min-width: $r_desk_1150) {
-            flex-basis: 850px;
-        }
         & button {
             margin: 1.5rem auto 0;
         }
@@ -1100,6 +1097,32 @@ footer {
 /* Post */
 
 .post {
+    &.page {
+        @media (min-width: $r_desk_1150) {
+            width: 72.5vw;
+        }
+    }
+    & .article {
+        @media (min-width: $r_desk_wxga) {
+            display: block;
+        }
+    }
+    &__sticky {
+        display: flex;
+        gap: 7rem;
+    }
+    &__scroll {
+        flex-basis: fit-content;
+    }
+    &__nav {
+        width: 37.1rem;
+        align-self: flex-start;
+        position: sticky;
+        top: 1.5rem;
+        & .article-nav {
+            margin: 0 !important;
+        }
+    }
     &__categories {
         display: flex;
         justify-content: space-between;
@@ -1185,8 +1208,13 @@ footer {
             height: 24px;
             background-image: url(../img/quote.png);
             background-size: cover;
+            @media (min-width: $r_mob_400) {
+                width: 24px;
+                background-size: contain;
+            }
             @media (min-width: $r_desk) {
                 flex-basis: 2rem;
+                background-size: cover;
             }
         }
     }
@@ -1563,6 +1591,11 @@ footer {
         flex-basis: 100%;
         @media (min-width: $r_tab) {
             flex-basis: inherit;
+        }
+    }
+    & .article__info {
+        @media (min-width: $r_desk) {
+            display: block;
         }
     }
 }

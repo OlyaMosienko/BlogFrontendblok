@@ -274,11 +274,6 @@ main {
 main .page {
   height: 100%;
 }
-@media (min-width: 1150px) {
-  main .page {
-    flex-basis: 850px;
-  }
-}
 main .page button {
   margin: 1.5rem auto 0;
 }
@@ -1243,6 +1238,32 @@ footer {
 }
 
 /* Post */
+@media (min-width: 1150px) {
+  .post.page {
+    width: 72.5vw;
+  }
+}
+@media (min-width: 1340px) {
+  .post .article {
+    display: block;
+  }
+}
+.post__sticky {
+  display: flex;
+  gap: 7rem;
+}
+.post__scroll {
+  flex-basis: fit-content;
+}
+.post__nav {
+  width: 37.1rem;
+  align-self: flex-start;
+  position: sticky;
+  top: 1.5rem;
+}
+.post__nav .article-nav {
+  margin: 0 !important;
+}
 .post__categories {
   display: flex;
   justify-content: space-between;
@@ -1332,9 +1353,16 @@ footer {
   background-image: url(../img/quote.png);
   background-size: cover;
 }
+@media (min-width: 400px) {
+  .post__body blockquote::before {
+    width: 24px;
+    background-size: contain;
+  }
+}
 @media (min-width: 1000px) {
   .post__body blockquote::before {
     flex-basis: 2rem;
+    background-size: cover;
   }
 }
 .post__video {
@@ -1717,6 +1745,11 @@ footer {
 @media (min-width: 768px) {
   .recommend-swiper__item {
     flex-basis: inherit;
+  }
+}
+@media (min-width: 1000px) {
+  .recommend-swiper .article__info {
+    display: block;
   }
 }
 
