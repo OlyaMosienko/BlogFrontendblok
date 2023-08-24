@@ -13,7 +13,7 @@ var swiper = new Swiper(".tagSwiper", {
 
 var swiper = new Swiper(".recommend-swiper", {
   slidesPerView: 2,
-  slidesPerGroup: 2,
+  spaceBetween: 30,
   direction: getDirection(),
       navigation: {
         nextEl: '.swiper-button-next',
@@ -28,7 +28,7 @@ var swiper = new Swiper(".recommend-swiper", {
 
 function getDirection() {
   var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+  var direction = window.innerWidth <= 767 ? 'vertical' : 'horizontal';
 
   return direction;
 };

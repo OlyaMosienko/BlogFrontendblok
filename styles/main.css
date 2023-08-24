@@ -274,6 +274,11 @@ main {
 main .page {
   height: 100%;
 }
+@media (min-width: 1150px) {
+  main .page {
+    flex-basis: 850px;
+  }
+}
 main .page button {
   margin: 1.5rem auto 0;
 }
@@ -487,6 +492,7 @@ main .page button {
   padding-bottom: 2rem;
   margin-bottom: 2.7rem;
   border: 1px solid #EDEDED;
+  box-sizing: border-box;
 }
 @media (min-width: 1000px) {
   .article__item {
@@ -1241,7 +1247,7 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
   .post__categories {
     justify-content: flex-start;
     gap: 1rem;
@@ -1583,8 +1589,10 @@ footer {
   line-height: 1.5;
   margin-bottom: 2.1rem;
 }
-.comments__item.answer {
-  margin-left: 7rem;
+@media (min-width: 768px) {
+  .comments__item.answer {
+    margin-left: 7rem;
+  }
 }
 .comments__functions {
   font-size: 1.6rem;
@@ -1669,13 +1677,22 @@ footer {
   margin: 0;
 }
 .recommend-swiper__nav {
-  display: flex;
-  gap: 1.5rem;
+  position: relative;
+  width: 4rem;
+  height: 3.1rem;
 }
 .recommend-swiper__next, .recommend-swiper__prev {
   width: 3rem;
   height: 3rem;
   cursor: pointer;
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
+  margin: 0;
+}
+.recommend-swiper__prev {
+  left: -3.5rem;
 }
 .recommend-swiper__next::before, .recommend-swiper__prev::before {
   content: "";
@@ -1691,11 +1708,20 @@ footer {
   transform: rotate(180deg);
 }
 .recommend-swiper .swiper-wrapper {
-  gap: 3rem;
+  max-height: 94rem;
 }
 .recommend-swiper__item {
   height: auto;
   flex-basis: 100%;
+}
+@media (min-width: 768px) {
+  .recommend-swiper__item {
+    flex-basis: inherit;
+  }
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  display: none;
 }
 
 /* Error 404 */

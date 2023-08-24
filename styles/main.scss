@@ -260,6 +260,9 @@ header {
 main {
     & .page {
         height: 100%;
+        @media (min-width: $r_desk_1150) {
+            flex-basis: 850px;
+        }
         & button {
             margin: 1.5rem auto 0;
         }
@@ -448,6 +451,7 @@ main {
     padding-bottom: 2rem;
     margin-bottom: 2.7rem;
     border: 1px solid $line;
+    box-sizing: border-box;
         @media (min-width: $r_desk) {
             margin-bottom: 3.1rem;
         }
@@ -1099,7 +1103,7 @@ footer {
     &__categories {
         display: flex;
         justify-content: space-between;
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_tab) {
             justify-content: flex-start;
             gap: 1rem;
         }
@@ -1431,7 +1435,9 @@ footer {
             margin-bottom: 2.1rem;
         }
         &.answer {
-            margin-left: 7rem;
+            @media (min-width: $r_tab) {
+                margin-left: 7rem;
+            }
         }
     }
     &__functions {
@@ -1519,13 +1525,22 @@ footer {
         }
     }
     &__nav {
-        display: flex;
-        gap: 1.5rem;
+        position: relative;
+        width: 4rem;
+        height: 3.1rem;
     }
     &__next, &__prev {
         width: 3rem;
         height: 3rem;
         cursor: pointer;
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 0;
+        margin: 0;
+    }
+    &__prev {
+        left: -3.5rem;
     }
     &__next::before, &__prev::before {
         content: '';
@@ -1541,12 +1556,19 @@ footer {
         transform: rotate(180deg);
     }
     & .swiper-wrapper {
-        gap: 3rem;
+        max-height: 94rem;
     }
     &__item {
         height: auto;
         flex-basis: 100%;
+        @media (min-width: $r_tab) {
+            flex-basis: inherit;
+        }
     }
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    display: none;
 }
 
 /* Error 404 */
