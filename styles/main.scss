@@ -388,6 +388,9 @@ main {
         padding: 3rem 0 2.5rem;
         margin: 3rem 0 9rem;
     }
+    @media (min-width: $r_desk_1150) {
+        display: none;
+    }
     &__title {
         font-size: 2.4rem !important;
         font-family: $font-fira !important;
@@ -1115,12 +1118,23 @@ footer {
         flex-basis: fit-content;
     }
     &__nav {
-        width: 37.1rem;
         align-self: flex-start;
         position: sticky;
         top: 1.5rem;
         & .article-nav {
-            margin: 0 !important;
+            @media (min-width: $r_minmob) {
+                display: none;
+            }
+            @media (min-width: $r_desk_1150) {
+                display: block;
+                margin: 0;
+                padding: 0;
+                width: 37.1rem;
+                border: none;
+            }
+            & li > ul {
+                border-left: 1px solid $line;
+            }
         }
     }
     &__categories {
@@ -1135,6 +1149,9 @@ footer {
         & p {
             line-height: 1.5;
             margin: 3.1rem 0;
+            @media (min-width: $r_desk_1150) {
+                font-size: 2.6rem;
+            }
         }
         & a {
             color: $accent;
@@ -1154,6 +1171,9 @@ footer {
             padding-left: 0;
             list-style-type: none;
             margin: 3rem 0;
+            @media (min-width: $r_desk_1150) {
+                font-size: 2.6rem;
+            }
         }
         & ul > li + li, ol li + li {
             margin-top: 0;
@@ -1198,6 +1218,9 @@ footer {
             @media (min-width: $r_desk) {
                 gap: 1.5rem;
             }
+            @media (min-width: $r_desk_1150) {
+                font-size: 2.6rem;
+            }
         }
         & blockquote::before {
             content: '';
@@ -1241,6 +1264,9 @@ footer {
         width: 100%;
         height: 50vw;
         margin: 5rem 0;
+        @media (min-width: $r_desk_1150) {
+            height: 25vw;
+        }
     }
     & .title {
         line-height: 1.2;
@@ -1252,6 +1278,7 @@ footer {
     }
     & .article__about {
         padding: 0;
+        margin: 5rem 0;
     }
     & .article__info {
         margin-top: 3rem;
@@ -1284,14 +1311,23 @@ footer {
     & h2 {
         font-size: 2.4rem;
         margin: 4.75rem 0 0;
+        @media (min-width: $r_desk_1150) {
+            font-size: 3.2rem;
+        }
     }
     & h3 {
         font-size: 2rem;
         margin: 3.1rem 0 0;
+        @media (min-width: $r_desk_1150) {
+            font-size: 2.4rem;
+        }
     }
     & h4 {
         font-size: 1.8rem;
         margin: 3.5rem 0 0;
+        @media (min-width: $r_desk_1150) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -1310,6 +1346,9 @@ footer {
         text-transform: uppercase;
         letter-spacing: .06rem;
         margin: 0 !important;
+        @media (min-width: $r_desk_1150) {
+            font-size: 2.4rem !important;
+        }
     }
     & p {
         margin: 3rem 0;
@@ -1331,12 +1370,18 @@ footer {
         letter-spacing: .06rem;
         margin: 0;
         line-height: 1.5;
+        @media (min-width: $r_desk_1150) {
+            font-size: 2.4rem;
+        }
     }
     &__list {
         margin: 3rem 0 0;
         @media (min-width: $r_desk) {
             display: flex;
             gap: 3rem;
+        }
+        @media (min-width: $r_desk_1150) {
+            font-size: 2.4rem;
         }
     }
     &__list a {
@@ -1387,7 +1432,19 @@ footer {
     margin-bottom: 5rem;
     @media (min-width: $r_desk) {
         padding: 3rem;
-        margin-bottom: 9rem;
+        margin: 9rem 0;
+    }
+    @media (min-width: $r_desk_1150) {
+        margin: 10rem 0;
+    }
+    &__areas {
+        @media (min-width: $r_desk_1150) {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+    &__inputs {
+        flex-grow: 1;
     }
     &__textarea, &__input {
         padding: 2rem;
@@ -1401,6 +1458,9 @@ footer {
             padding: 3rem;
             margin-bottom: 3rem;
         }
+        @media (min-width: $r_desk_1150) {
+            font-size: 2rem;
+        }
         &::placeholder {
             color: $light-text;
         }
@@ -1412,6 +1472,9 @@ footer {
     &__textarea {
         min-height: 20.2rem;
         resize: none;
+        @media (min-width: $r_desk_1150) {
+            flex-basis: 60rem;
+        }
     }
     &__btn {
         font-size: 1.4rem;
@@ -1428,6 +1491,9 @@ footer {
         @media (min-width: $r_desk) {
             width: 30.7rem;
         }
+        @media (min-width: $r_desk_1150) {
+            font-size: 1.8rem;
+        }
         & a {
             color: $light;
             text-decoration: none;
@@ -1442,6 +1508,9 @@ footer {
         text-transform: uppercase;
         letter-spacing: 0.07rem;
         margin-bottom: 3rem;
+        @media (min-width: $r_desk_1150) {
+            font-size: 3.2rem;
+        }
     }
     & .author__name {
         padding: 0;
@@ -1461,6 +1530,9 @@ footer {
             font-size: 1.8rem;
             line-height: 1.5;
             margin-bottom: 2.1rem;
+            @media (min-width: $r_desk_1150) {
+                font-size: 2.6rem;
+            }
         }
         &.answer {
             @media (min-width: $r_tab) {
@@ -1550,6 +1622,9 @@ footer {
             text-transform: uppercase;
             letter-spacing: .07rem;
             margin: 0;
+            @media (min-width: $r_desk_1150) {
+                font-size: 3.2rem;
+            }
         }
     }
     &__nav {
@@ -1596,6 +1671,9 @@ footer {
     & .article__info {
         @media (min-width: $r_desk) {
             display: block;
+        }
+        @media (min-width: $r_desk_1150) {
+            display: flex;
         }
     }
 }
