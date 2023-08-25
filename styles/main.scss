@@ -370,6 +370,9 @@ main {
         }
         & li {
             margin-bottom: -1px;
+            @media (min-width: $r_desk_fhd) {
+                margin-top: -1px;
+            }
         }
         & li:last-child {
             margin-bottom: 0;
@@ -840,9 +843,6 @@ footer {
     @media (min-width: $r_desk) {
         margin-top: 11rem;
     }
-    @media (min-width: $r_desk_fhd) {
-        margin-top: 10rem;
-    }
 }
 
 .footer {
@@ -1099,10 +1099,17 @@ footer {
 
 /* Post */
 
+.post.page + .menu {
+    position: unset;
+}
+
 .post {
     &.page {
         @media (min-width: $r_desk_1150) {
             width: 72.5vw;
+        }
+        @media (min-width: $r_desk_fhd) {
+            width: 77.5vw;
         }
     }
     & .article {
@@ -1113,6 +1120,11 @@ footer {
     &__sticky {
         display: flex;
         gap: 7rem;
+        @media (min-width: $r_desk_1150) {
+            padding: 5rem 3rem;
+            border: 1px solid $line;
+            margin-bottom: 10rem;
+        }
     }
     &__scroll {
         flex-basis: fit-content;
@@ -1121,6 +1133,7 @@ footer {
         align-self: flex-start;
         position: sticky;
         top: 1.5rem;
+        padding-bottom: 5rem;
         & .article-nav {
             @media (min-width: $r_minmob) {
                 display: none;
@@ -1539,6 +1552,9 @@ footer {
                 margin-left: 7rem;
             }
         }
+    }
+    &__item:last-child {
+        margin-bottom: 0;
     }
     &__functions {
         font-size: 1.6rem;
