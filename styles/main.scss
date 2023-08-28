@@ -88,7 +88,7 @@ $r_desk_4k: 3760px; // 3840
     margin: 0 auto;
     @media (min-width: $r_desk_fhd) {
         padding-left: 7.5rem;
-        padding-right: 5.5rem;
+        padding-right: 6rem;
     }
 }
 
@@ -133,6 +133,10 @@ header {
     justify-content: space-between;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    @media (min-width: $r_desk_1150) {
+        padding-top: 2.65rem;
+        padding-bottom: 2.4rem;
+    }
     &__items {
         display: flex;
         align-items: center;
@@ -272,7 +276,7 @@ main {
         margin: 9.5rem auto 0 auto;
     }
     @media (min-width: $r_desk_hd) {
-        margin: 10.5rem auto 0 auto;
+        margin: 10rem auto 0 auto;
     }
 }
 
@@ -287,6 +291,11 @@ main {
 
 .scroll-menu {
     height: 100%;
+    &._post {
+        & .menu {
+            position: unset;
+        }
+    }
     @media (min-width: $r_desk_1150) {
         display: flex;
         gap: 6.7rem;
@@ -495,6 +504,10 @@ main {
         border: 1px solid $accent;
         padding: 3px 9px 2px 9px;
         letter-spacing: .05rem;
+        & a {
+            text-decoration: none;
+            color: $dark;
+        }
         @media (min-width: $r_desk) {
             letter-spacing: .08rem;
         }
@@ -1099,17 +1112,13 @@ footer {
 
 /* Post */
 
-.post.page + .menu {
-    position: unset;
-}
-
 .post {
     &.page {
         @media (min-width: $r_desk_1150) {
             width: 72.5vw;
         }
         @media (min-width: $r_desk_fhd) {
-            width: 77.5vw;
+            width: 76.5vw;
         }
     }
     & .article {
@@ -1118,10 +1127,10 @@ footer {
         }
     }
     &__sticky {
-        display: flex;
-        gap: 7rem;
         @media (min-width: $r_desk_1150) {
-            padding: 5rem 3rem;
+            display: flex;
+            gap: 7rem;
+            padding: 5rem 3rem 0 3rem;
             border: 1px solid $line;
             margin-bottom: 10rem;
         }
@@ -1206,6 +1215,10 @@ footer {
             position: absolute;
             top: .9rem;
             left: 0;
+            @media (min-width: $r_desk_fhd) {
+                top: 1.5rem;
+                left: -2px;
+            }
         }
         & ol {
             counter-reset: item;
@@ -1220,6 +1233,10 @@ footer {
             position: absolute;
             top: 4px;
             left: 0;
+            @media (min-width: $r_desk_fhd) {
+                top: 1rem;
+                left: -2px;
+            }
         }
         & blockquote {
             margin: 0;
@@ -1279,6 +1296,9 @@ footer {
         margin: 5rem 0;
         @media (min-width: $r_desk_1150) {
             height: 25vw;
+        }
+        @media (min-width: $r_desk_fhd) {
+            height: 29.75vw;
         }
     }
     & .title {
@@ -1344,6 +1364,19 @@ footer {
     }
 }
 
+.student {
+    padding: 2rem;
+    margin: 3rem 0;
+    border: 1px solid $accent;
+    background-color: rgba($accent, .05);
+    // display: none;
+    @media (min-width: $r_desk_1150) {
+        padding: 3rem;
+        margin: 5rem 0;
+        font-size: 2.6rem;
+    }
+}
+
 .advice {
     border: 1px solid $accent;
     background-color: rgba($accent, .05);
@@ -1352,6 +1385,9 @@ footer {
     @media (min-width: $r_desk) {
         padding: 3rem 3rem 2rem;
         display: flex;
+    }
+    @media (min-width: $r_desk_fhd) {
+        padding: 3rem 3rem 0;
     }
     &__title {
         font-size: 2rem !important;
@@ -1385,6 +1421,9 @@ footer {
         line-height: 1.5;
         @media (min-width: $r_desk_1150) {
             font-size: 2.4rem;
+        }
+        @media (min-width: $r_desk_fhd) {
+            letter-spacing: 0.065rem;
         }
     }
     &__list {
@@ -1449,6 +1488,9 @@ footer {
     }
     @media (min-width: $r_desk_1150) {
         margin: 10rem 0;
+    }
+    @media (min-width: $r_desk_fhd) {
+        padding: 5rem;
     }
     &__areas {
         @media (min-width: $r_desk_1150) {
@@ -1545,11 +1587,15 @@ footer {
             margin-bottom: 2.1rem;
             @media (min-width: $r_desk_1150) {
                 font-size: 2.6rem;
+                margin-top: 2rem;
             }
         }
         &.answer {
             @media (min-width: $r_tab) {
                 margin-left: 7rem;
+            }
+            @media (min-width: $r_desk_fhd) {
+                margin-left: 5rem;
             }
         }
     }
@@ -1559,6 +1605,9 @@ footer {
     &__functions {
         font-size: 1.6rem;
         display: flex;
+        @media (min-width: $r_desk_1150) {
+            font-size: 2rem;
+        }
         &._close-comments {
             justify-content: space-between;
             align-items: center;
@@ -1696,6 +1745,56 @@ footer {
 
 .swiper-button-next:after, .swiper-button-prev:after {
     display: none;
+}
+
+/* Overlay Menu and Search */
+
+.overlay {
+    position: absolute;
+    background-color: $light;
+    top: 9.1rem;
+    right: -100%;
+    width: 100%;
+    opacity: 0;
+    transition: all .5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
+    &.active {
+        right: 0;
+        opacity: 1;
+    }
+    @media (min-width: $r_desk_1150) {
+        display: none;
+    }
+}
+
+.modal {
+    padding: 5rem 2rem;
+    @media (min-width: $r_tab) {
+        padding: 10rem 5rem;
+        border-left: 1px solid $line;
+        max-width: 27.5rem;
+        margin-left: auto;
+    }
+    &__nav {
+        padding-left: 0;
+        list-style-type: none;
+        font-size: 2.4rem;
+        margin-top: 0;
+        margin-bottom: 5rem;
+        & li > a {
+            text-decoration: none;
+            color: $dark;
+            transition: .2s;
+            &:hover {
+                color: $accent;
+            }
+        }
+        & li {
+            margin-bottom: 3rem;
+        }
+        & li:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 /* Error 404 */
