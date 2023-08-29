@@ -14,8 +14,8 @@
                     <img src="img/logo.svg" alt="Frontend Blok" class="logo">
                 </a>
                 <div class="header__items">
-                    <button class="header__search header__btn">
-                        <img src="img/search.png" alt="">
+                    <button class="header__search header__btn" id="searchBtn">
+                        <img src="img/search.svg" alt="">
                     </button>
                     <button class="header__menu header__btn" id="burger">
                         <div class="burger-btn">
@@ -353,6 +353,15 @@
             </div>
         </div>
     </footer>
+    <div class="overlay _search" id="overlay">
+        <div class="modal-search">
+            <div class="search-area">
+                <input class="search-area__input" type="text" placeholder="Введите запрос">
+                <button class="search-area__btn" type="submit"></button>
+                <button type="button" class="search-area__close"  id="searchClose"></button>
+            </div>
+        </div>
+    </div>
     <div class="overlay" id="overlayMenu">
         <div class="modal">
             <nav>

@@ -183,14 +183,14 @@ header {
   }
 }
 .header__search img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   background-position: center;
 }
 @media (min-width: 360px) {
   .header__search img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 }
 .header__menu {
@@ -233,52 +233,50 @@ header {
 
 .burger-btn {
   display: inline-block;
-  margin: 0;
-  padding: 5px;
-  overflow: visible;
+  padding: 0;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: 0.2s;
   transition-timing-function: linear;
-  border: 0;
-  background-color: transparent;
-  color: inherit;
-  font-size: 0;
-  text-transform: none;
-  cursor: pointer;
+}
+@media (min-width: 360px) {
+  .burger-btn {
+    padding: 1rem;
+  }
+}
+.burger-btn__block {
+  display: inline-block;
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .burger-btn__inner {
-  display: block;
   top: 50%;
+  left: 0.2rem;
   transform: translateY(-50%);
   transition-duration: 0.075s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .burger-btn__inner, .burger-btn__inner::before, .burger-btn__inner::after {
   position: absolute;
-  width: 36px;
-  height: 3px;
+  width: 2rem;
+  height: 0.2rem;
   transition-property: transform;
-  transition-duration: 0.15s;
+  transition-duration: 0.2s;
   transition-timing-function: ease;
-  background-color: #FFF;
+  background-color: #FFFFFF;
+  border-radius: 1rem;
 }
 .burger-btn__inner::before, .burger-btn__inner::after {
   content: "";
   display: block;
 }
 .burger-btn__inner::before {
-  top: -11px;
+  top: -6px;
   transition: top 0.075s 0.12s ease, opacity 0.075s ease;
 }
 .burger-btn__inner::after {
-  bottom: -11px;
+  bottom: -6px;
   transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.burger-btn__block {
-  display: inline-block;
-  position: relative;
-  width: 36px;
-  height: 25px;
 }
 .burger-btn.is-active .burger-btn__inner {
   transform: rotate(45deg);
@@ -320,13 +318,13 @@ header {
 }
 .search-area__btn {
   position: absolute;
-  right: 17px;
-  top: calc(50% - 12.5px);
+  right: 22px;
+  top: calc(50% - 8.5px);
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 17px;
+  height: 18px;
   background-color: transparent;
-  background-image: url(../img/search.png);
+  background-image: url(../img/search.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -2036,6 +2034,9 @@ footer {
   opacity: 1;
   box-shadow: 0 0.9rem 1.9rem rgba(42, 47, 54, 0.2);
 }
+.overlay._search {
+  top: 0;
+}
 @media (min-width: 1150px) {
   .overlay {
     display: none;
@@ -2073,6 +2074,35 @@ footer {
 }
 .modal__nav li:last-child {
   margin-bottom: 0;
+}
+
+.modal-search {
+  padding: 1.75rem;
+}
+@media (min-width: 1000px) {
+  .modal-search {
+    padding: 2.45rem;
+  }
+}
+.modal-search .search-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.modal-search .search-area__btn {
+  right: 55px;
+}
+.modal-search .search-area__close {
+  cursor: pointer;
+  background-image: url(../img/close.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: cover;
+  border: none;
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
 /* Error 404 */

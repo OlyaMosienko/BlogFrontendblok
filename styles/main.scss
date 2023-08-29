@@ -175,12 +175,12 @@ header {
         }
     }
     &__search img {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         background-position: center;
         @media (min-width: $r_mob_360) {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
         }
     }
     &__menu {
@@ -222,54 +222,47 @@ header {
 
 .burger-btn {
     display: inline-block;
-    margin: 0;
-    padding: 5px;
-    overflow: visible;
+    padding: 0;
     transition-property: opacity, filter;
-    transition-duration: 0.15s;
+    transition-duration: .2s;
     transition-timing-function: linear;
-    border: 0;
-    background-color: transparent;
-    color: inherit;
-    font-size: 0;
-    text-transform: none;
-    cursor: pointer;
-    &__inner {
-        display: block;
-        top: 50%;
-        transform: translateY(-50%);
-        transition-duration: 0.075s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        &,
-        &::before,
-        &::after {
-            position: absolute;
-            width: 36px;
-            height: 3px;
-            transition-property: transform;
-            transition-duration: 0.15s;
-            transition-timing-function: ease;
-            background-color: #FFF;
-        }
-        &::before,
-        &::after {
-            content: "";
-            display: block;
-        }
-        &::before {
-            top: (8px + 3px) * -1;
-            transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-        }
-        &::after {
-            bottom: (8px + 3px) * -1;
-            transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        }
+    @media (min-width: $r_mob_360) {
+        padding: 1rem;
     }
     &__block {
         display: inline-block;
         position: relative;
-        width: 36px;
-        height: 25px;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    &__inner {
+        top: 50%;
+        left: .2rem;
+        transform: translateY(-50%);
+        transition-duration: 0.075s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        &, &::before, &::after {
+            position: absolute;
+            width: 2rem;
+            height: .2rem;
+            transition-property: transform;
+            transition-duration: .2s;
+            transition-timing-function: ease;
+            background-color: $light;
+            border-radius: 1rem;
+        }
+        &::before, &::after {
+            content: "";
+            display: block;
+        }
+        &::before {
+            top: -6px;
+            transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+        }
+        &::after {
+            bottom: -6px;
+            transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
     }
     &.is-active {
         & .burger-btn__inner {
@@ -310,13 +303,13 @@ header {
     }
     &__btn {
         position: absolute;
-        right: 17px;
-        top: calc(50% - 12.5px);
+        right: 22px;
+        top: calc(50% - 8.5px);
         display: block;
-        width: 22px;
-        height: 22px;
+        width: 17px;
+        height: 18px;
         background-color: transparent;
-        background-image: url(../img/search.png);
+        background-image: url(../img/search.svg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
@@ -1829,6 +1822,9 @@ footer {
         opacity: 1;
         box-shadow: 0 0.9rem 1.9rem rgba($dark, 0.2);
     }
+    &._search {
+        top: 0;
+    }
     @media (min-width: $r_desk_1150) {
         display: none;
     }
@@ -1861,6 +1857,33 @@ footer {
         }
         & li:last-child {
             margin-bottom: 0;
+        }
+    }
+}
+
+.modal-search {
+    padding: 1.75rem;
+    @media (min-width: $r_desk) {
+        padding: 2.45rem;
+    }
+    & .search-area {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        &__btn {
+            right: 55px;
+        }
+        &__close {
+            cursor: pointer;
+            background-image: url(../img/close.svg);
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: cover;
+            border: none;
+            display: block;
+            width: 20px;
+            height: 20px;
         }
     }
 }
