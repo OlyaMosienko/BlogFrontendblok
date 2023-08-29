@@ -1,3 +1,11 @@
+// Burger Menu
+
+let btn = document.querySelector('.burger-btn');
+
+btn.addEventListener('click', function () {
+  this.classList.toggle('is-active');
+});
+
 // Overlay Menu
 
 const burger = document.getElementById("burger");
