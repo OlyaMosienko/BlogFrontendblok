@@ -434,7 +434,7 @@ main {
                 color: $light;
                 background-color: $dark;
             }
-            &:active {
+            &:active, &.active {
                 color: $light;
                 background-color: $dark;
             }
@@ -566,10 +566,8 @@ main {
         border: 1px solid $accent;
         padding: 3px 9px 2px 9px;
         letter-spacing: .05rem;
-        & a {
-            text-decoration: none;
-            color: $dark;
-        }
+        text-decoration: none;
+        color: $dark;
         @media (min-width: $r_desk) {
             letter-spacing: .08rem;
         }
@@ -579,7 +577,7 @@ main {
         color: $accent;
         font-size: 1.6rem;
         margin-left: 1rem;
-        cursor: pointer;
+        text-decoration: none;
         @media (min-width: $r_tab) {
             font-size: 1.8rem;
         }
@@ -1152,7 +1150,7 @@ footer {
             background-color: $accent;
             border: 1px solid $accent;
         }
-        &:active {
+        &:active, &.active {
             color: $light;
             background-color: $accent;
             border: 1px solid $accent;
