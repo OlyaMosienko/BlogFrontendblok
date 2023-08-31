@@ -80,6 +80,26 @@
   }
 }
 
+.cursor {
+  position: fixed;
+  box-sizing: border-box;
+  top: -5px;
+  left: -9px;
+  z-index: 10000;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(42, 47, 54, 0);
+  border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  -webkit-backdrop-filter: invert(1);
+          backdrop-filter: invert(1);
+  transform: translate(-50%, -50%);
+  mix-blend-mode: normal;
+}
+
 /* Header */
 header {
   border-bottom: 1px solid #EDEDED;

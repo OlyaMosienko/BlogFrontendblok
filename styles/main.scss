@@ -92,6 +92,23 @@ $r_desk_4k: 3760px; // 3840
     }
 }
 
+.cursor {
+    position: fixed;
+    box-sizing: border-box;
+    top: -5px;
+    left: -9px;
+    z-index: 10000;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba($dark, 0);
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    backdrop-filter: invert(1);
+    transform: translate(-50%, -50%);
+    mix-blend-mode: normal;
+}
+
 /* Header */
 
 header {
