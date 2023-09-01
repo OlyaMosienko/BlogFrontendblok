@@ -224,7 +224,7 @@ header {
         display: flex;
         align-items: center;
         gap: .5rem;
-        transition: .2s;
+        //transition: .2s;
         & .fill {
             stroke: $dark;
         }
@@ -1184,6 +1184,22 @@ footer {
 /* Search */
 
 .search {
+    &.page {
+        @media (min-width: $r_desk_1150) {
+            max-width: 72vw;
+        }
+        @media (min-width: $r_desk_hd) {
+            max-width: 75vw;
+        }
+        @media (min-width: $r_desk_wxga_xxl) {
+            max-width: 77vw;
+        }
+    }
+    & .article__item {
+        @media (min-width: $r_desk_1150) {
+            margin-bottom: 0;
+        }
+    }
     &__result {
         margin: 3rem 0 3rem;
         @media (min-width: $r_tab) {
@@ -1202,6 +1218,9 @@ footer {
         }
         @media (min-width: $r_desk_fhd) {
             width: 76.5vw;
+        }
+        @media (min-width: $r_desk_full) {
+            width: 77.5vw;
         }
     }
     & .article {
@@ -1226,6 +1245,9 @@ footer {
         position: sticky;
         top: 1.5rem;
         padding-bottom: 5rem;
+        max-height: 35rem;
+        overflow: scroll;
+        width: 63rem;
         & .article-nav {
             @media (min-width: $r_minmob) {
                 display: none;
@@ -1240,6 +1262,25 @@ footer {
             & li > ul {
                 border-left: 1px solid $line;
             }
+        }
+        &::-webkit-scrollbar {
+            width: 1rem;
+            background-color: $light;
+            @media (min-width: $r_tab) {
+                width: 1.4rem;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 1rem;
+            background-color: rgba($accent, .8);
+            transition: .2s;
+            &:hover {
+                background-color: rgba($accent, 1);
+            }
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: 1rem;
+            background-color: transparent;
         }
     }
     &__categories {
@@ -1468,6 +1509,9 @@ footer {
     @media (min-width: $r_desk) {
         padding: 3rem 3rem 2rem;
         display: flex;
+    }
+    @media (min-width: $r_desk_1150) {
+        display: block;
     }
     @media (min-width: $r_desk_fhd) {
         padding: 3rem 3rem 0;
@@ -1809,7 +1853,7 @@ footer {
         @media (min-width: $r_desk) {
             display: block;
         }
-        @media (min-width: $r_desk_1150) {
+        @media (min-width: $r_desk_full_over) {
             display: flex;
         }
     }
