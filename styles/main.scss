@@ -132,7 +132,7 @@ header {
         height: 40px;
         display: block;
         padding-left: 1.5rem;
-        padding-top: 3rem;
+        padding-top: 2.5rem;
         @media (min-width: $r_desk) {
             width: 270px;
             height: 52px;
@@ -150,6 +150,9 @@ header {
     justify-content: space-between;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    @media (min-width: $r_desk) {
+        padding: 1.5rem 0;
+    }
     @media (min-width: $r_desk_1150) {
         padding-top: 2.65rem;
         padding-bottom: 2.4rem;
@@ -340,18 +343,12 @@ header {
 main {
     & .page {
         height: 100%;
-        & button {
-            margin: 1.5rem auto 0;
-        }
     }
     margin: 3rem auto 0 auto;
     @media (min-width: $r_mob_360) {
         margin: 5rem auto 0 auto;
     }
     @media (min-width: $r_desk) {
-        margin: 9.5rem auto 0 auto;
-    }
-    @media (min-width: $r_desk_hd) {
         margin: 10rem auto 0 auto;
     }
 }
@@ -378,6 +375,7 @@ main {
     @media (min-width: $r_desk_1150) {
         display: flex;
         gap: 6.7rem;
+        justify-content: space-between;
     }
     @media (min-width: $r_desk_wxga) {
         gap: 9.7rem;
@@ -479,7 +477,7 @@ main {
         padding: 3rem 0 2.5rem;
         margin: 3rem 0 9rem;
     }
-    @media (min-width: $r_desk_1150) {
+    @media (min-width: $r_desk_wxga_xxl) {
         display: none;
     }
     &__title {
@@ -532,17 +530,19 @@ main {
 }
 
 .article {
-    @media (min-width: $r_desk_wxga) {
+    @media (min-width: $r_desk_wxga_xxl) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
-        margin-bottom: 3rem;
     }
     &__item {
-    padding-bottom: 2rem;
-    margin-bottom: 2.7rem;
-    border: 1px solid $line;
-    box-sizing: border-box;
+        padding-bottom: 2rem;
+        margin-bottom: 3rem;
+        border: 1px solid $line;
+        box-sizing: border-box;
+        &:last-child {
+            margin-bottom: 0;
+        }
         @media (min-width: $r_desk) {
             margin-bottom: 3.1rem;
         }
@@ -556,6 +556,9 @@ main {
         width: 100%;
         height: 50vw;
         margin-bottom: 3rem;
+        @media (min-width: $r_mob_360) {
+            height: 52vw;
+        }
         @media (min-width: $r_desk) {
             height: 447px;
         }
@@ -593,10 +596,11 @@ main {
         font-family: $font-jet;
         color: $accent;
         font-size: 1.6rem;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         text-decoration: none;
         @media (min-width: $r_tab) {
             font-size: 1.8rem;
+            margin-left: 1rem;
         }
     }
     &__title {
@@ -618,7 +622,7 @@ main {
         }
     }
     &__info {
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_desk_full) {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -631,7 +635,7 @@ main {
         color: $light-text;
         font-size: 1.35rem;
         gap: 1rem;
-        margin-top: 1.9rem;
+        margin-top: 1.5rem;
         @media (min-width: $r_mob_360) {
             font-size: 1.6rem;
             gap: 2rem;
@@ -743,7 +747,7 @@ main {
     border: 1px solid $accent;
     background-color: rgba($accent, .05);
     padding: 3rem 1.5rem;
-    margin-bottom: 3rem;
+    margin: 3rem 0;
     @media (min-width: $r_desk) {
         padding: 3rem;
     }
@@ -824,6 +828,7 @@ main {
     }
     &._footer {
         padding: 5rem 3rem;
+        margin-top: 0;
         margin-bottom: 0;
         @media (min-width: $r_desk_fhd) {
             margin-right: 5.5rem;
@@ -850,11 +855,15 @@ main {
             @media (min-width: $r_desk) {
                 font-size: 1.8rem;
             }
+            @media (min-width: $r_desk_wxga_xxl) {
+                margin-bottom: 2.1rem;
+            }
         }
         & .button {
             margin-top: 2.3rem;
             @media (min-width: $r_desk) {
                 max-width: 341px;
+                margin-top: 0;
             }
             @media (min-width: $r_desk_fhd) {
                 max-width: 100%;
@@ -879,6 +888,9 @@ main {
     width: 100%;
     padding: 1.7rem;
     margin-top: 1.5rem;
+    &.loadmore {
+        margin: 3rem auto 0;
+    }
     @media (min-width: $r_desk) {
         max-width: 314px;
         margin: 0;
@@ -936,16 +948,18 @@ main {
 /* Footer */
 
 footer {
-    margin-top: 4.7rem;
+    margin-top: 5rem;
     @media (min-width: $r_desk) {
-        margin-top: 11rem;
+        margin-top: 9.5rem;
+    }
+    @media (min-width: $r_desk_full) {
+        margin-top: 10rem;
     }
 }
 
 .footer {
     border: 1px solid $line;
     border-top: none;
-    padding-top: 2.4rem;
     @media (min-width: $r_desk) {
         padding-top: 1.2rem;
     }
@@ -978,13 +992,13 @@ footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0rem 2rem 1rem 2rem;
+            padding: 1.5rem 2rem 1rem 2rem;
         }
     }
     &__menu {
         border-top: 1px solid $line;
         border-bottom: 1px solid $line;
-        padding: .9rem 1.5rem;
+        padding: 1rem 1.5rem;
         @media (min-width: $r_tab) {
             display: flex;
             justify-content: space-between;
@@ -1122,7 +1136,7 @@ footer {
     }
     &._desk {
         display: grid;
-        grid-template-columns: 1fr 50.5rem;
+        grid-template-columns: 1fr 51rem;
         border-top: 1px solid $line;
         @media (max-width: $r_desk_fhd) {
             display: none;
@@ -1153,14 +1167,18 @@ footer {
         padding: 1rem;
         border: 1px solid $dark;
         transition: .2s;
+        @media (min-width: $r_mob_360) {
+            padding: 0.85rem 1.9rem;
+        }
         @media (min-width: $r_tab) {
             padding: .8rem;
         }
         @media (min-width: $r_desk) {
             padding: 1rem;
         }
-        @media (min-width: $r_desk_fhd) {
-            padding: 1.5rem 3rem;
+        @media (min-width: $r_desk_wxga) {
+            font-size: 2.4rem;
+            padding: 1.4rem 3rem;
         }
         &:hover {
             color: $light;
@@ -1179,6 +1197,33 @@ footer {
 
 .swiper-wrapper {
     display: flex;
+    @media (min-width: $r_desk_wxga) {
+        gap: 1rem;
+    }
+}
+
+.category {
+    & .title {
+        @media (min-width: $r_desk) {
+            font-size: 4.8rem;
+        }
+        @media (min-width: $r_desk_wxga) {
+            font-size: 6.4rem;
+        }
+    }
+    & .article__info {
+        @media (min-width: $r_desk) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @media (min-width: $r_desk_wxga) {
+            display: block;
+        }
+        @media (min-width: $r_desk_full) {
+            display: flex;
+        }
+    }
 }
 
 /* Search */
@@ -1216,20 +1261,17 @@ footer {
         @media (min-width: $r_desk_1150) {
             width: 72.5vw;
         }
-        @media (min-width: $r_desk_fhd) {
+        @media (min-width: $r_desk_wxga_xxl) {
             width: 76.5vw;
-        }
-        @media (min-width: $r_desk_full) {
-            width: 77.5vw;
         }
     }
     & .article {
-        @media (min-width: $r_desk_wxga) {
+        @media (min-width: $r_desk_wxga_xxl) {
             display: block;
         }
     }
     &__sticky {
-        @media (min-width: $r_desk_1150) {
+        @media (min-width: $r_desk_wxga_xxl) {
             display: flex;
             gap: 7rem;
             padding: 5rem 3rem 0 3rem;
@@ -1238,21 +1280,29 @@ footer {
         }
     }
     &__scroll {
-        flex-basis: fit-content;
+        flex-basis: 117%;
     }
     &__nav {
-        align-self: flex-start;
-        position: sticky;
-        top: 1.5rem;
-        padding-bottom: 5rem;
-        max-height: 35rem;
-        overflow: scroll;
-        width: 63rem;
+        @media (min-width: $r_desk_wxga_xxl) {
+            align-self: flex-start;
+            position: sticky;
+            top: 1.5rem;
+            padding-bottom: 5rem;
+            max-height: 35rem;
+            overflow-y: scroll;
+            width: 77.5rem;
+        }
+        @media (min-width: $r_desk_full) {
+            width: 74rem;
+        }
+        @media (min-width: $r_desk_fhd) {
+            width: 63rem;
+        }
         & .article-nav {
             @media (min-width: $r_minmob) {
                 display: none;
             }
-            @media (min-width: $r_desk_1150) {
+            @media (min-width: $r_desk_wxga_xxl) {
                 display: block;
                 margin: 0;
                 padding: 0;
@@ -1285,11 +1335,8 @@ footer {
     }
     &__categories {
         display: flex;
-        justify-content: space-between;
-        @media (min-width: $r_tab) {
-            justify-content: flex-start;
-            gap: 1rem;
-        }
+        justify-content: flex-start;
+        gap: 1rem;
     }
     &__body {
         & p {
@@ -1420,9 +1467,10 @@ footer {
         margin: 5rem 0;
         @media (min-width: $r_desk_1150) {
             height: 25vw;
+            margin: 4rem 0 5rem;
         }
         @media (min-width: $r_desk_fhd) {
-            height: 29.75vw;
+            height: 30vw;
         }
     }
     & .title {
@@ -1435,12 +1483,15 @@ footer {
     }
     & .article__about {
         padding: 0;
-        margin: 5rem 0;
+        margin: 5rem 0 4rem;
     }
     & .article__info {
         margin-top: 3rem;
         @media (min-width: $r_desk) {
             align-items: end;
+        }
+        @media (min-width: $r_desk_wxga) {
+            align-items: center;
         }
     }
     & .author__name {
@@ -1513,7 +1564,8 @@ footer {
     @media (min-width: $r_desk_1150) {
         display: block;
     }
-    @media (min-width: $r_desk_fhd) {
+    @media (min-width: $r_desk_wxga) {
+        display: flex;
         padding: 3rem 3rem 0;
     }
     &__title {
@@ -1608,7 +1660,7 @@ footer {
 .comments-form {
     border: 1px solid $line;
     padding: 2rem;
-    margin-bottom: 5rem;
+    margin: 7rem 0 5rem;
     @media (min-width: $r_desk) {
         padding: 3rem;
         margin: 9rem 0;
@@ -1659,6 +1711,8 @@ footer {
         }
     }
     & .button {
+        text-align: center;
+        margin-top: 0;
         @media (min-width: $r_desk) {
             width: 30.7rem;
         }
@@ -1703,7 +1757,7 @@ footer {
             margin-bottom: 2.1rem;
             @media (min-width: $r_desk_1150) {
                 font-size: 2.6rem;
-                margin-top: 2rem;
+                margin-top: 1.5rem;
             }
         }
         &.answer {
@@ -1850,7 +1904,7 @@ footer {
         }
     }
     & .article__info {
-        @media (min-width: $r_desk) {
+        @media (min-width: $r_desk_full) {
             display: block;
         }
         @media (min-width: $r_desk_full_over) {
@@ -1893,14 +1947,14 @@ footer {
         padding: 10rem 5rem;
         border-left: 1px solid $line;
         max-width: 27.5rem;
-        margin-left: auto;
+        margin-left: 72.5%;
     }
     &__nav {
         padding-left: 0;
         list-style-type: none;
         font-size: 2.4rem;
         margin-top: 0;
-        margin-bottom: 5rem;
+        margin-bottom: 4.5rem;
         & li > a {
             text-decoration: none;
             color: $dark;
