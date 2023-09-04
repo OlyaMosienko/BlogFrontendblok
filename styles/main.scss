@@ -5,6 +5,10 @@ $light: #FFFFFF;
 $accent: #12C0DD;
 $line: #EDEDED;
 $light-text: #95A3B1;
+$motivation: #D912DD;
+$tech: #F12509;
+$career: #12DD3F;
+$calendar: #126FDD;
 
 $font-fira: 'Fira Sans', sans-serif;
 $font-jet: 'JetBrains Mono', sans-serif;
@@ -588,6 +592,15 @@ main {
         letter-spacing: .05rem;
         text-decoration: none;
         color: $dark;
+        &._code {
+            border: 1px solid $accent;
+        }
+        &._motivation {
+            border: 1px solid $motivation;
+        }
+        &._tech {
+            border: 1px solid $tech;
+        }
         @media (min-width: $r_desk) {
             letter-spacing: .08rem;
         }
@@ -1193,12 +1206,11 @@ footer {
             margin-right: 1rem !important;
         }
     }
-}
-
-.swiper-wrapper {
-    display: flex;
-    @media (min-width: $r_desk_wxga) {
-        gap: 1rem;
+    & .swiper-wrapper {
+        display: flex;
+        @media (min-width: $r_desk_wxga) {
+            gap: 1rem;
+        }
     }
 }
 
@@ -1296,7 +1308,7 @@ footer {
             width: 74rem;
         }
         @media (min-width: $r_desk_fhd) {
-            width: 63rem;
+            width: 66.5rem;
         }
         & .article-nav {
             @media (min-width: $r_minmob) {
@@ -1894,7 +1906,7 @@ footer {
         transform: rotate(180deg);
     }
     & .swiper-wrapper {
-        max-height: 94rem;
+        max-height: 259vw;
     }
     &__item {
         height: auto;

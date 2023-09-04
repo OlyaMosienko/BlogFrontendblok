@@ -13,7 +13,7 @@
     //this.speed = 0.5;
 //}
 
-// Создаем div элемент для кастомного курсора
+//Создаем div элемент для кастомного курсора
 var cursor = document.createElement("div");
 cursor.className = "custom-cursor";
 document.body.appendChild(cursor);
@@ -39,3 +39,16 @@ elementsWithCustomCursor.forEach(function(element) {
     cursor.style.display = "block";
   });
 });
+
+
+// var box = document.getElementById('box');
+
+// document.addEventListener('mousemove', function(event) {
+//   var mouseX = event.clientX;
+//   var mouseY = event.clientY;
+  
+//   var offsetX = (mouseX / window.innerWidth) * 20 - 10; // Определяем смещение по оси X в диапазоне от -10 до 10
+//   var offsetY = (mouseY / window.innerHeight) * 20 - 10; // Определяем смещение по оси Y в диапазоне от -10 до 10
+  
+//   box.style.boxShadow = offsetX + 'px ' + offsetY + 'px 10px rgba(0, 0, 0, 0.5)';
+// });
