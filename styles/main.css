@@ -3,9 +3,6 @@
   html {
     font-size: 10px;
   }
-  html._opened-menu, html._opened-modal {
-    overflow: hidden;
-  }
 }
 @media (min-width: 1200px) {
   html {
@@ -20,6 +17,9 @@
     overflow-y: scroll;
     background: #FFFFFF;
     margin: 0;
+  }
+  body._opened-menu {
+    overflow-y: hidden;
   }
   body::-webkit-scrollbar {
     width: 1rem;
@@ -55,9 +55,6 @@
   body.compensate-for-scrollbar {
     margin-right: 0 !important;
   }
-  ._opened-menu body, ._opened-modal body {
-    overflow: hidden;
-  }
   body *::-moz-selection {
     background: rgba(18, 192, 221, 0.3);
   }
@@ -72,6 +69,7 @@
   padding-left: 2rem;
   padding-right: 2rem;
   margin: 0 auto;
+  max-width: 1920px;
 }
 @media (min-width: 1770px) {
   .container {
@@ -261,6 +259,8 @@ header {
   transition-property: opacity, filter;
   transition-duration: 0.2s;
   transition-timing-function: linear;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 @media (min-width: 360px) {
   .burger-btn {
@@ -270,8 +270,13 @@ header {
 .burger-btn__block {
   display: inline-block;
   position: relative;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 100%;
+  height: 0.3rem;
+}
+@media (min-width: 360px) {
+  .burger-btn__block {
+    height: 0.2rem;
+  }
 }
 .burger-btn__inner {
   top: 50%;
@@ -329,6 +334,7 @@ header {
   padding: 1.5rem 1.5rem;
   border: 1px solid rgb(237, 237, 237);
   width: 100%;
+  transition: 0.2s;
 }
 .search-area__input::-moz-placeholder {
   color: #95A3B1;
@@ -726,9 +732,22 @@ main .page {
 .article__link {
   color: #12C0DD;
   transition: 0.2s;
-}
-.article__link:hover {
   text-decoration: none;
+  position: relative;
+}
+.article__link::after {
+  display: block;
+  content: "";
+  background-color: #12C0DD;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0.5px;
+  transition: 0.2s;
+}
+.article__link:hover::after {
+  display: none;
 }
 .article__comment {
   display: flex;
@@ -884,6 +903,7 @@ main .page {
   padding: 2rem 1.4rem;
   border: 1px solid rgb(237, 237, 237);
   width: 100%;
+  transition: 0.2s;
 }
 @media (min-width: 1000px) {
   .subscribe__input {
@@ -1355,7 +1375,7 @@ footer {
   background-color: #12C0DD;
   border: 1px solid #12C0DD;
 }
-.tag-swiper__link:active, .tag-swiper__link.active {
+.tag-swiper__link.active {
   color: #FFFFFF;
   background-color: #12C0DD;
   border: 1px solid #12C0DD;
@@ -1535,9 +1555,22 @@ footer {
 .post__body a {
   color: #12C0DD;
   transition: 0.2s;
-}
-.post__body a:hover {
   text-decoration: none;
+  position: relative;
+}
+.post__body a::after {
+  display: block;
+  content: "";
+  background-color: #12C0DD;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0.5px;
+  transition: 0.2s;
+}
+.post__body a:hover::after {
+  display: none;
 }
 .post__body figure {
   margin: 0 auto;
@@ -1560,9 +1593,11 @@ footer {
   margin-top: 0;
 }
 .post__body ul > li, .post__body ol > li {
-  position: relative;
-  padding-left: 2.3rem;
+  padding-left: 0;
   line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
 }
 .post__body ul > li::before {
   content: "";
@@ -1571,9 +1606,6 @@ footer {
   height: 1rem;
   border-radius: 100%;
   background-color: #12C0DD;
-  position: absolute;
-  top: 0.9rem;
-  left: 0;
 }
 @media (min-width: 1770px) {
   .post__body ul > li::before {
@@ -1591,9 +1623,6 @@ footer {
   font-size: 1.8rem;
   line-height: 1.2;
   font-weight: 700;
-  position: absolute;
-  top: 4px;
-  left: 0;
 }
 @media (min-width: 1770px) {
   .post__body ol > li::before {
@@ -1856,6 +1885,7 @@ footer {
 }
 .socials__list a svg {
   fill: #2A2F36;
+  transition: fill 0.2s;
 }
 .socials__list a:hover {
   text-decoration: none;
@@ -1916,6 +1946,7 @@ footer {
   box-sizing: border-box;
   border: 1px solid #EDEDED;
   margin-bottom: 2rem;
+  transition: 0.2s;
 }
 @media (min-width: 1000px) {
   .comments-form__textarea, .comments-form__input {
@@ -2177,13 +2208,13 @@ footer {
   right: -100%;
   width: 100%;
   opacity: 0;
-  box-shadow: none;
   transition: all 0.5s cubic-bezier(0.6, 0.05, 0.28, 0.91);
 }
 .overlay.active {
   right: 0;
+  height: 100vh;
   opacity: 1;
-  box-shadow: 0 0.9rem 1.9rem rgba(42, 47, 54, 0.2);
+  overflow-y: hidden;
 }
 .overlay._search {
   top: 0;
@@ -2266,6 +2297,7 @@ footer {
   background-color: rgba(18, 192, 221, 0.05);
   padding: 3rem;
   margin: auto 0;
+  max-width: 1230px;
 }
 @media (min-width: 768px) {
   .error {
