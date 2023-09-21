@@ -1417,11 +1417,9 @@ footer {
             margin-top: 0;
         }
         & ul > li, ol > li {
-            padding-left: 0;
+            padding-left: 2.45rem;
             line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 1.4rem;
+            position: relative;
         }
         & ul > li::before {
             content: '';
@@ -1430,9 +1428,14 @@ footer {
             height: 1rem;
             border-radius: 100%;
             background-color: $accent;
+            position: absolute;
+            top: .9rem;
+            left: 0;
+            @media (min-width: $r_desk_1150) {
+                top: 1.35rem;
+            }
             @media (min-width: $r_desk_fhd) {
                 top: 1.5rem;
-                left: -2px;
             }
         }
         & ol {
@@ -1445,9 +1448,11 @@ footer {
             font-size: 1.8rem;
             line-height: 1.2;
             font-weight: 700;
-            @media (min-width: $r_desk_fhd) {
+            position: absolute;
+            top: .4rem;
+            left: 0;
+            @media (min-width: $r_desk_1150) {
                 top: 1rem;
-                left: -2px;
             }
         }
         & blockquote {
@@ -1965,7 +1970,7 @@ footer {
 .overlay {
     position: absolute;
     background-color: $light;
-    top: 9.1rem;
+    top: 9.4rem;
     right: -100%;
     width: 100%;
     opacity: 0;
@@ -1978,6 +1983,7 @@ footer {
     }
     &._search {
         top: 0;
+        height: inherit;
     }
     @media (min-width: $r_desk_1150) {
         display: none;
