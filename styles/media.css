@@ -404,6 +404,12 @@
     }
 }
 
+@media (max-width: 1150px) {
+    .menu {
+        display: none;
+    }
+}
+
 @media (min-width: 1150px) {
     .header {
       padding-top: 2.65rem;
