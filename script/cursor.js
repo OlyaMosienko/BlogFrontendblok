@@ -14,21 +14,21 @@
 //}
 
 //Создаем div элемент для кастомного курсора
-var cursor = document.createElement("div");
+let cursor = document.createElement("div");
 cursor.className = "custom-cursor";
 document.body.appendChild(cursor);
 
 // Перемещаем кастомный курсор вместе с мышью
 document.addEventListener("mousemove", function(event) {
-  var x = event.clientX;
-  var y = event.clientY;
+  let x = event.clientX;
+  let y = event.clientY;
   cursor.style.left = x + "px";
   cursor.style.top = y + "px";
   this.speed = 0.5;
 });
 
 // Скрытие стандартного курсора при наведении на элементы
-var elementsWithCustomCursor = document.querySelectorAll(".custom-cursor-element");
+let elementsWithCustomCursor = document.querySelectorAll(".custom-cursor-element");
 
 elementsWithCustomCursor.forEach(function(element) {
   element.addEventListener("mouseenter", function() {
