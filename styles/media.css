@@ -143,6 +143,10 @@
         font-size: 1.8rem;
         margin-left: 1rem;
     }
+    .advice {
+        display: flex;
+        padding: 3rem 3rem 0;
+    }
     .footer__head {
         display: flex;
         justify-content: space-between;
@@ -395,16 +399,10 @@
     }
 }
 
-@media (max-width: 1151px) {
+@media (max-width: 1150px) {
     .header__items._desc {
         display: none;
     }
-    .menu {
-        display: none;
-    }
-}
-
-@media (max-width: 1150px) {
     .menu {
         display: none;
     }
@@ -565,10 +563,6 @@
     .main-article .article__info {
         align-items: center;
     }
-    .advice {
-        display: flex;
-        padding: 3rem 3rem 0;
-    }
 }
 
 @media (min-width: 1500px) {
@@ -657,28 +651,38 @@
     }
 }
 
-@media (max-width: 1770px) {
-    .footer._desk {
-      display: none;
-    }
-}
-
 @media (min-width: 1770px) {
     .container {
         padding-left: 7.5rem;
         padding-right: 6rem;
     }
-    .logo._footer {
-        padding: 4.7rem 0 5rem 7.5rem;
-    }
     .menu__categories li {
         margin-top: -1px;
+    }
+    footer {
+        border-top: 1px solid #EDEDED;
+    }
+    footer .container {
+        padding: 0;
+    }
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 33rem;
+        grid-template-areas:
+            "footer__logo footer__socials"
+            "footer__menu footer__subscribe"
+            "footer__rules footer__dataset";
+    }
+    .logo._footer {
+        padding: 4.7rem 0 5rem 7.5rem;
+        grid-area: footer__logo;
     }
     .subscribe._footer {
         margin-right: 5.5rem;
         padding: 5rem 3rem 2rem;
         z-index: 1;
         text-align: center;
+        grid-area: footer__subscribe;
     }
     .subscribe._footer .subscribe__area {
         display: flex;
@@ -692,9 +696,6 @@
     .subscribe._footer .button {
         max-width: 100%;
     }
-    .footer {
-        padding: 0;
-    }
     .footer__socials {
         margin: 0 0 -1px 0;
         border-left: 1px solid #EDEDED;
@@ -702,19 +703,19 @@
         align-items: center;
         justify-content: center;
         padding-right: 7.5rem;
+        grid-area: footer__socials;
     }
     .footer__menu {
         padding: 3rem 2rem 3rem 7.5rem;
+        grid-area: footer__menu;
     }
     .footer__courses .footer__list {
-        gap: 0 6.7rem;
+        display: block;
+        column-count: 2;
+        column-gap: 4rem;
     }
     .footer__title {
         margin-bottom: 5rem;
-    }
-    .footer__list {
-        display: grid;
-        grid-template-columns: 25rem 1fr;
     }
     .footer__bottom {
         padding-top: 0;
@@ -726,6 +727,7 @@
         align-items: center;
         padding: 3.2rem 0 5rem 7.5rem;
         gap: 9.8vw;
+        grid-area: footer__rules;
     }
     .footer__rules a {
         margin-top: 0;
@@ -739,12 +741,10 @@
         margin-top: -1px;
         border-top: 1px solid #EDEDED;
         border-left: 1px solid #EDEDED;
+        grid-area: footer__dataset;
     }
     .footer__dataset span {
         padding: 0;
-    }
-    .footer._main {
-        display: none;
     }
     .post__nav {
         width: 66.5rem;

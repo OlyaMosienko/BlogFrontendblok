@@ -93,16 +93,21 @@ header {
 }
 .header__link {
   font-size: 2.4rem;
-  color: #2A2F36;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+.header__link span, .header__link .fill {
+  transition: .2s;
+}
+.header__link span {
+  color: #2A2F36;
+}
 .header__link .fill {
   stroke: #2A2F36;
 }
-.header__link:hover {
+.header__link span:hover {
   color: #12C0DD;
 }
 .header__link:hover .fill {
@@ -738,12 +743,6 @@ footer {
   padding-bottom: 2rem;
 }
 
-.footer._desk {
-  display: grid;
-  grid-template-columns: 1fr 51rem;
-  border-top: 1px solid #EDEDED;
-}
-
 /* Tag and Category */
 .tag__list {
   list-style-type: none;
@@ -1003,6 +1002,11 @@ footer {
   margin: 3rem 0;
 }
 
+.advice img {
+  width: 22.3rem;
+  height: auto;
+}
+
 .socials {
   border: 1px solid #12C0DD;
   background-color: rgba(18, 192, 221, 0.05);
@@ -1236,14 +1240,10 @@ footer {
 .recommend-swiper__next::before {
   transform: rotate(180deg);
 }
-.recommend-swiper .swiper-wrapper {
-  max-height: 259vw;
-}
 .recommend-swiper__item {
   height: auto;
   flex-basis: 100%;
 }
-
 
 .swiper-button-next:after, .swiper-button-prev:after {
   display: none;

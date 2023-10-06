@@ -12,23 +12,15 @@ var swiper = new Swiper(".tagSwiper", {
 // Post Swiper
 
 var swiper = new Swiper(".recommend-swiper", {
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 30,
-  direction: getDirection(),
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      on: {
-        resize: function () {
-          swiper.changeDirection(getDirection());
-        },
-      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        }
+      }
 });
-
-function getDirection() {
-  var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 767 ? 'vertical' : 'horizontal';
-
-  return direction;
-};
