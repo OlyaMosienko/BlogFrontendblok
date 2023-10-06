@@ -147,17 +147,32 @@
         display: flex;
         padding: 3rem 3rem 0;
     }
-    .footer__head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem 2rem 1rem 2rem;
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "footer__subscribe footer__subscribe"
+            "footer__logo footer__socials"
+            "footer__menu footer__menu"
+            "footer__rules footer__dataset";
+    }
+    .subscribe._footer {
+        grid-area: footer__subscribe;
+    }
+    .logo._footer {
+        grid-area: footer__logo;
+        padding-top: 2rem;
+    }
+    .footer__socials {
+        grid-area: footer__socials;
+        justify-content: flex-end;
     }
     .footer__menu {
         display: flex;
         justify-content: space-between;
         padding: 3rem 2rem 5rem 2rem;
         gap: 1%;
+        grid-area: footer__menu;
     }
     .footer__courses {
         flex-basis: 50%;
@@ -169,21 +184,16 @@
     .footer__title {
         margin-bottom: 2rem;
     }
-    .footer__bottom {
-        display: flex;
-        padding-top: 0.5rem;
-        letter-spacing: 0.96px;
-    }
     .footer__rules {
-        flex-basis: 50%;
         padding: 3rem;
+        grid-area: footer__rules;
     }
     .footer__rules span {
         display: inline-block;
     }
     .footer__dataset {
-        flex-basis: 50%;
         padding: 5rem 3rem;
+        grid-area: footer__dataset;
     }
     .tag__list {
         margin: 0 -1rem 0 0;
@@ -244,7 +254,7 @@
     .logo._footer {
         width: 270px;
         height: 52px;
-        padding: 0;
+        padding: 2.8rem 0 3rem 2rem;
     }
     .header {
         padding: 1.5rem 0;
@@ -330,7 +340,16 @@
     }
     .footer__socials {
         gap: 3rem;
-        padding: 0;
+        padding-right: 2.1rem;
+        padding-left: 0;
+        margin-top: 3.9rem;
+        margin-bottom: 3.7rem;
+    }
+    .footer__rules, .footer__dataset {
+        font-size: 1.6rem;
+    }
+    .footer__rules br {
+        display: none;
     }
     .footer__item {
         letter-spacing: 0.96px;
@@ -666,8 +685,9 @@
         padding: 0;
     }
     .footer {
+        padding-top: 0;
         display: grid;
-        grid-template-columns: 1fr 33rem;
+        grid-template-columns: 1fr 51rem;
         grid-template-areas:
             "footer__logo footer__socials"
             "footer__menu footer__subscribe"
@@ -675,14 +695,12 @@
     }
     .logo._footer {
         padding: 4.7rem 0 5rem 7.5rem;
-        grid-area: footer__logo;
     }
     .subscribe._footer {
         margin-right: 5.5rem;
         padding: 5rem 3rem 2rem;
         z-index: 1;
         text-align: center;
-        grid-area: footer__subscribe;
     }
     .subscribe._footer .subscribe__area {
         display: flex;
@@ -702,23 +720,17 @@
         border-bottom: 1px solid #EDEDED;
         align-items: center;
         justify-content: center;
-        padding-right: 7.5rem;
-        grid-area: footer__socials;
+        padding-right: 6.5rem;
     }
     .footer__menu {
-        padding: 3rem 2rem 3rem 7.5rem;
-        grid-area: footer__menu;
+        padding: 3rem 2rem 4rem 7.5rem;
     }
-    .footer__courses .footer__list {
-        display: block;
+    .footer__list {
         column-count: 2;
-        column-gap: 4rem;
+        column-gap: 0;
     }
     .footer__title {
         margin-bottom: 5rem;
-    }
-    .footer__bottom {
-        padding-top: 0;
     }
     .footer__rules {
         font-size: 1.6rem;
@@ -726,8 +738,7 @@
         display: flex;
         align-items: center;
         padding: 3.2rem 0 5rem 7.5rem;
-        gap: 9.8vw;
-        grid-area: footer__rules;
+        gap: 10vw;
     }
     .footer__rules a {
         margin-top: 0;
@@ -736,12 +747,11 @@
         font-size: 1.6rem;
         display: flex;
         align-items: center;
-        gap: 2.5vw;
-        padding: 3.2rem 5.5rem 5rem 4rem;
+        gap: 2.6vw;
+        padding: 3.2rem 5.5rem 5rem 3.75rem;
         margin-top: -1px;
         border-top: 1px solid #EDEDED;
         border-left: 1px solid #EDEDED;
-        grid-area: footer__dataset;
     }
     .footer__dataset span {
         padding: 0;

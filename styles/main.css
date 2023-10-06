@@ -43,7 +43,7 @@ header {
   height: 40px;
   display: block;
   padding-left: 1.5rem;
-  padding-top: 2.5rem;
+  padding-top: 3rem;
 }
 
 .header {
@@ -623,43 +623,56 @@ main .page {
   display: block;
   width: 2.8rem;
   height: 2.8rem;
+  text-decoration: none;
+  font-size: 0;
+  position: relative;
+}
+
+.social::before {
+  position: absolute;
+  content: '';
   -webkit-mask: center center/100% no-repeat;
           mask: center center/100% no-repeat;
   text-decoration: none;
   background: #2A2F36;
   transition: background-color 0.2s;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.social._yt {
+.social._yt::before {
   -webkit-mask-image: url(/img/yt.svg);
           mask-image: url(/img/yt.svg);
   background-size: 2.6rem;
 }
-.social._yt:hover {
+.social._yt:hover::before {
   background: #F12509;
 }
-.social._vk {
+.social._vk::before {
   -webkit-mask-image: url(/img/vk.svg);
           mask-image: url(/img/vk.svg);
   background-size: 2.8rem;
 }
-.social._vk:hover {
+.social._vk:hover::before {
   background: #0077FF;
 }
-.social._tg {
+.social._tg::before {
   -webkit-mask-image: url(/img/tg.svg);
           mask-image: url(/img/tg.svg);
   background-size: 2.45rem;
 }
-.social._tg:hover {
+.social._tg:hover::before {
   background: #12C0DD;
 }
-.social._ig {
+.social._ig::before {
   -webkit-mask-image: url(/img/ig.svg);
           mask-image: url(/img/ig.svg);
   background-size: 2.63rem;
 }
-.social._ig:hover {
+.social._ig:hover::before {
   background: fuchsia;
 }
 
@@ -678,7 +691,7 @@ footer {
   justify-content: start;
   gap: 2.75rem;
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.7rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
