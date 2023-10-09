@@ -828,6 +828,7 @@ footer {
 .post__body p {
   line-height: 1.5;
   margin: 3.1rem 0;
+  font-size: 1.8rem;
 }
 
 .post__body a {
@@ -858,6 +859,7 @@ footer {
   width: 100%;
 }
 .post__body ul, .post__body ol {
+  font-size: 1.8rem;
   padding-left: 0;
   list-style-type: none;
   margin: 3rem 0;
@@ -903,7 +905,7 @@ footer {
   border-left: 1px solid #12C0DD;
   display: flex;
   gap: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .post__body blockquote::before {
@@ -969,24 +971,29 @@ footer {
   gap: 2rem;
   font-size: 2rem;
 }
-.main-article h2, .main-article h3, .main-article h4 {
+.main-article h3, .main-article h4, .main-article h5, .main-article h6 {
   font-family: "JetBrains Mono", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.06rem;
 }
-.main-article h2 {
-  font-size: 2.4rem;
-  margin: 4.75rem 0 0;
-}
-
 .main-article h3 {
-  font-size: 2rem;
-  margin: 3.1rem 0 0;
+  font-size: 2.4rem;
+  margin: 5.1rem 0 0;
 }
 
 .main-article h4 {
+  font-size: 2rem;
+  margin: 3.45rem 0 0;
+}
+
+.main-article h5 {
   font-size: 1.8rem;
   margin: 3.5rem 0 0;
+}
+
+.main-article h6 {
+  font-size: 1.6rem;
+  margin: 3.35rem 0 0;
 }
 
 .student {
