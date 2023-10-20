@@ -1,0 +1,122 @@
+<?php get_header() ?>
+<main class="main">
+    <div class="container">
+        <div class="scroll-menu">
+            <div class="menu">
+                <ul class="menu__categories">
+                    <li><a href="category.html">Код</a></li>
+                    <li><a href="category.html">Карьера</a></li>
+                    <li><a href="category.html">Мотивация</a></li>
+                    <li><a href="category.html">Технологии</a></li>
+                    <li><a href="category.html">События</a></li>
+                </ul>
+            </div>
+            <div class="page">
+                <h1 class="title">Интернет-журнал<span>для фронтендеров и не только</span></h1>
+                <div class="article">
+                    <?php
+                        $args = array(
+                            'numberposts' => 4,
+                            'offset' => 0,
+                        );
+                        $result = wp_get_recent_posts( $args );
+
+                        foreach( $result as $p ){
+                            $thumbnail = get_the_post_thumbnail($p['ID'], 'large');
+                            ?>
+                            <article class="article__item">
+                                <div class="article__thumb">
+                                    <a href="<?php echo get_permalink($p['ID']) ?>">
+                                        <?php echo $thumbnail;?>
+                                    </a>
+                                </div>
+                                <div class="article__about">
+                                    <a href="category.html" class="article__category">Код</a>
+                                    <h3 class="article__title">
+                                        <a href="<?php echo get_permalink($p['ID']) ?>"><?php echo $p['post_title'] ?></a>
+                                    </h3>
+                                    <div class="article__info">
+                                        <div class="author">
+                                            <a href="#"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/author.png" alt="" class="author__img"></a>
+                                            <div class="author__info">
+                                                <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                                <span class="author__date">
+                                                    <?php 
+                                                        $date = date_i18n('j F, Y', strtotime($p['post_date']));
+                                                        echo $date;
+                                                    ?>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="article__footer">
+                                            <span class="article__views">850</span>
+                                            <span class="article__time">~25 мин</span>
+                                            <a href="<?php echo get_permalink($p['ID']) ?>" class="article__link">Читать далее</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                    <?php } ?>
+                </div>
+                <section class="subscribe">
+                    <div class="subscribe__box">
+                        <h2 class="subscribe__title">Получайте первыми свежие статьи прямо на вашу почту</h2>
+                        <div class="subscribe__area">
+                            <input type="email" placeholder="Ваш e-mail" class="subscribe__input">
+                            <button type="submit" class="button">подписаться</button>
+                        </div>
+                    </div>
+                    <div class="subscribe__agreement">
+                        <p>Нажимая на кнопку «подписаться», я&nbsp;даю согласие на <a href="https://annblok.ru/workshop" target="_blank">обработку персональных данных</a></p>
+                    </div>
+                </section>
+                <div class="article">
+                    <?php
+                        $args = array(
+                            'numberposts' => 2,
+                            'offset' => 4,
+                        );
+                        $result = wp_get_recent_posts( $args );
+
+                        foreach( $result as $p ){
+                            $thumbnail = get_the_post_thumbnail($p['ID'], 'large');
+                    ?>
+                    <article class="article__item">
+                        <div class="article__thumb">
+                            <a href="<?php echo get_permalink($p['ID']) ?>">
+                                <?php echo $thumbnail;?>
+                            </a>
+                        </div>
+                        <div class="article__about">
+                            <a href="category.html" class="article__category">Код</a>
+                            <h3 class="article__title">
+                                <a href="<?php echo get_permalink($p['ID']) ?>"><?php echo $p['post_title'] ?></a>
+                            </h3>
+                            <div class="article__info">
+                                <div class="author">
+                                    <a href="#"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/author.png" alt="" class="author__img"></a>
+                                    <div class="author__info">
+                                        <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                        <span class="author__date">
+                                            <?php 
+                                                $date = date_i18n('j F, Y', strtotime($p['post_date']));
+                                                echo $date;
+                                            ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="article__footer">
+                                    <span class="article__views">850</span>
+                                    <span class="article__time">~25 мин</span>
+                                    <a href="<?php echo get_permalink($p['ID']) ?>" class="article__link">Читать далее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<?php get_footer() ?>
