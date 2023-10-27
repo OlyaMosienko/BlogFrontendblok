@@ -568,6 +568,7 @@
     }
     .article__item {
         margin-bottom: 0;
+        max-width: 73rem;
     }
     .tag-swiper__link {
         font-size: 2.4rem;
@@ -680,6 +681,10 @@
     }
     .menu__categories li {
         margin-top: -1px;
+    }
+    .post__body blockquote::before {
+        flex-basis: 9rem;
+        background-size: cover;
     }
     footer {
         border-top: 1px solid #EDEDED;

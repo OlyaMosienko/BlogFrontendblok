@@ -361,7 +361,7 @@ main .page {
   margin-bottom: 3rem;
 }
 
-.article__img {
+.article__thumb a > img {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -647,32 +647,32 @@ main .page {
 }
 
 .social._yt::before {
-  -webkit-mask-image: url(/img/yt.svg);
-          mask-image: url(/img/yt.svg);
+  -webkit-mask-image: url(../img/yt.svg);
+          mask-image: url(../img/yt.svg);
   background-size: 2.6rem;
 }
 .social._yt:hover::before {
   background: #F12509;
 }
 .social._vk::before {
-  -webkit-mask-image: url(/img/vk.svg);
-          mask-image: url(/img/vk.svg);
+  -webkit-mask-image: url(../img/vk.svg);
+          mask-image: url(../img/vk.svg);
   background-size: 2.8rem;
 }
 .social._vk:hover::before {
   background: #0077FF;
 }
 .social._tg::before {
-  -webkit-mask-image: url(/img/tg.svg);
-          mask-image: url(/img/tg.svg);
+  -webkit-mask-image: url(../img/tg.svg);
+          mask-image: url(../img/tg.svg);
   background-size: 2.45rem;
 }
 .social._tg:hover::before {
   background: #12C0DD;
 }
 .social._ig::before {
-  -webkit-mask-image: url(/img/ig.svg);
-          mask-image: url(/img/ig.svg);
+  -webkit-mask-image: url(../img/ig.svg);
+          mask-image: url(../img/ig.svg);
   background-size: 2.63rem;
 }
 .social._ig:hover::before {
@@ -898,7 +898,7 @@ footer {
   line-height: 1.2;
   font-weight: 700;
   position: absolute;
-  top: 0.4rem;
+  top: 0.35rem;
   left: 0;
 }
 
@@ -943,6 +943,10 @@ footer {
   width: 100%;
   height: 50vw;
   margin: 5rem 0;
+}
+
+.main-article__thumb img {
+  width: inherit;
 }
 
 .main-article .title {
@@ -1000,7 +1004,8 @@ footer {
 }
 
 .main-article img {
-  max-width: 690px;
+  max-width: 100%;
+  height: auto;
 }
 
 .student {
