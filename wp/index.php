@@ -29,9 +29,9 @@
                                     </h3>
                                     <div class="article__info">
                                         <div class="author">
-                                            <a href="#"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/author.png" alt="" class="author__img"></a>
+                                            <a href="#"><?php echo get_avatar($author->ID, 56.8); ?></a>
                                             <div class="author__info">
-                                                <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                                <h4 class="author__name"><a href="#"><?php the_author_meta('display_name', $post->post_author); ?></a></h4>
                                                 <span class="author__date">
                                                     <?php 
                                                         $date = date_i18n('j F, Y', strtotime($p['post_date']));
@@ -86,9 +86,9 @@
                             </h3>
                             <div class="article__info">
                                 <div class="author">
-                                    <a href="#"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/author.png" alt="" class="author__img"></a>
+                                    <a href="#"><?php echo get_avatar($author->ID, 56.8); ?></a>
                                     <div class="author__info">
-                                        <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                        <h4 class="author__name"><a href="#"><?php the_author_meta('display_name', $post->post_author); ?></a></h4>
                                         <span class="author__date">
                                             <?php 
                                                 $date = date_i18n('j F, Y', strtotime($p['post_date']));

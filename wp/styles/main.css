@@ -511,6 +511,9 @@ main .page {
   align-items: center;
   gap: 1.5rem;
 }
+.author a > img {
+  border-radius: 100%;
+}
 .author__info {
   font-family: "Fira Sans", sans-serif;
 }

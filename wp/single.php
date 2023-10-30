@@ -33,9 +33,9 @@
                                     </div>
                                     <div class="article__info">
                                         <div class="author">
-                                            <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
+                                            <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
                                             <div class="author__info">
-                                                <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                                <h4 class="author__name"><a href="#"><?php the_author_meta('display_name', $post->post_author); ?></a></h4>
                                                 <span class="author__date"><?php echo get_the_date('j F Y'); ?></span>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@
                                             <div class="author">
                                                 <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
                                                 <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
+                                                    <h4 class="author__name"><a href="#"><?php the_author_meta('display_name'); ?></a></h4>
                                                     <span class="author__date"><?php echo get_the_date('j F Y'); ?></span>
                                                 </div>
                                             </div>
