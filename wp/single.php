@@ -3,15 +3,7 @@
 <main class="main">
     <div class="container">
         <div class="scroll-menu _post">
-            <div class="menu">
-                <ul class="menu__categories">
-                    <li><a href="category.html">Код</a></li>
-                    <li><a href="category.html">Карьера</a></li>
-                    <li><a href="category.html">Мотивация</a></li>
-                    <li><a href="category.html">Технологии</a></li>
-                    <li><a href="category.html">События</a></li>
-                </ul>
-            </div>
+            <?php get_sidebar(); ?>
             <div class="page post">
                 <div class="post__sticky">
                     <div class="post__scroll">
@@ -121,168 +113,47 @@
                         </div>
                         <div class="swiper recommend-swiper">
                             <div class="swiper-wrapper">
+                            <?php
+                                $query_args = array(
+                                    'post_per_page' => '2',
+                                    'paged' => get_query_var('paged') ?: 1,
+                                    'post__not_in' => array($post->ID)
+                                );
+                            ?>
+                            <?php wp_reset_query(); $query = new WP_Query($query_args); ?>
+                                <?php if($query->have_posts()) {
+                                    while($query->have_posts()) {
+                                        $query->the_post();
+                                ?>
                                 <div class="swiper-slide article__item recommend-swiper__item">
                                     <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <?php the_post_thumbnail( 'large' ); ?>
                                         </a>
                                     </div>
                                     <div class="article__about">
                                         <a href="category.html" class="article__category">Код</a>
                                         <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
+                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
                                         <div class="article__info">
                                             <div class="author">
                                                 <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
                                                 <div class="author__info">
                                                     <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
+                                                    <span class="author__date"><?php echo get_the_date('j F Y'); ?></span>
                                                 </div>
                                             </div>
                                             <div class="article__footer">
                                                 <span class="article__views">850</span>
                                                 <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
+                                                <a href="<?php the_permalink(); ?>" class="article__link">Читать далее</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide article__item recommend-swiper__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post5.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
-                                                <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item recommend-swiper__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
-                                                <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item recommend-swiper__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post5.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
-                                                <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item recommend-swiper__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post6.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
-                                                <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide article__item recommend-swiper__item">
-                                    <div class="article__thumb">
-                                        <a href="">
-                                            <img class="article__img" src="img/post5.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
-                                        <h3 class="article__title">
-                                            <a href="">Единицы измерения CSS для padding, margin, height, width</a>
-                                        </h3>
-                                        <div class="article__info">
-                                            <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
-                                                <div class="author__info">
-                                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                                    <span class="author__date">28 июля 2023</span>
-                                                </div>
-                                            </div>
-                                            <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
-                                                <a href="" class="article__link">Читать далее</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

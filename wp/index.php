@@ -2,15 +2,7 @@
 <main class="main">
     <div class="container">
         <div class="scroll-menu">
-            <div class="menu">
-                <ul class="menu__categories">
-                    <li><a href="category.html">Код</a></li>
-                    <li><a href="category.html">Карьера</a></li>
-                    <li><a href="category.html">Мотивация</a></li>
-                    <li><a href="category.html">Технологии</a></li>
-                    <li><a href="category.html">События</a></li>
-                </ul>
-            </div>
+            <?php get_sidebar(); ?>
             <div class="page">
                 <h1 class="title">Интернет-журнал<span>для фронтендеров и не только</span></h1>
                 <div class="article">

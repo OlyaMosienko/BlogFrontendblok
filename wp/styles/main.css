@@ -260,6 +260,11 @@ main .page {
   top: 1.5rem;
 }
 
+.wp-block-categories {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 .menu__categories {
   font-size: 2.4rem;
   font-family: "JetBrains Mono", sans-serif;

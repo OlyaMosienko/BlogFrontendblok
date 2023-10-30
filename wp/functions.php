@@ -17,3 +17,20 @@ function theme_add_scripts() {
     wp_enqueue_script( 'script-cursor', get_template_directory_uri() .'/script/cursor.js', array(), '1.0', true );
     wp_enqueue_script( 'script-main', get_template_directory_uri() .'/script/main.js', array(), '1.0', true );
 }
+
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets(){
+
+	register_sidebar( array(
+		'name'          => 'Categories Sidebar',
+		'id'            => 'categories-sidebar',
+		'description'   => 'Description',
+		'class'         => '',
+		'before_widget' => '<div id="%1$s" class="widget menu__categories %2$s">',
+		'after_widget'  => "</div>\n",
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h2>\n",
+		'before_sidebar' => '', // WP 5.6
+		'after_sidebar'  => '', // WP 5.6
+	) );
+}
