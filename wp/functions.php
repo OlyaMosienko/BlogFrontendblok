@@ -34,3 +34,16 @@ function register_my_widgets(){
 		'after_sidebar'  => '', // WP 5.6
 	) );
 }
+
+add_filter( 'get_search_form', 'my_search_form' );
+function my_search_form( $form ) {
+
+	$form = '
+	<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		<label class="screen-reader-text" for="s">Запрос для поиска:</label>
+		<input class="search-area__input" type="text" value="" placeholder="Введите запрос"' . get_search_query() . '" name="s" id="s" />
+		<button class="search-area__btn" type="submit" id="searchsubmit"></button>
+	</form>';
+
+	return $form;
+}

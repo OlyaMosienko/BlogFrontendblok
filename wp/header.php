@@ -27,9 +27,8 @@
                 </div>
                 <div class="header__items _desc">
                     <div class="search-area">
-                        <input class="search-area__input" type="text" placeholder="Введите запрос">
-                        <button class="search-area__btn" type="submit"></button>
-                    </div>
+                        <?php get_search_form(); ?>
+                    </div>  
                     <div class="header__socials">
                         <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
                         <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>

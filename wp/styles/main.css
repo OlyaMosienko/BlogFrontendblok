@@ -69,6 +69,9 @@ header {
   height: 40px;
   padding: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__search img {
@@ -221,6 +224,7 @@ main {
 }
 main .page {
   height: 100%;
+  flex-grow: 1;
 }
 
 .page-title {
@@ -382,13 +386,14 @@ main .page {
 }
 
 .article__category {
+  display: inline-block;
+  color: #2A2F36;
   font-size: 1.8rem;
   font-weight: 500;
   border: 1px solid #12C0DD;
   padding: 3px 9px 2px 9px;
   letter-spacing: 0.05rem;
   text-decoration: none;
-  color: #2A2F36;
 }
 .article__category._code {
   border: 1px solid #12C0DD;
@@ -1346,6 +1351,13 @@ footer {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+.modal-search .search-area form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
 }
 .modal-search .search-area__btn {
   right: 55px;
