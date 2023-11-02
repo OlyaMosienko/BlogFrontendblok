@@ -24,7 +24,10 @@ var swiper = new Swiper(".recommend-swiper", {
         },
         1150: {
           slidesPerView: 1,
-        }
+        },
+        1340: {
+          slidesPerView: 2,
+        },
       }
 });
 

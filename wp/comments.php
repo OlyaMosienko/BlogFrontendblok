@@ -75,6 +75,13 @@ if ( post_password_required() ) { ?>
 <?php endif; ?>
 
 <?php 
+$fields   =  array(
+    'author' => '<input class="comments-form__input" id="author" name="author" type="text" placeholder="Введите имя*" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $html_req . ' />',
+
+    'email'  => '<input class="comments-form__input" placeholder="Введите e-mail*" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $html_req  . ' />',
+
+    'cookies' => '',
+);
 $args = array(
     'comment_field' => '<textarea id="comment" name="comment" class="comments-form__textarea" placeholder="Введите комментарий*" aria-required="true"></textarea>',
     'comment_notes_before' => '',
@@ -82,5 +89,6 @@ $args = array(
     'title_reply' => '',
     'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="btn">Отправить</button>',
     'submit_field' => '<div class="button">%1$s %2$s</div>',
+    'fields' => apply_filters( 'comment_form_default_fields', $fields ),
 );
 comment_form($args); ?>

@@ -52,6 +52,7 @@
                         <?php endwhile; ?>
                     </div>
                 <?php else : ?>
+                    <h1 class="title"><?php the_search_query(); ?></h1>
                     <h1 class="title">Ничего не найдено</h1>
                     <p class="search__result">Но, вы можете почитать другие полезные статьи нашего журнала</p>
                     <div class="post__recommend">

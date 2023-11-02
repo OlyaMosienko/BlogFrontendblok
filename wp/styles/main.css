@@ -225,6 +225,7 @@ main {
 main .page {
   height: 100%;
   flex-grow: 1;
+  max-width: 1490px;
 }
 
 .page-title {
@@ -1141,9 +1142,15 @@ footer {
   margin-top: 0;
 }
 
-.comments-form .button a {
+.comments-form .button button {
   color: #FFFFFF;
-  text-decoration: none;
+  font-size: 1.4rem;
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.42px;
+  background-color: transparent;
+  border: none;
 }
 
 .comments__title {
