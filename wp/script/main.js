@@ -21,6 +21,9 @@ var swiper = new Swiper(".recommend-swiper", {
       breakpoints: {
         768: {
           slidesPerView: 2,
+        },
+        1150: {
+          slidesPerView: 1,
         }
       }
 });

@@ -787,6 +787,7 @@ footer {
   padding: 1rem;
   border: 1px solid #2A2F36;
   transition: 0.2s;
+  flex-basis: content;
 }
 
 .tag-swiper__link:hover {

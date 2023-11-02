@@ -157,6 +157,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php comments_template(); ?>
                     <form class="comments-form">
                         <div class="comments-form__areas">
                             <textarea class="comments-form__textarea" placeholder="Введите комментарий*"></textarea>
