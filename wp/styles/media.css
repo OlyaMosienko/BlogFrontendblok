@@ -509,14 +509,20 @@
         margin: 10rem 0;
     }
     .comments-form__areas {
-        display: flex;
+        display: grid;
         gap: 3rem;
+        grid-template-areas:
+            'a b'
+            'a c'
+            'd .';
     }
     .comments-form__textarea, .comments-form__input {
         font-size: 2rem;
+        margin: 0;
     }
     .comments-form__textarea {
-        flex-basis: 60rem;
+        width: 60rem;
+        grid-area: a;
     }
     .comments-form .button {
         font-size: 1.8rem;

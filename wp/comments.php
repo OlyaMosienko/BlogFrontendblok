@@ -85,7 +85,7 @@ $fields   =  array(
 $args = array(
     'comment_field' => '<textarea id="comment" name="comment" class="comments-form__textarea" placeholder="Введите комментарий*" aria-required="true"></textarea>',
     'comment_notes_before' => '',
-    'class_form' => 'comments-form',
+    'class_form' => 'comments-form__areas',
     'title_reply' => '',
     'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="btn">Отправить</button>',
     'submit_field' => '<div class="button">%1$s %2$s</div>',

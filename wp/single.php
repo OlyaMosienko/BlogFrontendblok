@@ -157,19 +157,9 @@
                             </div>
                         </div>
                     </div>
-                    <?php comments_template(); ?>
-                    <form class="comments-form">
-                        <div class="comments-form__areas">
-                            <textarea class="comments-form__textarea" placeholder="Введите комментарий*"></textarea>
-                            <div class="comments-form__inputs">
-                                <input type="text" class="comments-form__input" placeholder="Введите имя*">
-                                <input type="email" class="comments-form__input" placeholder="Введите e-mail*">
-                            </div>
-                        </div>
-                        <div class="button">
-                            <a href="#" class="btn">Отправить</a>
-                        </div>
-                    </form>
+                    <div class="comments-form">
+                        <?php comments_template(); ?>
+                    </div>
                     <div class="comments">
                         <h2 class="comments__title">Комментарии</h2>
                         <div class="comments__item">
