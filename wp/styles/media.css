@@ -257,7 +257,8 @@
         padding: 2.8rem 0 3rem 2rem;
     }
     .header {
-        padding: 1.5rem 0;
+        padding: 1.95rem 0;
+        align-items: center;
     }
     .header__items {
         gap: 2rem;

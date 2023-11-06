@@ -62,38 +62,23 @@
     </div>
     <div class="overlay" id="overlayMenu">
         <div class="modal">
-            <nav>
-                <ul class="modal__nav">
-                    <li>
-                        <a href="category.html">Код</a>
-                    </li>
-                    <li>
-                        <a href="category.html">Карьера</a>
-                    </li>
-                    <li>
-                        <a href="category.html">Мотивация</a>
-                    </li>
-                    <li>
-                        <a href="category.html">Технологии</a>
-                    </li>
-                    <li>
-                        <a href="category.html">События</a>
-                    </li>
-                    <li>
-                        <a href="http://frontendblok.com" class="header__link" target="_blank">FrontendBlok
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="fill" d="M7 7H17V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path class="fill" d="M7 17L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-                <div class="header__socials">
-                    <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
-                    <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
-                    <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
-                </div>
-            </nav>
+            <?php wp_nav_menu([
+                'menu'            => 'Mobile Menu',
+                'container'       => 'nav',
+                'menu_class'      => 'modal__nav',
+            ]); ?>
+            <a href="http://frontendblok.com" class="header__link" target="_blank">
+                <span>FrontendBlok</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="fill" d="M7 7H17V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path class="fill" d="M7 17L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <div class="header__socials">
+                <a href="https://www.youtube.com/channel/UCn5wduCq2Mus0v85QZn9IaA?sub_confirmation=1" class="social _yt" target="_blank"></a>
+                <a href="https://t.me/tpverstak" class="social _tg" target="_blank"></a>
+                <a href="https://vk.com/tpverstak" class="social _vk" target="_blank"></a>
+            </div>
         </div>
     </div>
     <?php wp_footer(); ?>

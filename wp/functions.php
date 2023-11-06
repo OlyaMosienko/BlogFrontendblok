@@ -47,3 +47,9 @@ function my_search_form( $form ) {
 
 	return $form;
 }
+
+add_action( 'after_setup_theme', 'mobile_menu' );
+
+function mobile_menu() {
+	register_nav_menu( 'mob', 'Mobile Menu' );
+}

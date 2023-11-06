@@ -10,8 +10,8 @@
     <header>
         <div class="container">
             <div class="header">
-                <a href="<?php echo home_url(); ?>">
-                    <img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/logo.svg" alt="Frontend Blok" class="logo">
+                <a href="<?php echo home_url(); ?>" class="logo">
+                    <img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/logo.svg" alt="Frontend Blok">
                 </a>
                 <div class="header__items">
                     <button class="header__search header__btn" id="searchBtn">

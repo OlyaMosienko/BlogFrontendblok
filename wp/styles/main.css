@@ -35,7 +35,9 @@ header {
 .logo {
   width: 146px;
   height: 28.1px;
-  padding-top: 0.4rem;
+}
+.logo img {
+  height: inherit;
 }
 
 .logo._footer {
@@ -48,7 +50,7 @@ header {
 
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -396,16 +398,16 @@ main .page {
   letter-spacing: 0.05rem;
   text-decoration: none;
 }
-.article__category._code {
+.article__category .cat-item-2 {
   border: 1px solid #12C0DD;
 }
-.article__category._motivation {
+.article__category .cat-item-4 {
   border: 1px solid #D912DD;
 }
-.article__category._tech {
+.article__category .cat-item-5 {
   border: 1px solid #F12509;
 }
-.article__category._events {
+.article__category .cat-item-1 {
   border: 1px solid #126FDD;
 }
 
@@ -1333,8 +1335,7 @@ footer {
   padding-left: 0;
   list-style-type: none;
   font-size: 2.4rem;
-  margin-top: 0;
-  margin-bottom: 4.5rem;
+  margin: 0;
 }
 .modal__nav li > a {
   text-decoration: none;
@@ -1347,8 +1348,8 @@ footer {
 .modal__nav li {
   margin-bottom: 3rem;
 }
-.modal__nav li:last-child {
-  margin-bottom: 0;
+.modal .header__link {
+  margin-bottom: 4.5rem;
 }
 
 .modal-search {
