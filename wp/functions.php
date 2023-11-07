@@ -53,3 +53,45 @@ add_action( 'after_setup_theme', 'mobile_menu' );
 function mobile_menu() {
 	register_nav_menu( 'mob', 'Mobile Menu' );
 }
+
+function setPostViews($postID) {
+	$count_key = 'post_views_count';
+	$count = get_post_meta($postID, $count_key, true);
+	if($count==''){
+		$count = 0;
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+	}
+	else{
+		$count++;
+		update_post_meta($postID, $count_key, $count);
+	}
+}
+
+function getPostViews($postID){
+	$count_key = 'post_views_count';
+	$count = get_post_meta( $postID, $count_key, true);
+	if( $count == '' ){
+		delete_post_meta( $postID, $count_key);
+		add_post_meta( $postID, $count_key, '0');
+		return "0";
+	}
+	return $count;
+}
+
+function reading_time() {
+	$content = get_post_field( 'post_content', $post->ID );
+	$content_clean = strip_tags($content);
+	$word_count = count(preg_split('/\s+/', $content_clean));
+	$readingtime = ceil($word_count / 200);
+	if ($readingtime == 1) {
+	  $timer = " мин";
+	} elseif ($readingtime == 2 || $readingtime == 3 || $readingtime == 4) {
+	  $timer = " мин";
+	} else {
+	  $timer = " мин";
+	}
+	$totalreadingtime = '~' . $readingtime . $timer;
+   
+	return $totalreadingtime;
+  }

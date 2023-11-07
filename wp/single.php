@@ -14,22 +14,20 @@
                                 <nav class="article-nav">
                                     <h3 class="article-nav__title">В этой статье:</h3>
                                     <ul class="article-nav__list">
-                                        <li>
-                                            <a href="">EM</a>
-                                            <ul>
-                                                <li><a href="">Классика: тестовая пирамида</a></li>
-                                                <li><a href="">Классика: тестовая пирамида</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Документация</a></li>
-                                        <li><a href="">Смотреть видео</a></li>
+                                        <?php echo do_shortcode('[ez-toc]'); ?>
                                     </ul>
                                 </nav>
                                 <div class="article__about">
                                     <div class="post__categories">
-                                        <a href="category.html" class="article__category _code">Код</a>
-                                        <a href="category.html" class="article__category _motivation">Мотивация</a>
-                                        <a href="category.html" class="article__category _tech">Технологии</a>
+                                        <?php 
+                                            foreach ( get_the_category() as $category ) {
+                                                printf(
+                                                    '<a href="%s" class="article__category">%s</a>', // Шаблон вывода ссылки
+                                                    esc_url( get_category_link( $category ) ), // Ссылка на рубрику
+                                                    esc_html( $category->name ) // Название рубрики
+                                                );
+                                            }
+                                        ?>
                                     </div>
                                     <div class="article__info">
                                         <div class="author">
@@ -40,9 +38,21 @@
                                             </div>
                                         </div>
                                         <div class="article__footer">
-                                            <span class="article__comment">10</span>
-                                            <span class="article__views">850</span>
-                                            <span class="article__time">~25 мин</span>
+                                            <span class="article__comment">
+                                                <?php 
+                                                    global $post;
+                                                    echo $post->comment_count; 
+                                                ?>
+                                            </span>
+                                            <span class="article__views">
+                                                <?php 
+                                                    echo getPostViews( $post->ID );
+                                                    setPostViews( $post->ID );
+                                                ?>
+                                            </span>
+                                            <span class="article__time">
+                                                <?php echo reading_time();?>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -50,8 +60,6 @@
                                     <?php the_post_thumbnail( 'large' ); ?>
                                 </div>
                                 <div class="post__body">
-                                    <p>Всем привет, меня зовут Анна Блок и в этой статье мы продолжим говорить про единицы измерения CSS. <a href="">Предыдущая статья</a> была связана с тем, что я описывала все значения, которые можно использовать относительно такого свойства, как font-size, но при этом я не сделала совершенно никаких выводов для того, что бы вам стало ясно какую единицу измерения использовать и в какой ситуации. Исправлю это недоразумение.</p>
-                                    <p>Выводы сформулирую в конце этой статьи. В начале поговорим о том, как использовать эти единицы измерения для других свойств, которые связаны с шириной и высотой: width, height, padding, margin, border-radius. Конечно же, все эти аспекты нужно рассматривать с точки зрения теории-практики, поэтому поехали.</p>
                                     <div class="article__advice advice">
                                         <div class="advice__text">
                                             <h2 class="advice__title">Рекомендация от нас</h2>
@@ -88,16 +96,7 @@
                         <nav class="article-nav">
                             <h3 class="article-nav__title">В этой статье:</h3>
                             <ul class="article-nav__list">
-                                <li>
-                                    <a href="">EM</a>
-                                    <ul>
-                                        <li><a href="">Классика: тестовая пирамида</a></li>
-                                        <li><a href="">Классика: тестовая пирамида</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="">Документация</a></li>
-                                <li><a href="">Смотреть видео</a></li>
-                                
+                                <?php echo do_shortcode('[ez-toc]'); ?>
                             </ul>
                         </nav>
                     </div>
@@ -145,8 +144,15 @@
                                                 </div>
                                             </div>
                                             <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
+                                                <span class="article__views">
+                                                    <?php 
+                                                        echo getPostViews( $post->ID );
+                                                        setPostViews( $post->ID );
+                                                    ?>
+                                                </span>
+                                                <span class="article__time">
+                                                    <?php echo reading_time();?>
+                                                </span>
                                                 <a href="<?php the_permalink(); ?>" class="article__link">Читать далее</a>
                                             </div>
                                         </div>

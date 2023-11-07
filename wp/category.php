@@ -55,8 +55,15 @@
                                         </div>
                                     </div>
                                     <div class="article__footer">
-                                        <span class="article__views">850</span>
-                                        <span class="article__time">~25 мин</span>
+                                        <span class="article__views">
+                                            <?php 
+                                                echo getPostViews( $post->ID );
+                                                setPostViews( $post->ID );
+                                            ?>
+                                        </span>
+                                        <span class="article__time">
+                                            <?php echo reading_time();?>
+                                        </span>
                                         <a href="<?php the_permalink(); ?>" class="article__link">Читать далее</a>
                                     </div>
                                 </div>
@@ -109,8 +116,15 @@
                                                 </div>
                                             </div>
                                             <div class="article__footer">
-                                                <span class="article__views">850</span>
-                                                <span class="article__time">~25 мин</span>
+                                                <span class="article__views">
+                                                    <?php 
+                                                        echo getPostViews( $post->ID );
+                                                        setPostViews( $post->ID );
+                                                    ?>
+                                                </span>
+                                                <span class="article__time">
+                                                    <?php echo reading_time();?>
+                                                </span>
                                                 <a href="<?php the_permalink(); ?>" class="article__link">Читать далее</a>
                                             </div>
                                         </div>
