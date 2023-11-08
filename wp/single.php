@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="comments-form">
-                        <?php comments_template(); ?>
+                        <?php comments_template('/comments.php', true); ?>
                     </div>
                     <div class="comments">
                         <h2 class="comments__title">Комментарии</h2>

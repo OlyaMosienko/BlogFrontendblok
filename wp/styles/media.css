@@ -449,8 +449,8 @@
         max-width: 281px;
         font-size: 1.8rem;
     }
-    .search.page {
-        max-width: 72vw;
+    main .page {
+        width: 77%;
     }
     .search .article__item {
         margin-bottom: 0;
@@ -541,6 +541,14 @@
     .recommend-swiper__head h2 {
         font-size: 3.2rem;
     }
+    .footer {
+        padding-top: 0;
+        grid-template-columns: 1fr 51rem;
+        grid-template-areas:
+            "footer__logo footer__socials"
+            "footer__menu footer__subscribe"
+            "footer__rules footer__dataset";
+    }
     .overlay {
         display: none;
     }
@@ -578,6 +586,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
     }
+    .post .article {
+        display: block;
+    }
     .article__item {
         margin-bottom: 0;
         max-width: 73rem;
@@ -597,6 +608,10 @@
     }
     .main-article .article__info {
         align-items: center;
+    }
+    .post__body blockquote::before {
+        flex-basis: 9rem;
+        background-size: cover;
     }
 }
 
@@ -641,7 +656,7 @@
         align-self: flex-start;
         position: sticky;
         top: 1.5rem;
-        padding-bottom: 5rem;
+        margin-bottom: 5rem;
         max-height: 35rem;
         overflow-y: scroll;
         width: 77.5rem;
@@ -652,6 +667,10 @@
         padding: 0;
         width: 37.1rem;
         border: none;
+    }
+    .footer__list {
+        column-count: 2;
+        column-gap: 0;
     }
 }
 
@@ -689,24 +708,11 @@
     .menu__categories li {
         margin-top: -1px;
     }
-    .post__body blockquote::before {
-        flex-basis: 9rem;
-        background-size: cover;
-    }
     footer {
         border-top: 1px solid #EDEDED;
     }
     footer .container {
         padding: 0;
-    }
-    .footer {
-        padding-top: 0;
-        display: grid;
-        grid-template-columns: 1fr 51rem;
-        grid-template-areas:
-            "footer__logo footer__socials"
-            "footer__menu footer__subscribe"
-            "footer__rules footer__dataset";
     }
     .logo._footer {
         padding: 4.7rem 0 5rem 7.5rem;
@@ -739,10 +745,6 @@
     }
     .footer__menu {
         padding: 3rem 2rem 4rem 7.5rem;
-    }
-    .footer__list {
-        column-count: 2;
-        column-gap: 0;
     }
     .footer__title {
         margin-bottom: 5rem;
