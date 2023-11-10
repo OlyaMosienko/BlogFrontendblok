@@ -705,6 +705,12 @@
         width: 37.1rem;
         border: none;
     }
+    /* footer {
+        border-top: 1px solid #EDEDED;
+    } */
+    footer .container {
+        padding: 0;
+    }
     .footer__list {
         column-count: 2;
         column-gap: 0;
@@ -744,12 +750,6 @@
     }
     .menu__categories li {
         margin-top: -1px;
-    }
-    footer {
-        border-top: 1px solid #EDEDED;
-    }
-    footer .container {
-        padding: 0;
     }
     .subscribe._footer {
         padding: 5rem 3rem 2rem;

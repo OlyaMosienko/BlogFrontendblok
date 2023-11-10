@@ -10,7 +10,15 @@
                         <div class="article">
                             <article class="main-article">
                                 <h1 class="title"><?php the_title(); ?></h1>
-                                <p class="student">Эту статью написал студент FrontendBlok</p>
+                                <?php
+                                    $show_attention_block = get_post_meta(get_the_ID(), 'show_attention_block', true);
+                                    if ($show_attention_block) {
+                                        echo '<div class="attention-block">';
+                                        echo '<p class="student">Эту статью написал студент FrontendBlok</p>';
+                                        echo '</div>';
+                                    }
+                                ?>
+                                <!-- <p class="student">Эту статью написал студент FrontendBlok</p> -->
                                 <nav class="article-nav">
                                     <h3 class="article-nav__title">В этой статье:</h3>
                                     <ul class="article-nav__list">
@@ -22,9 +30,9 @@
                                         <?php 
                                             foreach ( get_the_category() as $category ) {
                                                 printf(
-                                                    '<a href="%s" class="article__category">%s</a>', // Шаблон вывода ссылки
-                                                    esc_url( get_category_link( $category ) ), // Ссылка на рубрику
-                                                    esc_html( $category->name ) // Название рубрики
+                                                    '<a href="%s" class="article__category">%s</a>',
+                                                    esc_url( get_category_link( $category ) ),
+                                                    esc_html( $category->name )
                                                 );
                                             }
                                         ?>
@@ -65,7 +73,7 @@
                                             <h2 class="advice__title">Рекомендация от нас</h2>
                                             <p>Если ты только учишься, то рекомендуем пройти Бесплатный Марафон <a href="">«Основы веб-разработки»</a>. Идеально подойдет даже тем, кто впервые слышит слово «веб-разработка».</p>
                                         </div>
-                                        <div class="advice__img"><img src="/img/recommend.png" alt=""></div>
+                                        <div class="advice__img"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/recommend.png" alt=""></div>
                                     </div>
                                     <?php the_content(); ?>
                                 </div>

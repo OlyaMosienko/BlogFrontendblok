@@ -95,3 +95,38 @@ function reading_time() {
    
 	return $totalreadingtime;
   }
+
+  function add_attention_block_metabox() {
+    add_meta_box(
+        'attention_block_metabox',
+        'Статья написана учеником?',
+        'attention_block_metabox_callback',
+        'post',
+        'side',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'add_attention_block_metabox' );
+
+function attention_block_metabox_callback( $post ) {
+    $value = get_post_meta( $post->ID, 'show_attention_block', true );
+    ?>
+    <label for="show_attention_block">Статья написана учеником?</label>
+    <select name="show_attention_block" id="show_attention_block">
+        <option value="yes" <?php selected( $value, 'yes' ); ?>>Да</option>
+        <option value="no" <?php selected( $value, 'no' ); ?>>Нет</option>
+    </select>
+    <?php
+}
+
+function save_attention_block_metabox_data( $post_id ) {
+    if ( array_key_exists( 'show_attention_block', $_POST ) ) {
+        update_post_meta(
+            $post_id,
+            'show_attention_block',
+            $_POST['show_attention_block']
+        );
+    }
+}
+add_action( 'save_post', 'save_attention_block_metabox_data' );
+
