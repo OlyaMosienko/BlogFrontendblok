@@ -130,3 +130,11 @@ function save_attention_block_metabox_data( $post_id ) {
 }
 add_action( 'save_post', 'save_attention_block_metabox_data' );
 
+function restrict_tags_to_category($query) {
+    if ( $query->is_main_query() && !is_admin() && is_category('code') ) {
+        $category = get_queried_object(); // Получаем объект текущей категории
+        $tags = get_terms( 'post_tag', array( 'fields' => 'ids' ) );
+        $query->set( 'tag__in', $tags );
+    }
+}
+add_action('pre_get_posts', 'restrict_tags_to_category');

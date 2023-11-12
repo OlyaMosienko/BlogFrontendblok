@@ -7,6 +7,20 @@
             <div class="page category">
                 <div class="page-title">
                     <h1 class="title"><?php if( is_category() ) echo get_queried_object()->name; ?></h1>
+                    <div class="tag__list tag-swiper tagSwiper">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $current_category = get_queried_object(); // Получаем текущую категорию
+                                $tags = get_tags( array('hide_empty' => false) ); // Получаем все теги
+
+                                if ($tags) {
+                                    foreach ($tags as $tag) {
+                                        echo '<a class="swiper-slide tag-swiper__link" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>'; // Выводим ссылки на теги
+                                    }
+                                }
+                            ?>
+                        </div>
+                    </div>
                 </div>
                 <?php 
                     $category_slug = get_query_var( 'category_name' );
