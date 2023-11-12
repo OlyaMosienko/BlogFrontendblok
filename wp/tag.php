@@ -9,11 +9,15 @@
                     <h1 class="title">Код</h1>
                     <div class="tag__list tag-swiper tagSwiper">
                         <div class="swiper-wrapper">
-                            <a href="tag.html" class="swiper-slide tag-swiper__link">CSS</a>
-                            <a href="tag.html" class="swiper-slide tag-swiper__link active">JavaScript</a>
-                            <a href="tag.html" class="swiper-slide tag-swiper__link">Vue</a>
-                            <a href="tag.html" class="swiper-slide tag-swiper__link">React</a>
-                            <a href="tag.html" class="swiper-slide tag-swiper__link">TypeScript</a>
+                            <?php
+                                $tags = get_tags( array('hide_empty' => false) ); // Получаем все теги
+
+                                if ($tags) {
+                                    foreach ($tags as $tag) {
+                                        echo '<a class="swiper-slide tag-swiper__link" href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>'; // Выводим ссылки на теги
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
