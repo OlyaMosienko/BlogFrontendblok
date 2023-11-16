@@ -43,8 +43,9 @@
                                         <div class="article__footer">
                                             <span class="article__views">
                                                 <?php 
-                                                    echo getPostViews( $post->ID );
-                                                    setPostViews( $post->ID );
+                                                    // echo getPostViews( $post->ID );
+                                                    // setPostViews( $post->ID );
+                                                    echo do_shortcode('[views]');
                                                 ?>
                                             </span>
                                             <span class="article__time">
@@ -107,8 +108,9 @@
                                 <div class="article__footer">
                                     <span class="article__views">
                                         <?php 
-                                            echo getPostViews( $post->ID );
-                                            setPostViews( $post->ID );
+                                            // echo getPostViews( $post->ID );
+                                            // setPostViews( $post->ID );
+                                            echo do_shortcode('[views]');
                                         ?>
                                     </span>
                                     <span class="article__time">

@@ -54,30 +54,30 @@ function mobile_menu() {
 	register_nav_menu( 'mob', 'Mobile Menu' );
 }
 
-function setPostViews($postID) {
-	$count_key = 'post_views_count';
-	$count = get_post_meta($postID, $count_key, true);
-	if($count==''){
-		$count = 0;
-		delete_post_meta($postID, $count_key);
-		add_post_meta($postID, $count_key, '0');
-	}
-	else{
-		$count++;
-		update_post_meta($postID, $count_key, $count);
-	}
-}
+// function setPostViews($postID) {
+// 	$count_key = 'post_views_count';
+// 	$count = get_post_meta($postID, $count_key, true);
+// 	if($count==''){
+// 		$count = 0;
+// 		delete_post_meta($postID, $count_key);
+// 		add_post_meta($postID, $count_key, '0');
+// 	}
+// 	else{
+// 		$count++;
+// 		update_post_meta($postID, $count_key, $count);
+// 	}
+// }
 
-function getPostViews($postID){
-	$count_key = 'post_views_count';
-	$count = get_post_meta( $postID, $count_key, true);
-	if( $count == '' ){
-		delete_post_meta( $postID, $count_key);
-		add_post_meta( $postID, $count_key, '0');
-		return "0";
-	}
-	return $count;
-}
+// function getPostViews($postID){
+// 	$count_key = 'post_views_count';
+// 	$count = get_post_meta( $postID, $count_key, true);
+// 	if( $count == '' ){
+// 		delete_post_meta( $postID, $count_key);
+// 		add_post_meta( $postID, $count_key, '0');
+// 		return "0";
+// 	}
+// 	return $count;
+// }
 
 function reading_time() {
 	$content = get_post_field( 'post_content', $post->ID );

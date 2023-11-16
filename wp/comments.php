@@ -54,9 +54,34 @@ if ( post_password_required() ) { ?>
 		<div class="alignright"><?php next_comments_link(); ?></div>
 	</div>
 
-	<ol class="commentlist">
-	<?php wp_list_comments(); ?>
-	</ol>
+	<?php
+  	foreach ($comments as $comment) {
+		// В этом месте можно изменить HTML структуру комментария
+		// Например, добавить дополнительные элементы или изменить порядок вывода информации
+		?>
+		<div class="comments__item">
+			<div class="author">
+				<a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
+				<div class="author__info">
+					<h4 class="author__name"><a href="#"><?php comment_author(); ?></a></h4>
+					<span class="author__date"><?php comment_date('j F Y'); ?></span>
+				</div>
+			</div>
+			<p class="comment-text"><?php comment_text(); ?></p>
+			<div class="comments__functions _close-comments">
+				<div class="replay">
+					<?php comment_reply_link( [
+						'reply_text' => '<a href="#respond">Ответить</a>',
+						'depth' => 2,
+						'max_depth' => 2,
+						]);
+					?>
+				</div>
+				<div class="close-btn"><a href="">Свернуть</a></div>
+			</div>
+		</div>
+		<?php
+  	}?>
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link(); ?></div>
@@ -91,4 +116,4 @@ $args = array(
     'submit_field' => '<div class="button">%1$s %2$s</div>',
     'fields' => apply_filters( 'comment_form_default_fields', $fields ),
 );
-comment_form($args); ?>
+?>

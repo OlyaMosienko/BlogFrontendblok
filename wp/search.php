@@ -16,7 +16,7 @@
                     <h1 class="title"><?php the_search_query(); ?></h1>
                     <p class="search__result"> 
                         <?php
-                            if ($wp_query->found_posts == 1) {
+                            if ($wp_query->found_posts % 10 == 1) {
                                 $find = "Найден ";
                               } else {
                                 $find = "Найдено ";
@@ -24,9 +24,9 @@
                             echo $find;
                             global $wp_query;
                             echo $wp_query->found_posts;
-                            if ($wp_query->found_posts == 1) {
+                            if ($wp_query->found_posts % 10 == 1) {
                                 $result = " результат";
-                              } elseif ($wp_query->found_posts == 2 || $wp_query->found_posts == 3 || $wp_query->found_posts == 4) {
+                              } elseif ($wp_query->found_posts % 10 == 2 || $wp_query->found_posts % 10 == 3 || $wp_query->found_posts % 10 == 4) {
                                 $result = " результата";
                               } else {
                                 $result = " результатов";
@@ -57,10 +57,7 @@
                                         </div>
                                         <div class="article__footer">
                                             <span class="article__views">
-                                                <?php 
-                                                    echo getPostViews( $post->ID );
-                                                    setPostViews( $post->ID );
-                                                ?>
+                                                <?php echo do_shortcode('[views]'); ?>
                                             </span>
                                             <span class="article__time">
                                                 <?php echo reading_time();?>
@@ -110,7 +107,7 @@
                                         </h3>
                                         <div class="article__info">
                                             <div class="author">
-                                                <a href="#"><img src="img/author.png" alt="" class="author__img"></a>
+                                                <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
                                                 <div class="author__info">
                                                     <h4 class="author__name"><a href="#"><?php the_author_meta('display_name'); ?></a></h4>
                                                     <span class="author__date"><?php echo get_the_date('j F Y'); ?></span>
@@ -118,10 +115,7 @@
                                             </div>
                                             <div class="article__footer">
                                                 <span class="article__views">
-                                                    <?php 
-                                                        echo getPostViews( $post->ID );
-                                                        setPostViews( $post->ID );
-                                                    ?>
+                                                    <?php echo do_shortcode('[views]'); ?>
                                                 </span>
                                                 <span class="article__time">
                                                     <?php echo reading_time();?>
