@@ -14,12 +14,26 @@
                 ?>
                 <?php if($query->have_posts()) : ?>
                     <h1 class="title"><?php the_search_query(); ?></h1>
-                    <p class="search__result">Найдено 
+                    <p class="search__result"> 
                         <?php
+                            if ($wp_query->found_posts == 1) {
+                                $find = "Найден ";
+                              } else {
+                                $find = "Найдено ";
+                            };
+                            echo $find;
                             global $wp_query;
                             echo $wp_query->found_posts;
+                            if ($wp_query->found_posts == 1) {
+                                $result = " результат";
+                              } elseif ($wp_query->found_posts == 2 || $wp_query->found_posts == 3 || $wp_query->found_posts == 4) {
+                                $result = " результата";
+                              } else {
+                                $result = " результатов";
+                            };
+                            echo $result;
                         ?>
-                     результата</p>
+                    </p>
                     <div class="article">
                         <?php while($query->have_posts()) : $query->the_post(); ?>
                             <article class="article__item">
