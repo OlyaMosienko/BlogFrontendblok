@@ -70,14 +70,27 @@ if ( post_password_required() ) { ?>
 			<p class="comment-text"><?php comment_text(); ?></p>
 			<div class="comments__functions _close-comments">
 				<div class="replay">
-					<?php comment_reply_link( [
-						'reply_text' => '<a href="#respond">Ответить</a>',
-						'depth' => 2,
-						'max_depth' => 2,
-						]);
-					?>
+					<?php if (comments_open() && (get_option('thread_comments') == 1) && ($depth != $args['max_depth'])) { ?>
+					<div class="reply">
+						<?php comment_reply_link(array_merge( $args, array('reply_text' => 'Ответить', 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					</div>
+					<?php } ?>
 				</div>
 				<div class="close-btn"><a href="">Свернуть</a></div>
+				<div class="comment-replies">
+					<?php
+						// Проверяем, есть ли ответы на данный комментарий
+						$comment_id = get_comment_ID();
+						$args = array(
+							'parent' => $comment_id,
+							'style' => 'div',
+							'type' => 'comment',
+							'avatar_size' => 50,
+							'callback' => 'theme_comments_callback'
+							);
+							wp_list_comments($args);
+					?>
+				</div>
 			</div>
 		</div>
 		<?php

@@ -403,17 +403,20 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   letter-spacing: 0.05rem;
   text-decoration: none;
 }
-.article__category .cat-item-2 {
+.article__category.code {
   border: 1px solid #12C0DD;
 }
-.article__category .cat-item-4 {
+.article__category.motivation {
   border: 1px solid #D912DD;
 }
-.article__category .cat-item-5 {
+.article__category.tech {
   border: 1px solid #F12509;
 }
-.article__category .cat-item-1 {
+.article__category.events {
   border: 1px solid #126FDD;
+}
+.article__category.career {
+  border: 1px solid #12DD3F;
 }
 
 .article__tag {
@@ -1058,6 +1061,7 @@ footer {
 
 .advice img {
   width: 22.3rem;
+  max-width: 22.3rem;
   height: auto;
 }
 

@@ -29,9 +29,13 @@
                                     <div class="post__categories">
                                         <?php 
                                             foreach ( get_the_category() as $category ) {
+                                                $category_slug = $category->slug;
+                                                $category_class = $category_slug;
+                                            
                                                 printf(
-                                                    '<a href="%s" class="article__category">%s</a>',
+                                                    '<a href="%s" class="article__category %s">%s</a>',
                                                     esc_url( get_category_link( $category ) ),
+                                                    esc_attr( $category_class ),
                                                     esc_html( $category->name )
                                                 );
                                             }
@@ -136,7 +140,12 @@
                                         </a>
                                     </div>
                                     <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
+                                        <?php
+                                            $categories = get_the_category();
+                                            if ( ! empty( $categories ) ) {
+                                                echo '<a class="article__category ' . esc_attr( $category_class = $categories[0]->slug ) . '" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                                            }
+                                        ?>
                                         <h3 class="article__title">
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>

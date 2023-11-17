@@ -43,7 +43,12 @@
                                     </a>
                                 </div>
                                 <div class="article__about">
-                                    <a href="category.html" class="article__category">Код</a>
+                                    <?php
+                                        $categories = get_the_category();
+                                        if ( ! empty( $categories ) ) {
+                                            echo '<a class="article__category ' . esc_attr( $category_class = $categories[0]->slug ) . '" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                                        }
+                                    ?>
                                     <h3 class="article__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </h3>
@@ -101,7 +106,12 @@
                                         </a>
                                     </div>
                                     <div class="article__about">
-                                        <a href="category.html" class="article__category">Код</a>
+                                        <?php
+                                            $categories = get_the_category();
+                                            if ( ! empty( $categories ) ) {
+                                                echo '<a class="article__category ' . esc_attr( $category_class = $categories[0]->slug ) . '" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+                                            }
+                                        ?>
                                         <h3 class="article__title">
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h3>
