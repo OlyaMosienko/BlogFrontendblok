@@ -3,6 +3,11 @@
 define( 'BLOGFRONTENDBLOK_THEME_ROOT', get_template_directory_uri() );
 define( 'BLOGFRONTENDBLOK_IMG_DIR', BLOGFRONTENDBLOK_THEME_ROOT .'/img' );
 
+function my_theme_scripts() {
+	wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'my_theme_scripts');
+
 // правильный способ подключить стили и скрипты темы
 add_action( 'wp_enqueue_scripts', 'theme_add_scripts' );
 
@@ -15,9 +20,11 @@ function theme_add_scripts() {
 	// подключаем js файл темы
     wp_enqueue_script( 'script-swiper', get_template_directory_uri() .'/script/swiper-bundle.min.js', array(), '1.0', true );
     wp_enqueue_script( 'script-cursor', get_template_directory_uri() .'/script/cursor.js', array(), '1.0', true );
+	wp_enqueue_script( 'script-loadmore', get_template_directory_uri() .'/script/loadmore.js', array(), '1.0', true );
     wp_enqueue_script( 'script-main', get_template_directory_uri() .'/script/main.js', array(), '1.0', true );
 }
 
+// Categories Sidebar
 add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets(){
 
@@ -35,6 +42,7 @@ function register_my_widgets(){
 	) );
 }
 
+// Search form
 add_filter( 'get_search_form', 'my_search_form' );
 function my_search_form( $form ) {
 
@@ -48,6 +56,7 @@ function my_search_form( $form ) {
 	return $form;
 }
 
+// Mobile Menu
 add_action( 'after_setup_theme', 'mobile_menu' );
 
 function mobile_menu() {
@@ -79,6 +88,7 @@ function mobile_menu() {
 // 	return $count;
 // }
 
+// Reading Time
 function reading_time() {
 	$content = get_post_field( 'post_content', $post->ID );
 	$content_clean = strip_tags($content);
@@ -96,25 +106,32 @@ function reading_time() {
 	return $totalreadingtime;
   }
 
+// Attention Blocks
   function add_attention_block_metabox() {
     add_meta_box(
         'attention_block_metabox',
-        'Статья написана учеником?',
-        'attention_block_metabox_callback',
+        'Блок внимания',
+        'render_attention_block_metabox',
         'post',
         'side',
-        'default'
+        'high'
     );
 }
 add_action( 'add_meta_boxes', 'add_attention_block_metabox' );
 
-function attention_block_metabox_callback( $post ) {
+function render_attention_block_metabox($post) {
     $value = get_post_meta( $post->ID, 'show_attention_block', true );
     ?>
     <label for="show_attention_block">Статья написана учеником?</label>
     <select name="show_attention_block" id="show_attention_block">
         <option value="yes" <?php selected( $value, 'yes' ); ?>>Да</option>
         <option value="no" <?php selected( $value, 'no' ); ?>>Нет</option>
+    </select>
+
+	<label for="attention_block_display_2">Отображать блок с рекламой курсов?</label>
+    <select name="attention_block_display_2" id="attention_block_display_2">
+        <option value="yes" <?php selected($value, 'yes'); ?>>Да</option>
+        <option value="no" <?php selected($value, 'no'); ?>>Нет</option>
     </select>
     <?php
 }
@@ -127,8 +144,16 @@ function save_attention_block_metabox_data( $post_id ) {
             $_POST['show_attention_block']
         );
     }
+	if (array_key_exists('attention_block_display_2', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'attention_block_display_2',
+            $_POST['attention_block_display_2']
+        );
+    }
 }
 add_action( 'save_post', 'save_attention_block_metabox_data' );
+
 
 // function restrict_tags_to_category($query) {
 //     if ( $query->is_main_query() && !is_admin() && is_category('code') ) {
@@ -138,3 +163,27 @@ add_action( 'save_post', 'save_attention_block_metabox_data' );
 //     }
 // }
 // add_action('pre_get_posts', 'restrict_tags_to_category');
+
+// Load More
+function load_more_posts() {
+    $paged = $_POST['page'];
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'paged' => $paged + 1
+    );
+    $query = new WP_Query($args);
+    
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            // Выводите посты в цикле
+        }
+    }
+    
+    wp_reset_postdata();
+    
+    die();
+}
+add_action('wp_ajax_load_more_posts', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');

@@ -12,7 +12,7 @@
                                 <h1 class="title"><?php the_title(); ?></h1>
                                 <?php
                                     $show_attention_block = get_post_meta(get_the_ID(), 'show_attention_block', true);
-                                    if ($show_attention_block) {
+                                    if ($show_attention_block  === 'yes') {
                                         echo '<div class="attention-block">';
                                         echo '<p class="student">Эту статью написал студент FrontendBlok</p>';
                                         echo '</div>';
@@ -69,13 +69,18 @@
                                     <?php the_post_thumbnail( 'large' ); ?>
                                 </div>
                                 <div class="post__body">
-                                    <div class="article__advice advice">
-                                        <div class="advice__text">
+                                    <?php
+                                        $attention_block_display_2 = get_post_meta(get_the_ID(), 'attention_block_display_2', true);
+                                        if ($attention_block_display_2 === 'yes') {
+                                            echo '<div class="article__advice advice">';
+                                            echo '<div class="advice__text">
                                             <h2 class="advice__title">Рекомендация от нас</h2>
                                             <p>Если ты только учишься, то рекомендуем пройти Бесплатный Марафон <a href="">«Основы веб-разработки»</a>. Идеально подойдет даже тем, кто впервые слышит слово «веб-разработка».</p>
-                                        </div>
-                                        <div class="advice__img"><img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/recommend.png" alt=""></div>
-                                    </div>
+                                            </div>
+                                            <div class="advice__img"><img src="https://blog.frontendblok.com/wp-content/themes/blogfrontendblok/img/recommend.png" alt=""></div>';
+                                            echo '</div>';
+                                        }
+                                    ?>
                                     <?php the_content(); ?>
                                 </div>
                             </article>

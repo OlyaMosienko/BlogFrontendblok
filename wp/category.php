@@ -31,7 +31,8 @@
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'cat' => $category_id,
-                        'post_per_page' => '-1',
+                        'post_per_page' => '1',
+                        'paged' => 1
                     );
                     $query = new WP_Query( $args );
                 ?>
@@ -83,6 +84,10 @@
                         </article>
                     <?php endwhile; ?>
                 </div>
+                <?php 
+                    echo '<button class="button loadmore id="load-more-button" data-page="1" onclick="loadMorePosts()">Загрузить ещё</button>';
+                    wp_reset_postdata();
+                ?>
                 <?php else : ?>
                     <h1 class="title">Ничего не найдено</h1>
                     <p class="search__result">Но, вы можете почитать другие полезные статьи нашего журнала</p>
@@ -144,6 +149,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                
                                 <?php } ?>
                                 <?php } ?>
                             </div>
