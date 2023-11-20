@@ -31,7 +31,7 @@
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'cat' => $category_id,
-                        'post_per_page' => '1',
+                        'post_per_page' => '4',
                         'paged' => 1
                     );
                     $query = new WP_Query( $args );
@@ -85,8 +85,9 @@
                     <?php endwhile; ?>
                 </div>
                 <?php 
-                    echo '<button class="button loadmore id="load-more-button" data-page="1" onclick="loadMorePosts()">Загрузить ещё</button>';
-                    wp_reset_postdata();
+                    $cat = get_query_var('cat');
+                    $category = get_category ($cat);
+                    echo do_shortcode('[ajax_load_more container_type="div" post_type="post" category="'.$category->slug.'" posts_per_page="4" scroll="false" transition_container_classes="article" button_label="Загрузить ещё" destroy_after="no_more_posts"]');
                 ?>
                 <?php else : ?>
                     <h1 class="title">Ничего не найдено</h1>
@@ -169,7 +170,6 @@
                         <p>Нажимая на кнопку «подписаться», я&nbsp;даю согласие на <a href="https://annblok.ru/workshop" target="_blank">обработку персональных данных</a></p>
                     </div>
                 </section>
-                <button type="submit" class="button loadmore">загрузить ещё</button>
             </div>
         </div>
     </div>

@@ -29,7 +29,8 @@
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'tag_id' => $tag_id,
-                        'post_per_page' => '-1',
+                        'post_per_page' => '4',
+                        'paged' => 1
                     );
                     $query = new WP_Query( $args );
                 ?>
@@ -76,6 +77,10 @@
                         </article>
                     <?php endwhile; ?>
                 </div>
+                <?php
+                    $tag = get_query_var('tag'); 
+                    echo do_shortcode('[ajax_load_more container_type="div" post_type="post" tag="'.$tag.'" posts_per_page="4" scroll="false" transition_container_classes="article" button_label="Загрузить ещё" destroy_after="no_more_posts"]');
+                ?>
                 <?php else : ?>
                     <h1 class="title">Ничего не найдено</h1>
                     <p class="search__result">Но, вы можете почитать другие полезные статьи нашего журнала</p>
@@ -155,7 +160,6 @@
                         <p>Нажимая на кнопку «подписаться», я&nbsp;даю согласие на <a href="https://annblok.ru/workshop" target="_blank">обработку персональных данных</a></p>
                     </div>
                 </section>
-                <button type="submit" class="button loadmore">загрузить ещё</button>
             </div>
         </div>
     </div>

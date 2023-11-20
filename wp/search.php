@@ -9,6 +9,8 @@
                         'orderby' => 'date',
                         'order' => 'DESC',
                         's' => get_search_query(),
+                        'post_per_page' => '4',
+                        'paged' => 1,
                     );
                     $query = new WP_Query( $args );
                 ?>
@@ -74,6 +76,13 @@
                             </article>
                         <?php endwhile; ?>
                     </div>
+                    <?php
+                    $term = sanitize_text_field($_GET['s']);
+                        if(empty($term)){
+                        $term = get_search_query();
+                        }
+                        echo do_shortcode('[ajax_load_more container_type="div" post_type="post" search="'. $term .'" posts_per_page="4" scroll="false" transition_container_classes="article" button_label="Загрузить ещё" destroy_after="no_more_posts"]');
+                    ?>
                 <?php else : ?>
                     <h1 class="title">По поиску <?php the_search_query(); ?> Ничего не&nbsp;найдено</h1>
                     <p class="search__result">Но, вы можете почитать другие полезные статьи нашего журнала</p>
