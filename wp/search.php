@@ -38,7 +38,7 @@
                     </p>
                     <div class="article">
                         <?php while($query->have_posts()) : $query->the_post(); ?>
-                            <article class="article__item">
+                            <!-- <article class="article__item">
                                 <div class="article__thumb">
                                     <a href="<?php the_permalink(); ?>">
                                         <?php the_post_thumbnail( 'large' ); ?>
@@ -73,7 +73,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </article>
+                            </article> -->
                         <?php endwhile; ?>
                     </div>
                     <?php

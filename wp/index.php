@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="article__about">
                                     <?php
-                                        $categories = get_the_category();
+                                        $categories = get_the_category($p['ID']);
                                         if ( ! empty( $categories ) ) {
                                             echo '<a class="article__category ' . esc_attr( $category_class = $categories[0]->slug ) . '" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
                                         }
@@ -34,12 +34,12 @@
                                     </h3>
                                     <div class="article__info">
                                         <div class="author">
-                                            <a href="#"><?php echo get_avatar($author->ID, 56.8); ?></a>
+                                            <a href="#"><?php echo get_avatar($author->ID, 52); ?></a>
                                             <div class="author__info">
                                                 <h4 class="author__name"><a href="#"><?php the_author_meta('display_name', $post->post_author); ?></a></h4>
                                                 <span class="author__date">
                                                     <?php 
-                                                        $date = date_i18n('j F, Y', strtotime($p['post_date']));
+                                                        $date = date_i18n('j F Y', strtotime($p['post_date']));
                                                         echo $date;
                                                     ?>
                                                 </span>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="subscribe__agreement">
-                        <p>Нажимая на кнопку «подписаться», я&nbsp;даю согласие на <a href="https://annblok.ru/workshop" target="_blank">обработку персональных данных</a></p>
+                        <p>Нажимая на кнопку «подписаться», я&nbsp;даю согласие на <a href="https://frontendblok.com/pdf/Политика обработки персональных Frontend Blok.pdf" target="_blank">обработку персональных данных</a></p>
                     </div>
                 </section>
                 <div class="article">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="article__about">
                             <?php
-                                $categories = get_the_category();
+                                $categories = get_the_category($p['ID']);
                                 if ( ! empty( $categories ) ) {
                                     echo '<a class="article__category ' . esc_attr( $category_class = $categories[0]->slug ) . '" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
                                 }
@@ -104,12 +104,12 @@
                             </h3>
                             <div class="article__info">
                                 <div class="author">
-                                    <a href="#"><?php echo get_avatar($author->ID, 56.8); ?></a>
+                                    <a href="#"><?php echo get_avatar($author->ID, 52); ?></a>
                                     <div class="author__info">
                                         <h4 class="author__name"><a href="#"><?php the_author_meta('display_name', $post->post_author); ?></a></h4>
                                         <span class="author__date">
                                             <?php 
-                                                $date = date_i18n('j F, Y', strtotime($p['post_date']));
+                                                $date = date_i18n('j F Y', strtotime($p['post_date']));
                                                 echo $date;
                                             ?>
                                         </span>
@@ -124,7 +124,7 @@
                                         ?>
                                     </span>
                                     <span class="article__time">
-                                        <?php echo reading_time();?>
+                                        <?php echo reading_time($post->ID);?>
                                     </span>
                                     <a href="<?php echo get_permalink($p['ID']) ?>" class="article__link">Читать далее</a>
                                 </div>

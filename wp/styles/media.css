@@ -268,7 +268,7 @@
     }
     .article-nav {
         padding: 3rem 0 2.5rem;
-        margin: 3rem 0 9rem;
+        margin: 3rem 0 7.2rem;
     }
     .article-nav__title {
         letter-spacing: normal !important;
@@ -380,7 +380,13 @@
         letter-spacing: 0.14rem;
     }
     .main-article .article__info {
-        align-items: end;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-article .article__footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
     }
     .advice {
         padding: 3rem 3rem 2rem;
@@ -549,8 +555,6 @@
             "footer__menu footer__subscribe"
             "footer__rules footer__dataset";
         border-top: 1px solid #EDEDED;
-        border-left: none;
-        border-right: none;
     }
     .logo._footer {
         padding: 4.7rem 0 5rem 7.5rem;
@@ -671,6 +675,9 @@
     .subscribe__input {
         font-size: 1.8rem;
     }
+    .subscribe._footer {
+        padding: 4rem 3rem 2rem;
+    }
     .subscribe._footer h2 {
         margin-bottom: 2.1rem;
     }
@@ -735,6 +742,10 @@
     }
     .recommend-swiper .article__info {
         display: block;
+    }
+    .footer {
+        border-left: none;
+        border-right: none;
     }
 }
 

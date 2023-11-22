@@ -331,9 +331,9 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   padding: 0;
 }
 
-.article-nav__list li:first-child, .article-nav__list li + li {
+/* .article-nav__list li:first-child, .article-nav__list li + li {
   margin-bottom: 2rem;
-}
+} */
 .article-nav__list li:last-child {
   margin-bottom: 0;
 }
@@ -535,9 +535,10 @@ ul.ez-toc-list.ez-toc-list-level-1 {
 }
 .author__name {
   margin: 0;
-  padding-top: 0.4rem;
+  padding-top: 0;
   font-size: 1.8rem;
   font-weight: 400;
+  line-height: 1;
   text-transform: none;
   letter-spacing: normal;
 }
@@ -557,6 +558,9 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   background-color: rgba(18, 192, 221, 0.05);
   padding: 3rem 1.5rem;
   margin: 3rem 0;
+}
+.page.category .subscribe {
+  margin-bottom: 0;
 }
 
 .subscribe__title {
@@ -1018,7 +1022,7 @@ footer {
 
 .main-article h3 {
   font-size: 2rem;
-  margin: 3.45rem 0 0;
+  margin: 3.45rem 0 2rem;
 }
 
 .main-article h4 {
@@ -1267,6 +1271,10 @@ ol.commentlist {
   display: block;
   background-image: url(../img/chevron-down.png);
   background-size: contain;
+}
+
+.wp-block-kevinbatdorf-code-block-pro.cbp-hl-loaded.cbp-ff-loaded {
+  width: 42vw;
 }
 
 /* Swiper */

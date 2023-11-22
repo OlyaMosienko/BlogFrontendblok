@@ -90,7 +90,8 @@ function mobile_menu() {
 
 // Reading Time
 function reading_time() {
-	$content = get_post_field( 'post_content', $post->ID );
+	$content = get_the_content($post->ID);
+	// $content = get_post_field( 'post_content', $post->ID );
 	$content_clean = strip_tags($content);
 	$word_count = count(preg_split('/\s+/', $content_clean));
 	$readingtime = ceil($word_count / 200);
@@ -153,16 +154,6 @@ function save_attention_block_metabox_data( $post_id ) {
     }
 }
 add_action( 'save_post', 'save_attention_block_metabox_data' );
-
-
-// function restrict_tags_to_category($query) {
-//     if ( $query->is_main_query() && !is_admin() && is_category('code') ) {
-//         $category = get_queried_object(); // Получаем объект текущей категории
-//         $tags = get_terms( 'post_tag', array( 'fields' => 'ids' ) );
-//         $query->set( 'tag__in', $tags );
-//     }
-// }
-// add_action('pre_get_posts', 'restrict_tags_to_category');
 
 // Load More
 // function load_more_posts() {
