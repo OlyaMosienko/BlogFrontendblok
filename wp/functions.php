@@ -154,27 +154,3 @@ function save_attention_block_metabox_data( $post_id ) {
     }
 }
 add_action( 'save_post', 'save_attention_block_metabox_data' );
-
-// Load More
-// function load_more_posts() {
-//     $paged = $_POST['page'];
-//     $args = array(
-//         'post_type' => 'post',
-//         'post_status' => 'publish',
-//         'paged' => $paged + 1
-//     );
-//     $query = new WP_Query($args);
-    
-//     if ($query->have_posts()) {
-//         while ($query->have_posts()) {
-//             $query->the_post();
-//             // Выводите посты в цикле
-//         }
-//     }
-    
-//     wp_reset_postdata();
-    
-//     die();
-// }
-// add_action('wp_ajax_load_more_posts', 'load_more_posts');
-// add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');

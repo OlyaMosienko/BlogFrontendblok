@@ -18,7 +18,6 @@
                                         echo '</div>';
                                     }
                                 ?>
-                                <!-- <p class="student">Эту статью написал студент FrontendBlok</p> -->
                                 <nav class="article-nav">
                                     <h3 class="article-nav__title">В этой статье:</h3>
                                     <ul class="article-nav__list">
@@ -180,23 +179,12 @@
                         </div>
                     </div>
                     <div class="comments-form">
-                        <?php 
-                        $args = array(
-                            'comment_field' => '<textarea id="comment" name="comment" class="comments-form__textarea" placeholder="Введите комментарий*" aria-required="true"></textarea>',
-                            'comment_notes_before' => '',
-                            'class_form' => 'comments-form__areas',
-                            'title_reply' => '',
-                            'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="btn">Отправить</button>',
-                            'submit_field' => '<div class="button">%1$s %2$s</div>',
-                            'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-                        );
-                        comment_form($args); 
-                        ?>
+                        <?php comments_template(); ?>
                     </div>
                     <div class="comments">
                         <h2 class="comments__title">Комментарии</h2>
-                        <?php comments_template('/comments.php', true); ?>
-                        <div class="comments__item">
+                        <?php wp_list_comments(); ?>
+                        <!-- <div class="comments__item">
                             <div class="author">
                                 <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
                                 <div class="author__info">
@@ -236,7 +224,7 @@
                                 <div class="replay"><a href="">Ответить</a></div>
                                 <div class="open-btn"><a href="">Просмотреть все комментарии</a></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

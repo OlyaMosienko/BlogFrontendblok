@@ -33,8 +33,10 @@ header {
 }
 
 .logo {
-  width: 146px;
-  height: 28.1px;
+  /* width: 146px;
+  height: 28.1px; */
+  width: clamp(14.6rem, 3vw + 1rem, 27rem);
+  height: clamp(2.81rem, 3vw + 1rem, 5.2rem);
 }
 .logo img {
   height: inherit;
@@ -305,6 +307,9 @@ main .page {
 }
 
 /* Articles */
+.page.post .article {
+  margin-top: 0;
+}
 .article-nav {
   border-top: 1px solid #EDEDED;
   border-bottom: 1px solid #EDEDED;
@@ -331,9 +336,12 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   padding: 0;
 }
 
-/* .article-nav__list li:first-child, .article-nav__list li + li {
+.article-nav__list li:first-child {
   margin-bottom: 2rem;
-} */
+}
+.article-nav__list li + li {
+  margin-bottom: 2rem;
+}
 .article-nav__list li:last-child {
   margin-bottom: 0;
 }
@@ -425,6 +433,13 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   font-size: 1.6rem;
   margin-left: 0.5rem;
   text-decoration: none;
+}
+
+.article__info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10%;
 }
 
 .article__title {
@@ -645,6 +660,21 @@ ul.ez-toc-list.ez-toc-list-level-1 {
   padding: 1.7rem;
   margin-top: 1.5rem;
 }
+.button button {
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.42px;
+  background-color: #12C0DD;
+  border: 1px solid #12C0DD;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin-top: 0
+}
 .button.loadmore {
   margin: 3rem auto 0;
 }
@@ -682,32 +712,23 @@ ul.ez-toc-list.ez-toc-list-level-1 {
           mask-image: url(../img/yt.svg);
   background-size: 2.6rem;
 }
-.social._yt:hover::before {
-  background: #F12509;
-}
 .social._vk::before {
   -webkit-mask-image: url(../img/vk.svg);
           mask-image: url(../img/vk.svg);
   background-size: 2.8rem;
-}
-.social._vk:hover::before {
-  background: #0077FF;
 }
 .social._tg::before {
   -webkit-mask-image: url(../img/tg.svg);
           mask-image: url(../img/tg.svg);
   background-size: 2.45rem;
 }
-.social._tg:hover::before {
-  background: #12C0DD;
-}
 .social._ig::before {
   -webkit-mask-image: url(../img/ig.svg);
           mask-image: url(../img/ig.svg);
   background-size: 2.63rem;
 }
-.social._ig:hover::before {
-  background: fuchsia;
+.social:hover::before {
+  background: #12C0DD;
 }
 
 /* Footer */
