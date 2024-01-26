@@ -54,10 +54,6 @@ if ( post_password_required() ) { ?>
 		<div class="alignright"><?php next_comments_link(); ?></div>
 	</div>
 
-	<ol class="commentlist">
-	<?php wp_list_comments(); ?>
-	</ol>
-
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link(); ?></div>
 		<div class="alignright"><?php next_comments_link(); ?></div>

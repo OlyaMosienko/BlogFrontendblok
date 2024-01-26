@@ -183,7 +183,18 @@
                     </div>
                     <div class="comments">
                         <h2 class="comments__title">Комментарии</h2>
-                        <?php wp_list_comments(); ?>
+                        <?php
+                            $comments = get_comments(array(
+                                'post_id' => get_the_ID(),
+                                'status' => 'approve' // Только подтвержденные комментарии
+                            ));
+
+                            wp_list_comments(array(
+                                'reverse_top_level' => false,
+                                'style' => 'div',
+                            ), $comments);
+
+                        ?>
                         <!-- <div class="comments__item">
                             <div class="author">
                                 <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>

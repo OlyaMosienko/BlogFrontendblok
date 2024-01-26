@@ -754,21 +754,32 @@ footer {
 .footer__menu {
   border-top: 1px solid #EDEDED;
   border-bottom: 1px solid #EDEDED;
-  padding: 1rem 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.footer__marathons {
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+.footer__marathons, 
+.footer__courses {
+  break-inside: avoid;
+  flex-basis: calc(50% - 1rem);
 }
+
 
 .footer__title {
   color: #2A2F36;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .footer__list a:last-child {
@@ -778,37 +789,57 @@ footer {
 .footer__item {
   display: block;
   text-decoration: none;
-  color: #95A3B1;
-  font-size: 1.6rem;
+  color: #2A2F36;
+  opacity: .8;
+  transition: color .2s, opacity .2s;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
 .footer__rules {
-  font-size: 1.4rem;
-  color: #95A3B1;
-  padding: 2rem 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  column-count: 2;
+  column-gap: 2rem;
 }
 
 .footer__rules span {
   display: block;
+  break-inside: avoid;
+  color: #bfbfbf;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  cursor: default;
 }
 
 .footer__rules a {
   display: block;
-  color: #95A3B1;
   text-decoration: none;
-  margin-top: 2rem;
+  break-inside: avoid;
+  color: #bfbfbf;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  transition: color .2s;
+}
+
+.footer__item:hover,
+.footer__rules a:hover {
+  color: #12c0dd;
+  opacity: 1;
 }
 
 .footer__dataset {
-  font-size: 1.4rem;
-  color: #95A3B1;
-  padding: 0 1.5rem 2rem 1.5rem;
+  column-count: 2;
+  column-gap: 2rem;
 }
 
 .footer__dataset span {
-  display: block;
   padding-bottom: 2rem;
+  break-inside: avoid;
+  display: block;
+  color: #bfbfbf;
+  font-size: 1rem;
+  line-height: 1.4rem;
 }
 
 /* Tag and Category */
