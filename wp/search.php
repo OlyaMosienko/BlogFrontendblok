@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                             </article> -->
-                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); endwhile; ?>
                     </div>
                     <?php
                     $term = sanitize_text_field($_GET['s']);
@@ -134,10 +134,14 @@
                                             </div>
                                             <div class="article__footer">
                                                 <span class="article__views">
-                                                    <?php echo do_shortcode('[views]'); ?>
+													<?php
+                                                        $post_id = get_the_ID();
+                                                        echo number_format(track_post_views($post_id));
+													?>
                                                 </span>
                                                 <span class="article__time">
                                                     <?php echo reading_time();?>
+													<!-- <?php echo est_read_time(); ?> -->
                                                 </span>
                                                 <a href="<?php the_permalink(); ?>" class="article__link">Читать далее</a>
                                             </div>

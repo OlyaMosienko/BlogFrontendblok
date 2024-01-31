@@ -56,7 +56,10 @@
                                                 ?>
                                             </span>
                                             <span class="article__views">
-                                                <?php echo do_shortcode('[views]'); ?>
+                                                <?php
+                                                    $post_id = get_the_ID();
+                                                    echo number_format(track_post_views($post_id));
+                                                ?>
                                             </span>
                                             <span class="article__time">
                                                 <?php echo reading_time();?>
@@ -68,7 +71,7 @@
                                     <?php the_post_thumbnail( 'large' ); ?>
                                 </div>
                                 <div class="post__body">
-                                    <?php
+<!--                                     <?php
                                         $attention_block_display_2 = get_post_meta(get_the_ID(), 'attention_block_display_2', true);
                                         if ($attention_block_display_2 === 'yes') {
                                             echo '<div class="article__advice advice">';
@@ -79,7 +82,7 @@
                                             <div class="advice__img"><img src="https://blog.frontendblok.com/wp-content/themes/blogfrontendblok/img/recommend.png" alt=""></div>';
                                             echo '</div>';
                                         }
-                                    ?>
+                                    ?> -->
                                     <?php the_content(); ?>
                                 </div>
                             </article>
@@ -163,7 +166,10 @@
                                             </div>
                                             <div class="article__footer">
                                                 <span class="article__views">
-                                                    <?php echo do_shortcode('[views]'); ?>
+                                                    <?php
+                                                        $post_id = get_the_ID();
+                                                        echo number_format(track_post_views($post_id));
+                                                    ?>
                                                 </span>
                                                 <span class="article__time">
                                                     <?php echo reading_time();?>
@@ -174,68 +180,30 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <?php } ?>
+                                <?php wp_reset_postdata(); } ?>
                             </div>
                         </div>
                     </div>
                     <div class="comments-form">
                         <?php comments_template(); ?>
                     </div>
-                    <div class="comments">
+
+					<div class="comments">
                         <h2 class="comments__title">Комментарии</h2>
                         <?php
-                            $comments = get_comments(array(
-                                'post_id' => get_the_ID(),
+							
+							 $comments = get_comments(array(
+                                'post_id' => $post->ID,
                                 'status' => 'approve' // Только подтвержденные комментарии
                             ));
 
-                            wp_list_comments(array(
-                                'reverse_top_level' => false,
-                                'style' => 'div',
-                            ), $comments);
+                             wp_list_comments(array(
+                                 'style' => 'div',
+								'format' => 'html5',
+								'walker' => new WP_Bootstrap_Comments_Walker(),
+                             ), $comments);
 
                         ?>
-                        <!-- <div class="comments__item">
-                            <div class="author">
-                                <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
-                                <div class="author__info">
-                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                    <span class="author__date">28 июля 2023</span>
-                                </div>
-                            </div>
-                            <p>В начале описания каждой же программы проставлена цена и условия работы демо-версии. Нажмите Ctrl + F  и напишите «бесплатно». Это слово на странице вы найдете только в своем комментарии.</p>
-                            <div class="comments__functions _close-comments">
-                                <div class="replay"><a href="">Ответить</a></div>
-                                <div class="close-btn"><a href="">Свернуть</a></div>
-                            </div>
-                        </div>
-                        <div class="comments__item answer">
-                            <div class="author">
-                                <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
-                                <div class="author__info">
-                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                    <span class="author__date">28 июля 2023</span>
-                                </div>
-                            </div>
-                            <p>Большое спасибо за ответ, всё стало понятно</p>
-                            <div class="comments__functions">
-                                <div class="replay"><a href="">Ответить</a></div>
-                            </div>
-                        </div>
-                        <div class="comments__item ">
-                            <div class="author">
-                                <a href="#"><?php echo get_avatar($author->ID, 50); ?></a>
-                                <div class="author__info">
-                                    <h4 class="author__name"><a href="#">Анна Блок</a></h4>
-                                    <span class="author__date">28 июля 2023</span>
-                                </div>
-                            </div>
-                            <p>В начале описания каждой же программы проставлена цена и условия работы демо-версии. Нажмите Ctrl + F  и напишите «бесплатно». Это слово на странице вы найдете только в своем комментарии.</p>
-                            <div class="comments__functions _open-comments">
-                                <div class="replay"><a href="">Ответить</a></div>
-                                <div class="open-btn"><a href="">Просмотреть все комментарии</a></div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

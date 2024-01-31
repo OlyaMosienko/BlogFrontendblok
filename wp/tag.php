@@ -134,7 +134,12 @@
                                             </div>
                                             <div class="article__footer">
                                                 <span class="article__views">
-                                                    <?php echo do_shortcode('[views]'); ?>
+<!--                                                     <?php echo do_shortcode('[views='.$post->ID.']'); ?> -->
+<!-- 													<?php echo do_shortcode('[post-views]'); ?> -->
+													<?php
+                                                        $post_id = get_the_ID();
+														echo number_format(track_post_views($post_id));
+													?> 
                                                 </span>
                                                 <span class="article__time">
                                                     <?php echo reading_time();?>
@@ -145,7 +150,7 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <?php } ?>
+                                <?php wp_reset_postdata(); } ?>
                             </div>
                         </div>
                     </div>

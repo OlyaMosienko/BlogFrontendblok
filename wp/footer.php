@@ -8,7 +8,7 @@
                         <button type="submit" class="button">отправить</button>
                     </div>
                 </section>
-                <a href="<?php echo home_url(); ?>">
+                <a class="footer__logolink" href="<?php echo home_url(); ?>">
                     <img src="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/logo.svg" alt="Frontend Blok" class="logo _footer"/>
                 </a>
                 <div class="footer__socials">

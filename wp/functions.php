@@ -3,6 +3,8 @@
 define( 'BLOGFRONTENDBLOK_THEME_ROOT', get_template_directory_uri() );
 define( 'BLOGFRONTENDBLOK_IMG_DIR', BLOGFRONTENDBLOK_THEME_ROOT .'/img' );
 
+add_theme_support( 'post-thumbnails' );
+
 function my_theme_scripts() {
 	wp_enqueue_script('jquery');
 }
@@ -129,11 +131,11 @@ function render_attention_block_metabox($post) {
         <option value="no" <?php selected( $value, 'no' ); ?>>Нет</option>
     </select>
 
-	<label for="attention_block_display_2">Отображать блок с рекламой курсов?</label>
+<!-- 	<label for="attention_block_display_2">Отображать блок с рекламой курсов?</label>
     <select name="attention_block_display_2" id="attention_block_display_2">
         <option value="yes" <?php selected($value, 'yes'); ?>>Да</option>
         <option value="no" <?php selected($value, 'no'); ?>>Нет</option>
-    </select>
+    </select> -->
     <?php
 }
 
@@ -154,3 +156,59 @@ function save_attention_block_metabox_data( $post_id ) {
     }
 }
 add_action( 'save_post', 'save_attention_block_metabox_data' );
+
+
+//туц
+
+function get_post_views($post_id) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+    if($count==''){
+        delete_post_meta($post_id, $count_key);
+        return 0;
+    }
+    return $count;
+}
+
+function track_post_views($post_id) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+    }
+    return $count+1;
+}
+
+function get_acf_field_value($field_name) {
+    $value = get_field($field_name);
+    return $value;
+}
+
+function addAdvBlock($atts) {
+	
+	if (!current_user_can('manage_options') || !get_field('recommendation_show')) {
+        return;
+    }
+	
+    // Извлеките значения из ACF-полей
+    $title = get_acf_field_value('recommendation_title');
+    $content = get_acf_field_value('recommendation_content');
+    $image = get_acf_field_value('recommendation_image');
+
+    // Ваш код для генерации HTML-кода
+    $output = '<div class="article__advice advice">
+                    <div class="advice__text">
+                        <h2 class="advice__title">' . $title . '</h2>
+                        <p>' . $content . '</p>
+                    </div>
+                    <div class="advice__img">
+                        <img src="' . $image['url'] . '" alt="' . $image['alt'] . '">
+                    </div>
+                </div>';
+    return $output;
+}
+add_shortcode('shortcode_adv_block', 'addAdvBlock');
+
+require_once 'wp-bootstrap-comments.php';

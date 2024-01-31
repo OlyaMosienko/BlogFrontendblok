@@ -114,8 +114,14 @@
 }
 
 @media (min-width: 500px) {
+    .custom-cursor {
+        display: block;
+    }
     .page-title {
       margin-bottom: 5rem;
+    }
+    .footer__title {
+        font-size: 1.4rem;
     }
 }
 
@@ -148,31 +154,28 @@
         padding: 3rem 3rem 0;
     }
     .footer {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         grid-template-areas:
             "footer__subscribe footer__subscribe"
             "footer__logo footer__socials"
             "footer__menu footer__menu"
             "footer__rules footer__dataset";
     }
-    .subscribe._footer {
-        grid-area: footer__subscribe;
-    }
     .logo._footer {
-        grid-area: footer__logo;
-        padding-top: 2rem;
+        height: 32px;
     }
     .footer__socials {
-        grid-area: footer__socials;
-        justify-content: flex-end;
+        padding: 3rem 3rem 3rem 0;
+    }
+    .footer__socials .social {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 1.6rem 0 0;
     }
     .footer__menu {
         display: flex;
         justify-content: space-between;
         padding: 3rem 2rem 5rem 2rem;
         gap: 1%;
-        grid-area: footer__menu;
     }
     .footer__courses {
         flex-basis: 50%;
@@ -190,14 +193,14 @@
     }
     .footer__rules {
         padding: 3rem;
-        grid-area: footer__rules;
+        column-gap: 0;
     }
     .footer__rules span {
         display: inline-block;
     }
     .footer__dataset {
-        padding: 5rem 3rem;
-        grid-area: footer__dataset;
+        column-gap: 0;
+        padding: 3rem;
     }
     .tag__list {
         margin: 0 -1rem 0 0;
@@ -256,9 +259,10 @@
         height: 52px;
     } */
     .logo._footer {
-        width: 270px;
-        height: 52px;
-        padding: 2.8rem 0 3rem 2rem;
+        height: 40px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-right: 4rem;
     }
     .header {
         padding: 1.95rem 0;
@@ -322,12 +326,22 @@
         font-size: 1.6rem;
         margin-top: 3rem;
     }
+    .subscribe._footer {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
     .subscribe._footer h2 {
         font-size: 1.8rem;
     }
     .subscribe._footer .button {
-        max-width: 341px;
+        max-width: 100%;
         margin-top: 0;
+    }
+    .subscribe._footer .subscribe__input {
+        padding: 2.2rem 1.4rem;
     }
     .button {
         max-width: 314px;
@@ -340,44 +354,65 @@
     footer {
         margin-top: 9.5rem;
     }
+    .subscribe._footer .subscribe__area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
     .footer {
-        padding-top: 1.2rem;
+        grid-template-areas:
+        "footer__logo footer__socials"
+        "footer__menu footer__subscribe"
+        "footer__rules footer__dataset";
+        border-top: 1px solid #EDEDED;
     }
     .footer__socials {
         gap: 3rem;
-        padding-right: 2.1rem;
-        padding-left: 0;
-        margin-top: 3.9rem;
-        margin-bottom: 3.7rem;
+        padding: 4rem 2rem;
+        margin: 0 0 -1px 0;
+        border-left: 1px solid #EDEDED;
+        border-bottom: 1px solid #EDEDED;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__socials .social {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin: 0 1rem;
+    }
+    .footer__menu {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        padding-right: 4rem;
+    }
+    .footer__marathons {
+        flex-basis: 45%;
     }
     .footer__title {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         letter-spacing: .06rem;
         margin-bottom: 3rem;
     }
     .footer__item {
         letter-spacing: 0.96px;
         margin-bottom: 1.7rem;
-        font-size: 1.4rem;
     }
     .footer__rules {
         columns: unset;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
-    }
-    .footer__rules br {
-        display: none;
+        align-items: center;
     }
     .footer__dataset {
         columns: unset;
         padding: 3rem 2rem;
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        justify-content: space-around;
+        align-items: center;
     }
     .footer__dataset span,
-    .footer__rules span {
+    .footer__rules span, 
+    .footer__rules a {
         font-size: 1.2rem;
     }
     .tag-swiper__link {
@@ -571,38 +606,11 @@
             "footer__rules footer__dataset";
         border-top: 1px solid #EDEDED;
     }
-    .logo._footer {
-        padding: 4.7rem 0 5rem 7.5rem;
-    }
-    .footer__socials {
-        margin: 0 0 -1px 0;
-        border-left: 1px solid #EDEDED;
-        border-bottom: 1px solid #EDEDED;
-        align-items: center;
-        justify-content: center;
-        padding-right: 6.5rem;
-    }
-    .subscribe._footer {
-        padding: 9rem 3rem 2rem;
-        margin-right: 5.5rem;
-        z-index: 1;
-        text-align: center;
-    }
-    .subscribe._footer .subscribe__area {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
-        gap: 2rem;
-    }
-    .subscribe._footer .subscribe__input {
-        padding: 1.5rem 1.4rem;
-    }
     .subscribe._footer .button {
         max-width: 100%;
     }
     .footer__dataset {
         margin-top: -1px;
-        border-top: 1px solid #EDEDED;
         border-left: 1px solid #EDEDED;
     }
     .overlay {
@@ -622,6 +630,16 @@
     }
     .search.page {
         max-width: 75vw;
+    }
+    .logo._footer {
+        padding-top: 5rem;
+    }
+    .footer__socials .social {
+        margin: 0 1.5rem;
+    }
+    .footer__menu {
+        padding-top: 6rem;
+        padding-bottom: 5.5rem;
     }
     .footer__dataset {
         justify-content: space-between;
@@ -675,9 +693,6 @@
         flex-basis: 9rem;
         background-size: cover;
     }
-    .footer__marathons:last-child {
-        flex-basis: 45%;
-    }
     .footer__list {
         display: block;
         flex-direction: unset;
@@ -685,7 +700,7 @@
         column-count: 2;
         column-gap: 4rem;
     }
-    .footer__list:last-child .footer__list {
+    .footer__marathons .footer__list {
         column-gap: 0;
     }
     .footer__item {
@@ -718,6 +733,7 @@
     }
     .subscribe._footer h2 {
         margin-bottom: 2.1rem;
+        flex-basis: unset;
     }
     .search.page {
         max-width: 77vw;
@@ -751,6 +767,9 @@
         width: 37.1rem;
         border: none;
     }
+    .wp-block-kevinbatdorf-code-block-pro.cbp-hl-loaded.cbp-ff-loaded {
+        width: 42vw;
+    }
     /* footer {
         border-top: 1px solid #EDEDED;
     } */
@@ -770,9 +789,8 @@
     .post__nav {
         width: 74rem;
     }
-    .footer {
-        border-left: none;
-        border-right: none;
+    .footer__rules br {
+        display: none;
     }
 }
 
@@ -794,22 +812,17 @@
         margin-bottom: 5rem;
     }
     .footer__rules {
-        font-size: 1.6rem;
-        border-right: 1px solid #EDEDED;
         display: flex;
         align-items: center;
-        padding: 3.2rem 0 5rem 7.5rem;
         gap: 10vw;
     }
     .footer__rules a {
         margin-top: 0;
     }
     .footer__dataset {
-        font-size: 1.6rem;
         display: flex;
         align-items: center;
         gap: 2.6vw;
-        padding: 3.2rem 5.5rem 5rem 3.75rem;
     }
     .footer__dataset span {
         padding: 0;
