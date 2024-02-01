@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интернет-журнал FrontendBlok</title>
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="150x150" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/mstile-150x150.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="<?php echo BLOGFRONTENDBLOK_IMG_DIR ?>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <?php wp_head(); ?>
 </head>
 <body>
@@ -45,3 +53,4 @@
             </div>
         </div>    
     </header>
+<div class="up"></div>

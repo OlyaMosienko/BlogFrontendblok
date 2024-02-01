@@ -80,3 +80,15 @@ main.addEventListener("click", function () {
 		search.classList.remove("active");
 	}
 });
+
+// Button Scroll Up
+let windowHeight = document.documentElement.clientHeight;
+let up = document.querySelector('.up');
+
+
+document.addEventListener('scroll', () => {
+if (scrollY > windowHeight) {
+up.classList.add('active')
+} else up.classList.remove('active')
+});
+up.addEventListener('click', () => scrollTo(0, 0))

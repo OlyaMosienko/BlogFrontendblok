@@ -1528,3 +1528,34 @@ ol.commentlist {
   width: 74vw;
   height: auto;
 }
+
+/* Button Up */
+.up {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background: #12c0dd;
+  display: none;
+  font-size: 0;
+  z-index: 9;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+.up:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(-90deg);
+  transition: .2s;
+  mask: url(../img/arrowup.svg) center center/50% auto no-repeat;
+}
+.up.active {
+  display: block;
+  opacity: 1;
+}

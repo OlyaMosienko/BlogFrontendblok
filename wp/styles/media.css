@@ -1,6 +1,7 @@
 @media all {
     html {
       font-size: 10px;
+      scroll-behavior: smooth;
     }
     body {
         font: 400 2rem/1.3 "Fira Sans", sans-serif;
@@ -152,6 +153,10 @@
     .advice {
         display: flex;
         padding: 3rem 3rem 0;
+    }
+    .up {
+        width: 5rem;
+        height: 5rem;
     }
     .footer {
         grid-template-areas:
@@ -350,6 +355,10 @@
     .social {
         width: 3rem;
         height: 3rem;
+    }
+    .up {
+        width: 6rem;
+        height: 6rem;
     }
     footer {
         margin-top: 9.5rem;
