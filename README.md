@@ -1,4 +1,4 @@
-# BlogFrontendblok
+# Сайт блога для разработчиков BlogFrontendblok
 [Блог для фронтендеров и не только](https://blog.frontendblok.com) на CMS Wordpress
 
 <img width="532" alt="image" src="https://github.com/OlyaMosienko/BlogFrontendblok/blob/main/img/blog.frontendblok.com.png">
